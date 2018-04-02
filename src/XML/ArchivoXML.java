@@ -13,7 +13,7 @@ import org.jdom2.input.SAXBuilder;
 public class ArchivoXML {
 	public static void main(String[] args) {
 		ArchivoXML ejemplo = new ArchivoXML();
-		ejemplo.leerArchivo("src/archivo.xml");
+		ejemplo.leerArchivo("src/XML/archivo.xml");
 	}
 	public void leerArchivo(String xmlFile) {
 		SAXBuilder builder = new SAXBuilder();

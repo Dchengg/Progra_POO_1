@@ -45,6 +45,7 @@ public class Sender {
 	            	String name = parts[0];
 	            	String address = parts[1];
 	                toAddress[i] = new InternetAddress(address);
+	                
 	            }
 	
 	            for( int i = 0; i < toAddress.length; i++) {

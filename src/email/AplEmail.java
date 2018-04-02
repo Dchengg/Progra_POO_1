@@ -15,7 +15,7 @@ public class AplEmail {
 	private static final String USERNAME = "PackageNotifier";
 	private static final String PASSWORD = "Package123";
 
-	public AplEmail() {
+	public static void init() {
 		
 		Timer timer = new Timer();
 		Fetcher emailFetcher = new Fetcher(POP,STORETYPE,USERNAME,PASSWORD);
