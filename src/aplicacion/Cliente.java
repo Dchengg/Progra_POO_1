@@ -1,6 +1,7 @@
 package aplicacion;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 
 public class Cliente {
@@ -9,7 +10,7 @@ public class Cliente {
 	private String email;
 	private String dirección;
 	private String numTel;
-	private Date fechaDeNacimiento;
+	private String fechaDeNacimiento;
 	private boolean perfilCompleto;
 	private String contraseña;
 	private boolean notificaciones;
@@ -19,6 +20,19 @@ public class Cliente {
 	public Cliente(String pNombre, String pEmail) {
 		setNombre(pNombre);
 		setEmail(pEmail);
+	}
+	
+	public Cliente(String pNombre, String pEmail, String pDir, String pNumTel,String pFechaDeNacimiento,boolean pCompleto, String pContra, boolean pNotificaciones, String pNumCasillero) {
+		setNombre(pNombre);
+		setEmail(pEmail);
+		setDirección(pDir);
+		setNumTel(pNumTel);
+		setFechaDeNacimiento(pFechaDeNacimiento);
+		setPerfilCompleto(pCompleto);
+		setContraseña(pContra);
+		setNotificaciones(pNotificaciones);
+		setNumCasillero(pNumCasillero);
+		
 	}
 	
 	private void agregarPaquete(String trackingID, String tienda, String courier, int valor, String descripcion) {
@@ -50,10 +64,10 @@ public class Cliente {
 	public void setNumTel(String numTel) {
 		this.numTel = numTel;
 	}
-	public Date getFechaDeNacimiento() {
+	public String getFechaDeNacimiento() {
 		return fechaDeNacimiento;
 	}
-	public void setFechaDeNacimiento(Date fechaDeNacimiento) {
+	public void setFechaDeNacimiento(String fechaDeNacimiento) {
 		this.fechaDeNacimiento = fechaDeNacimiento;
 	}
 	public boolean isPerfilCompleto() {
@@ -74,6 +88,14 @@ public class Cliente {
 	}
 	public void setNotificaciones(boolean notificaciones) {
 		this.notificaciones = notificaciones;
+	}
+
+	public String getNumCasillero() {
+		return numCasillero;
+	}
+
+	public void setNumCasillero(String numCasillero) {
+		this.numCasillero = numCasillero;
 	}
 	
 	

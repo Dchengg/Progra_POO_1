@@ -2,9 +2,17 @@ package aplicacion;
 
 import email.AplEmail;
 
-public class App {
+import java.util.ArrayList;
 
+import XML.ClienteXML;
+
+public class App {
+	private ArrayList<Cliente> clientes;
+	
 	public static void main(String[] args) {
-		AplEmail.init();
+		//AplEmail.init();
+		ClienteXML.leerXML();
+		clientes = ClienteXML.get
+		
 	}
 }

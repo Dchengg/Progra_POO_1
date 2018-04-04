@@ -1,0 +1,33 @@
+<tables>
+  <tabla nombre="Clientes">
+    <campo>
+      <nombre>Pinche luis</nombre>
+      <email>diegocheng1973@gmail.com</email>
+      <dirrecion>Vazques de Coronado</dirrecion>
+      <numTel>22990823</numTel>
+      <fechaN>10-03-1999</fechaN>
+      <perfilC>si</perfilC>
+      <contrasena>:P</contrasena>
+      <recibirN>si</recibirN>
+      <casillero>a345</casillero>
+    </campo>
+    <campo>
+      <nombre>Pinche Jose :v</nombre>
+      <email>diegocheng1973@gmail.com</email>
+      <dirrecion>Tres Rios</dirrecion>
+      <numTel>0932123746</numTel>
+      <fechaN>30-11-2018</fechaN>
+      <perfilC>no</perfilC>
+      <contrasena>kek</contrasena>
+      <recibirN>no</recibirN>
+      <casillero>e210</casillero>
+    </campo>
+  </tabla>
+  <tabla nombre="Soporte">
+    <campo>
+      <nombre>campo</nombre>
+      <tipo>varchar</tipo>
+      <valor>pato</valor>
+    </campo>
+  </tabla>
+</tables>
