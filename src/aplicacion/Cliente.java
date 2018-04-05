@@ -40,6 +40,19 @@ public class Cliente {
 		paquetes.add(paqueteNuevo);
 	}
 	
+	public String toString() {
+	 String msg = "Nombre :" + getNombre() + "\n";
+	 msg += "Correo :" + getEmail() + "\n";
+	 msg += "Dirección : " + getDirección() + "\n";
+	 msg += "Número de Telefono : " + getNumTel() + "\n";
+	 msg += "Fecha de Nacimiento : " + getFechaDeNacimiento() + "\n";
+	 msg += "Perfil Completo : " + isPerfilCompleto() + "\n";
+	 msg += "Contraseña : " + getContraseña() + "\n";
+	 msg += "Recibir notificaciones : " + isNotificaciones() + "\n";
+	 msg += "Número de Casillero : " + getNumCasillero() + "\n";
+	 return msg;
+	}
+	
 	public String getNombre() {
 		return nombre;
 	}
