@@ -13,16 +13,18 @@ import org.jdom2.JDOMException;
 import org.jdom2.input.SAXBuilder;
 
 public class ClienteXML {
-	private ArrayList<Cliente> clientes = new ArrayList<Cliente>();
+	private ArrayList<Cliente> clientes;
+	private String xmlFile;
 	
-	public static void leerXML() {
-		ClienteXML ejemplo = new ClienteXML();
-		ejemplo.leerArchivo("src/XML/Usuarios.xml");
+	public ClienteXML(ArrayList<Cliente> pClientes, String pXmlFile) {
+		setClientes(pClientes);
+		setXmlFile(pXmlFile);
 	}
-	public void leerArchivo(String xmlFile) {
+	
+	public ArrayList<Cliente> leerArchivo(String xmlFile) {
+		ArrayList<Cliente> clientes = new ArrayList<Cliente>();
 		SAXBuilder builder = new SAXBuilder();
 		File xml = new File(xmlFile);
-		
 		try {
 			Document document = (Document)builder.build(xml);
 			Element rootNode = document.getRootElement();
@@ -47,7 +49,6 @@ public class ClienteXML {
 					System.out.println( "\t"+dir+"\t"+numTel+"\t"+fecha+"\t"+perfil+"\t"+contra+"\t"+recibir);
 					Cliente clienteCargado = new Cliente(nombre,email,dir,numTel,fecha,perfil,contra,recibir,casillero);
 					clientes.add(clienteCargado);
-					
 				}
 			}
 		}catch (IOException io) {
@@ -55,11 +56,25 @@ public class ClienteXML {
 		}catch(JDOMException jdomex) {
 			System.out.println(jdomex.getMessage());
 		}
-		
-	}
-	
-	public static ArrayList<Cliente> getClientes(){
 		return clientes;
 	}
+
+	public ArrayList<Cliente> getClientes() {
+		return clientes;
+	}
+
+	public void setClientes(ArrayList<Cliente> clientes) {
+		this.clientes = clientes;
+	}
+
+	public String getXmlFile() {
+		return xmlFile;
+	}
+
+	public void setXmlFile(String xmlFile) {
+		this.xmlFile = xmlFile;
+	}
+	
+	
 	
 }

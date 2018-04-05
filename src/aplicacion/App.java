@@ -7,12 +7,21 @@ import java.util.ArrayList;
 import XML.ClienteXML;
 
 public class App {
-	private ArrayList<Cliente> clientes;
+	private ArrayList<Cliente> clientes = new ArrayList<Cliente>();
 	
 	public static void main(String[] args) {
 		//AplEmail.init();
-		ClienteXML.leerXML();
-		clientes = ClienteXML.get
-		
+		ClienteXML lector = new ClienteXML(clientes,"src/XML/Usuarios");
 	}
+
+	private void setClientes(ArrayList<Cliente> clientes) {
+		this.clientes = clientes;
+	}
+
+	public ArrayList<Cliente> getClientes() {
+		return clientes;
+	}
+
+	
+	
 }
