@@ -40,6 +40,13 @@ public class Cliente {
 		paquetes.add(paqueteNuevo);
 	}
 	
+	public boolean logIn(String id, String contra) {
+		if(id.equals(getNombre()) && contra.equals(getContraseña())) {
+			return true;
+		}else {
+			return false;
+		}
+	}
 	public String toString() {
 	 String msg = "Nombre :" + getNombre() + "\n";
 	 msg += "Correo :" + getEmail() + "\n";
