@@ -17,19 +17,19 @@ import javax.xml.parsers.DocumentBuilderFactory;
 public class Writer{
 	public static void main(String[] args) {
 		List<Cliente> list = new ArrayList<Cliente>();
-		Cliente a = new Cliente("Vazques de Coronado","22990823","10-03-1999", "si","mecagoenChenga","si");
-		Cliente b = new Cliente("Tres Rios","0932123746","30-11-2018", "no","kek","no");
-		Cliente c = new Cliente("Cartago","11111111","01-01-01","si","believenot","si");
+		Cliente a = new Cliente("Vazques de Coronado","22990823","10-03-1999", "si","mecagoenChenga","si"); //this
+		Cliente b = new Cliente("Tres Rios","0932123746","30-11-2018", "no","kek","no"); //this
+		Cliente c = new Cliente("Cartago","11111111","01-01-01","si","believenot","si");  //this
 		list.add(a);
 		list.add(b);
-		list.add(c);
-		String fileName = "src/infoClientes.xml";
+		list.add(c); //this
+		
 		escribirArchivo(fileName,list);
 	}
-	private static void escribirArchivo(String XMLFile,List<Cliente> list) {
+	private static void escribirArchivo(List<Cliente> list) {
 		try {
-			DocumentBuilderFactory dFact = DocumentBuilderFactory.newInstance();
-			DocumentBuilder build = dFact.newDocumentBuilder();
+		DocumentBuilderFactory dFact = DocumentBuilderFactory.newInstance();
+		DocumentBuilder build = dFact.newDocumentBuilder();
 	        Document doc = build.newDocument();
 	        
 	        Element root = doc.createElement("tables");
@@ -60,9 +60,9 @@ public class Writer{
 	        	perfil.appendChild(doc.createTextNode(cliente.getPerfilC()));
 	        	campo.appendChild(perfil);
 	        	
-	        	Element contraseña = doc.createElement("contrasena");
-	        	contraseña.appendChild(doc.createTextNode(cliente.getContrasena()));
-	        	campo.appendChild(contraseña);
+	        	Element contraseÃ±a = doc.createElement("contrasena");
+	        	contraseÃ±a.appendChild(doc.createTextNode(cliente.getContrasena()));
+	        	campo.appendChild(contraseÃ±a);
 	        	
 	        	Element recibirN = doc.createElement("recibirN");
 	        	recibirN.appendChild(doc.createTextNode(cliente.getRecibirN()));
@@ -80,7 +80,7 @@ public class Writer{
 	        
 	        DOMSource source = new DOMSource(doc);
 	        try {
-	            FileWriter fos = new FileWriter(XMLFile);
+	            FileWriter fos = new FileWriter("src/infoClientes.xml");
 	            StreamResult result = new StreamResult(fos);
 	            aTransformer.transform(source, result);
 
