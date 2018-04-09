@@ -1,9 +1,12 @@
-package escritura;
+package XML;
 
 import javax.xml.transform.*;
 import javax.xml.transform.stream.*;
 import javax.xml.transform.dom.*;
 import org.w3c.dom.*;
+
+import aplicacion.Cliente;
+
 import javax.xml.parsers.*;
 
 import java.io.FileWriter;
@@ -17,9 +20,9 @@ import javax.xml.parsers.DocumentBuilderFactory;
 public class Writer{
 	public static void main(String[] args) {
 		List<Cliente> list = new ArrayList<Cliente>();
-		Cliente a = new Cliente("Vazques de Coronado","22990823","10-03-1999", "si","mecagoenChenga","si");
-		Cliente b = new Cliente("Tres Rios","0932123746","30-11-2018", "no","kek","no");
-		Cliente c = new Cliente("Cartago","11111111","01-01-01","si","believenot","si");
+		Cliente a = new Cliente("Diego Cheng", "diegocheng1973@gmail.com", "Santa ana","123","1/2/3",true,"contra",false,"a221");
+		Cliente b = new Cliente("Luis Chavarraria","luisSeMamo@hotmail.com","San jose","3456","5/7/5",false,":p",false,"a231");
+		Cliente c = new Cliente("Bruh","Pos@yahoo.com","brasil","6854","5/7/7",false,"password",true,"a999");
 		list.add(a);
 		list.add(b);
 		list.add(c);
@@ -45,27 +48,36 @@ public class Writer{
 		        tabla.appendChild(campo);
 		        
 	        	Element direccion = doc.createElement("dirrecion");
-	        	direccion.appendChild(doc.createTextNode(cliente.getDireccion()));
+	        	direccion.appendChild(doc.createTextNode(cliente.getDirección()));
 	        	campo.appendChild(direccion);
 	        	
 	        	Element numero = doc.createElement("numero");
-	        	numero.appendChild(doc.createTextNode(cliente.getNumero()));
+	        	numero.appendChild(doc.createTextNode(cliente.getNumCasillero()));
 	        	campo.appendChild(numero);
 	        	
 	        	Element fechaN = doc.createElement("fechaN");
-	        	fechaN.appendChild(doc.createTextNode(cliente.getFechaN()));
+	        	fechaN.appendChild(doc.createTextNode(cliente.getFechaDeNacimiento()));
 	        	campo.appendChild(fechaN);
 	        	
 	        	Element perfil = doc.createElement("perfilC");
-	        	perfil.appendChild(doc.createTextNode(cliente.getPerfilC()));
+	        	if(cliente.isPerfilCompleto()) {
+	        		perfil.appendChild(doc.createTextNode("true"));
+	        	}else {
+	        		perfil.appendChild(doc.createTextNode("false"));
+	        	}
 	        	campo.appendChild(perfil);
-	        	
+	     
 	        	Element contraseña = doc.createElement("contrasena");
-	        	contraseña.appendChild(doc.createTextNode(cliente.getContrasena()));
+	        	contraseña.appendChild(doc.createTextNode(cliente.getContraseña()));
 	        	campo.appendChild(contraseña);
 	        	
 	        	Element recibirN = doc.createElement("recibirN");
-	        	recibirN.appendChild(doc.createTextNode(cliente.getRecibirN()));
+	        	if(cliente.isNotificaciones()) {
+	        		recibirN.appendChild(doc.createTextNode("true"));
+	        	}else {
+	        		recibirN.appendChild(doc.createTextNode("false"));
+	        	}
+	        	
 	        	campo.appendChild(recibirN);
 	   
 	        }

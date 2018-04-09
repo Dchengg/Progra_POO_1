@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import javax.mail.internet.InternetAddress;
+
+import aplicacion.Cliente;
 import email.Fetcher;
 import email.Sender;
 
@@ -15,7 +18,7 @@ public class AplEmail {
 	private static final String USERNAME = "PackageNotifier";
 	private static final String PASSWORD = "Package123";
 
-	public static void init() {
+	public static void init(ArrayList<Cliente> clientes) {
 		
 		Timer timer = new Timer();
 		Fetcher emailFetcher = new Fetcher(POP,STORETYPE,USERNAME,PASSWORD);
@@ -25,7 +28,18 @@ public class AplEmail {
 				System.out.println("It RAN");
 				ArrayList<String> recipients = emailFetcher.fetchEmail();
 				emailSender.sendEmail(recipients);
+				for( int i = 0; i < recipients.size(); i++ ) {
+	            	String[]parts = recipients.get(i).split(";");
+	            	String name = parts[0];
+	            	String address = parts[1];
+	                Cliente cliente = new Cliente(name,address);
+	                clientes.add(cliente);
+	                
+	            }
+				
 			}
 		},0,30*1000);
 	}
+	
+	
 }

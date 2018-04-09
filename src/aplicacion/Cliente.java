@@ -96,8 +96,8 @@ public class Cliente {
 	public void setPerfilCompleto(boolean perfilCompleto) {
 		this.perfilCompleto = perfilCompleto;
 	}
-	
-	private String getContraseña() {
+	//Tiene que ser privada pero por unos problemas en Writer se necesita public **HAY QUE ARREGLAR
+	public String getContraseña() {
 		return contraseña;
 	}
 	private void setContraseña(String contraseña) {

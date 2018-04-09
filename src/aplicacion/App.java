@@ -5,6 +5,7 @@ import email.AplEmail;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
 import XML.ClienteXML;
 
 public class App {
@@ -14,7 +15,7 @@ public class App {
 		ArrayList<Cliente> clientes = new ArrayList<Cliente>();
 		ClienteXML lector = new ClienteXML(clientes,"src/XML/Usuarios.xml");
 		lector.leerArchivo();
-		AplEmail.init();
+		AplEmail.init(clientes);
 		for(Cliente cliente:clientes) {
 			System.out.println(cliente.toString());
 		}
@@ -27,6 +28,7 @@ public class App {
 	
 	private static boolean menuLogIn(ArrayList<Cliente> clientes) {
 		String msg;
+		//CloseShieldInputStream stream = new CloseShieldInputStream(System.in);
 		Scanner reader = new Scanner(System.in);
 		msg = "Bienvenido a Package Notifier"+ "\n";
 		msg += "LOG IN"+ "\n";
@@ -38,11 +40,11 @@ public class App {
 		System.out.println("");
 		for(Cliente cliente:clientes) {
 			if(cliente.logIn(id,contra)){
-				reader.close();
+				//reader.close();
 				return true;
 			}
 		}
-		reader.close();
+		//reader.close();
 		return false;
 		
 	}
