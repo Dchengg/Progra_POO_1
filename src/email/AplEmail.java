@@ -17,6 +17,7 @@ public class AplEmail {
 	private static final String STORETYPE = "pop3";
 	private static final String USERNAME = "PackageNotifier";
 	private static final String PASSWORD = "Package123";
+	private static int numero = 0;
 
 	public static void init(ArrayList<Cliente> clientes) {
 		
@@ -25,21 +26,17 @@ public class AplEmail {
 		Sender emailSender = new Sender(SMTP,USERNAME,PASSWORD);	
 		timer.scheduleAtFixedRate(new TimerTask() { 
 			public void run() {
-				System.out.println("It RAN");
+				System.out.println("it ran "+ ++numero + " times");
 				ArrayList<String> recipients = emailFetcher.fetchEmail();
-				emailSender.sendEmail(recipients);
 				for( int i = 0; i < recipients.size(); i++ ) {
 	            	String[]parts = recipients.get(i).split(";");
 	            	String name = parts[0];
 	            	String address = parts[1];
 	                Cliente cliente = new Cliente(name,address);
-	                clientes.add(cliente);
-	                
+	                clientes.add(cliente);	                
 	            }
-				
+				emailSender.sendEmail(recipients);
 			}
 		},0,30*1000);
-	}
-	
-	
+	}		
 }

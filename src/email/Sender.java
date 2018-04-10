@@ -10,10 +10,10 @@ public class Sender {
 
 	private String host;
     private String username;  
-    private String password; 
+    private String password;
+    
     private String subject = "Welcome to PackageNotifier!!!";
-    private String content = "Your id is : " + "'DChengg'" +"\n"
-							+ " Your password is: " + "x123";
+
     private ArrayList<String> recipients = new ArrayList<String>();
 
     public Sender(String pHost, String pUsername, String pPassword) {
@@ -39,21 +39,25 @@ public class Sender {
 	        try {
 	            message.setFrom(new InternetAddress(getHost()));
 	            InternetAddress[] toAddress = new InternetAddress[recipients.size()];
-	
+	            String[] toWho = new String[recipients.size()];
 	            for( int i = 0; i < recipients.size(); i++ ) {
 	            	String[]parts = recipients.get(i).split(";");
 	            	String name = parts[0];
 	            	String address = parts[1];
+	            	System.out.println("address = " + address);
 	                toAddress[i] = new InternetAddress(address);
-	                
+	                toWho[i] = name;
 	            }
 	
 	            for( int i = 0; i < toAddress.length; i++) {
 	                message.addRecipient(Message.RecipientType.TO, toAddress[i]);
+	                message.setSubject(subject);
+		            String content = "Your id is : " + toWho[i] +"\n"
+							+ " Your password is: " + "x123";
+		            message.setText(content);
 	            }
 	            
-	            message.setSubject("Hello " + "\n" + subject);
-	            message.setText(content);
+	            
 	            Transport transport = session.getTransport("smtps");
 	            transport.connect(getHost(), getUsername(), getPassword());
 	            transport.sendMessage(message, message.getAllRecipients());
@@ -67,7 +71,7 @@ public class Sender {
 	        }
 	        recipients.clear();
     	} else {
-    		System.out.println("No email to send");
+    		//System.out.println("No email to send");
     	}
     }
     
@@ -102,7 +106,7 @@ public class Sender {
 	private void setRecipients(ArrayList<String> raw) {
 		for(int i = 0; i<raw.size();i++) {
 			String recipient = raw.get(i);
-			System.out.println(recipient);
+			//System.out.println(recipient);
 			recipients.add(recipient);
 		}
 	}
