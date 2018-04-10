@@ -26,7 +26,7 @@ public class Writer{
 		list.add(a);
 		list.add(b);
 		list.add(c);
-		String fileName = "src/infoClientes.xml";
+		String fileName = "src/XML/Usuarios.xml";
 		escribirArchivo(fileName,list);
 	}
 	private static void escribirArchivo(String XMLFile,List<Cliente> list) {
@@ -39,46 +39,63 @@ public class Writer{
 	        doc.appendChild(root);
 	        
 	        Element tabla = doc.createElement("tabla");
+	        tabla.setAttribute("Nombre", "Clientes");
 	        root.appendChild(tabla);
-	        
-	        
 	        
 	        for(Cliente cliente : list){
 	        	Element campo = doc.createElement("campo");
 		        tabla.appendChild(campo);
 		        
+		        Element nombre = doc.createElement("nombre");
+	        	nombre.appendChild(doc.createTextNode(cliente.getNombre()));
+	        	campo.appendChild(nombre);
+	        	
+	        	Element correo = doc.createElement("email");
+	        	correo.appendChild(doc.createTextNode(cliente.getEmail()));
+	        	campo.appendChild(correo);
+		        
 	        	Element direccion = doc.createElement("dirrecion");
 	        	direccion.appendChild(doc.createTextNode(cliente.getDirección()));
 	        	campo.appendChild(direccion);
 	        	
-	        	Element numero = doc.createElement("numero");
-	        	numero.appendChild(doc.createTextNode(cliente.getNumCasillero()));
-	        	campo.appendChild(numero);
+	        	Element numTel = doc.createElement("numTel");
+	        	numTel.appendChild(doc.createTextNode(cliente.getNumTel()));
+	        	campo.appendChild(numTel);
 	        	
-	        	Element fechaN = doc.createElement("fechaN");
-	        	fechaN.appendChild(doc.createTextNode(cliente.getFechaDeNacimiento()));
-	        	campo.appendChild(fechaN);
+	        	Element fechaDeNacimiento = doc.createElement("fechaDeNacimiento");
+	        	fechaDeNacimiento.appendChild(doc.createTextNode(cliente.getFechaDeNacimiento()));
+	        	campo.appendChild(fechaDeNacimiento);
 	        	
-	        	Element perfil = doc.createElement("perfilC");
+	        	Element perfilCompleto = doc.createElement("perfilCompleto");
 	        	if(cliente.isPerfilCompleto()) {
-	        		perfil.appendChild(doc.createTextNode("true"));
+	        		perfilCompleto.appendChild(doc.createTextNode("true"));
 	        	}else {
-	        		perfil.appendChild(doc.createTextNode("false"));
+	        		perfilCompleto.appendChild(doc.createTextNode("false"));
 	        	}
-	        	campo.appendChild(perfil);
+	        	campo.appendChild(perfilCompleto);
 	     
-	        	Element contraseña = doc.createElement("contrasena");
+	        	Element contraseña = doc.createElement("contraseña");
 	        	contraseña.appendChild(doc.createTextNode(cliente.getContraseña()));
 	        	campo.appendChild(contraseña);
 	        	
-	        	Element recibirN = doc.createElement("recibirN");
+	        	Element notificaciones = doc.createElement("notificaciones");
 	        	if(cliente.isNotificaciones()) {
-	        		recibirN.appendChild(doc.createTextNode("true"));
+	        		notificaciones.appendChild(doc.createTextNode("true"));
 	        	}else {
-	        		recibirN.appendChild(doc.createTextNode("false"));
+	        		notificaciones.appendChild(doc.createTextNode("false"));
 	        	}
 	        	
-	        	campo.appendChild(recibirN);
+	        	campo.appendChild(notificaciones);
+	        	
+	        	Element numCasillero = doc.createElement("numCasillero");
+	        	numCasillero.appendChild(doc.createTextNode(cliente.getNumCasillero()));
+	        	campo.appendChild(numCasillero);
+	        	
+	        	/*Not ready, need more time
+	        	 * 
+	        	 * Element paquetes = doc.createElement("paquetes");
+	        	paquetes.appendChild(doc.createTextNode(cliente.getPaquetes()));
+	        	campo.appendChild(paquetes);*/
 	   
 	        }
 	        TransformerFactory tranFactory = TransformerFactory.newInstance();

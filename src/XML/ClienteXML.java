@@ -39,11 +39,11 @@ public class ClienteXML {
 						String email = campo.getChildTextTrim("email");
 						String dir = campo.getChildTextTrim("dirrecion");
 						String numTel = campo.getChildTextTrim("numTel");
-						String fecha = campo.getChildTextTrim("fechaN");
-						boolean perfil = (campo.getChildTextTrim("perfilC").equals("si"));
-						String contra = campo.getChildTextTrim("contrasena");
-						boolean recibir = (campo.getChildTextTrim("recibirN").equals("si"));
-						String casillero = campo.getChildTextTrim("casillero");
+						String fecha = campo.getChildTextTrim("fechaDeNacimiento");
+						boolean perfil = (campo.getChildTextTrim("perfilCompleto").equals("true"));
+						String contra = campo.getChildTextTrim("contraseña");
+						boolean recibir = (campo.getChildTextTrim("notificaciones").equals("true"));
+						String casillero = campo.getChildTextTrim("numCasillero");
 						Cliente clienteCargado = new Cliente(nombre,email,dir,numTel,fecha,perfil,contra,recibir,casillero);
 						clientes.add(clienteCargado);
 						}
