@@ -3,7 +3,7 @@
     <tabla Nombre="Clientes">
         <campo>
             <nombre>Diego Cheng</nombre>
-            <email>diegocheng1973@gmail.com</email>
+            <email>bruh@gmail.com</email>
             <dirrecion>Santa ana</dirrecion>
             <numTel>123</numTel>
             <fechaDeNacimiento>1/2/3</fechaDeNacimiento>

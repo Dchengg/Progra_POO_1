@@ -11,10 +11,6 @@ public class Sender {
 	private String host;
     private String username;  
     private String password;
-    
-    private String subject = "Welcome to PackageNotifier!!!";
-
-    
 
     public Sender(String pHost, String pUsername, String pPassword) {
     	setHost(pHost);
@@ -22,7 +18,7 @@ public class Sender {
     	setPassword(pPassword);
     }
 
-    public void sendEmail(String pAddress, String pNombre, String pContraseña) {
+    public void sendEmail(String pAddress, String pSubject, String pContent) {
 	    Properties props = System.getProperties();
 	    props.put("mail.smtp.starttls.enable", "true");
 	    props.put("mail.smtp.host", getHost());
@@ -38,10 +34,8 @@ public class Sender {
 	        message.setFrom(new InternetAddress(getHost()));
 	        InternetAddress toAddress = new InternetAddress(pAddress);
 	        message.addRecipient(Message.RecipientType.TO, toAddress);
-            message.setSubject(subject);
-            String content = "Your id is : " + pNombre +"\n"
-					+ " Your password is: " + pContraseña;
-            message.setText(content);
+            message.setSubject(pSubject);
+            message.setText(pContent);
 	        Transport transport = session.getTransport("smtps");
 	        transport.connect(getHost(), getUsername(), getPassword());
 	        transport.sendMessage(message, message.getAllRecipients());

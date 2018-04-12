@@ -44,7 +44,7 @@ public class Paquete {
 		this.courier = courier;
 	}
 
-	public int getValor() {
+	public double getValor() {
 		return valor;
 	}
 

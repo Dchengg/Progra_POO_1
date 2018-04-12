@@ -14,7 +14,7 @@ public class Soporte extends Administrador{
 		//Date creacionCuenta = new java.util.Date();
 		super.setNombre(nombre);
 		super.setContraseña(contraseña);
-		setCreacionDeCuenta(creacionCuenta);
+		//setCreacionDeCuenta(creacionCuenta);
 	}
 	
 	//metodos

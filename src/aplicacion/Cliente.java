@@ -36,7 +36,7 @@ public class Cliente {
 		
 	}
 	
-	private void agregarPaquete(String trackingID, String tienda, String courier, int valor, String descripcion) {
+	public void agregarPaquete(String trackingID, String tienda, String courier, int valor, String descripcion) {
 		Paquete paqueteNuevo = new Paquete(trackingID,tienda,courier,valor,descripcion);
 		paquetes.add(paqueteNuevo);
 	}
@@ -53,7 +53,7 @@ public class Cliente {
 		String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
 		StringBuilder builder = new StringBuilder();
 		Random rand = new Random();
-		while(builder.length() < 5) {
+		while(builder.length() < 3) {
 			int index = (int) (rand.nextFloat() * chars.length());
 			builder.append(chars.charAt(index));
 		}
