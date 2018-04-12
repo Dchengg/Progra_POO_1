@@ -11,7 +11,7 @@ public class Soporte extends Administrador{
 	//constructores
 	public Soporte(String nombre, String contraseña,String correo)
 	{
-		Date creacionCuenta = new java.util.Date();
+		//Date creacionCuenta = new java.util.Date();
 		super.setNombre(nombre);
 		super.setContraseña(contraseña);
 		setCreacionDeCuenta(creacionCuenta);

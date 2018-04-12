@@ -26,7 +26,7 @@ public class Administrador {
 	
 	
 	public String toString() {
-		 String msg = "Nombre :" + super.getNombre() + "\n";
+		 String msg = "Nombre :" + getNombre() + "\n";
 
 		 return msg;
 		}
