@@ -3,7 +3,6 @@ package aplicacion;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.Random;
 
 public class Cliente {
 
@@ -18,6 +17,8 @@ public class Cliente {
 	private String numCasillero;
 	private ArrayList<Paquete> paquetes = new ArrayList<Paquete>();
 	
+	
+
 	public Cliente(String pNombre, String pEmail) {
 		setNombre(pNombre);
 		setEmail(pEmail);
@@ -47,18 +48,6 @@ public class Cliente {
 		}else {
 			return false;
 		}
-	}
-	
-	public void generarContraseña() {	
-		String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
-		StringBuilder builder = new StringBuilder();
-		Random rand = new Random();
-		while(builder.length() < 5) {
-			int index = (int) (rand.nextFloat() * chars.length());
-			builder.append(chars.charAt(index));
-		}
-		String contraseña = builder.toString();
-		setContraseña(contraseña);
 	}
 	public String toString() {
 	 String msg = "Nombre :" + getNombre() + "\n";
@@ -131,5 +120,11 @@ public class Cliente {
 		this.numCasillero = numCasillero;
 	}
 	
-	
+	public ArrayList<Paquete> getPaquetes() {
+		return paquetes;
+	}
+
+	public void setPaquetes(ArrayList<Paquete> paquetes) {
+		this.paquetes = paquetes;
+	}
 }

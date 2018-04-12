@@ -15,17 +15,13 @@ public class App {
 		ArrayList<Cliente> clientes = new ArrayList<Cliente>();
 		ClienteXML lector = new ClienteXML(clientes,"src/XML/Usuarios.xml");
 		lector.leerArchivo();
-	//	AplEmail.init(clientes);
+		AplEmail.init(clientes);
 		for(Cliente cliente:clientes) {
 			System.out.println(cliente.toString());
-			System.out.println(cliente.generarContraseña());
 		}
 		while(true) {
 			if(menuLogIn(clientes)) {
 				System.out.println("We are in!!!");
-				for(Cliente cliente:clientes) {
-					System.out.println(cliente.toString());
-				}
 			}
 		}
 	}
