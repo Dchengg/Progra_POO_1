@@ -7,8 +7,8 @@ import aplicacion.Paquete;
 
 public class Administrador {
 
-	private String nombre;
-	private String contraseña;
+	private String nombre= "administrador";
+	private String contraseña= "123Adm";
 	private ArrayList<Cliente> clientes = new ArrayList<Cliente>();
 	private ArrayList<Paquete> soloPaquetes = new ArrayList<Paquete>();
 	private ArrayList<Soporte> Soportes = new ArrayList<Soporte>();
