@@ -49,7 +49,7 @@ public class Cliente {
 		}
 	}
 	
-	public void generarContraseña() {	
+	public String generarContraseña() {	
 		String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
 		StringBuilder builder = new StringBuilder();
 		Random rand = new Random();
@@ -57,8 +57,10 @@ public class Cliente {
 			int index = (int) (rand.nextFloat() * chars.length());
 			builder.append(chars.charAt(index));
 		}
-		String contraseña = builder.toString();
-		setContraseña(contraseña);
+		String contra = builder.toString();
+		System.out.print(contra);
+		setContraseña(contra);
+		return contra;
 	}
 	public String toString() {
 	 String msg = "Nombre :" + getNombre() + "\n";

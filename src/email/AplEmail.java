@@ -30,13 +30,15 @@ public class AplEmail {
 				ArrayList<String> recipients = emailFetcher.fetchEmail();
 				for( int i = 0; i < recipients.size(); i++ ) {
 	            	String[]parts = recipients.get(i).split(";");
-	            	String name = parts[0];
+	            	String nombre = parts[0];
 	            	String address = parts[1];
-	                Cliente cliente = new Cliente(name,address);
-	                cliente.generarContraseña();
-	                clientes.add(cliente);	                
+	                Cliente cliente = new Cliente(nombre,address);
+	                String contraseña = cliente.generarContraseña();
+	                clientes.add(cliente);	
+	                emailSender.sendEmail(address,nombre,contraseña);
+	                timer.cancel();
 	            }
-				emailSender.sendEmail(recipients);
+				
 			}
 		},0,30*1000);
 	}		

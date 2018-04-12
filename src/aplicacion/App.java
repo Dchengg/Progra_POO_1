@@ -15,10 +15,9 @@ public class App {
 		ArrayList<Cliente> clientes = new ArrayList<Cliente>();
 		ClienteXML lector = new ClienteXML(clientes,"src/XML/Usuarios.xml");
 		lector.leerArchivo();
-	//	AplEmail.init(clientes);
+		AplEmail.init(clientes);
 		for(Cliente cliente:clientes) {
 			System.out.println(cliente.toString());
-			System.out.println(cliente.generarContraseña());
 		}
 		while(true) {
 			if(menuLogIn(clientes)) {
@@ -41,7 +40,7 @@ public class App {
 		String id = reader.nextLine();
 		System.out.print("Contraseña: ");
 		String contra = reader.nextLine();
-		System.out.println("");
+		//System.out.println("");
 		for(Cliente cliente:clientes) {
 			if(cliente.logIn(id,contra)){
 				//reader.close();
