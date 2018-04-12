@@ -22,9 +22,6 @@ public class App {
 		while(true) {
 			if(menuLogIn(clientes)) {
 				System.out.println("We are in!!!");
-				for(Cliente cliente:clientes) {
-					System.out.println(cliente.toString());
-				}
 			}
 		}
 	}

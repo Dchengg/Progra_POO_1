@@ -5,7 +5,7 @@ public class Paquete {
 	private String trackingID;
 	private String tienda;
 	private String courier;
-	private int valor;
+	private double valor;
 	private int peso;
 	private String descripcion;
 	private String estado;
