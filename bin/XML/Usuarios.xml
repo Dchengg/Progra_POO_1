@@ -1,33 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
 <tables>
-  <tabla nombre="Clientes">
-    <campo>
-      <nombre>Pinche luis</nombre>
-      <email>diegocheng1973@gmail.com</email>
-      <dirrecion>Vazques de Coronado</dirrecion>
-      <numTel>22990823</numTel>
-      <fechaN>10-03-1999</fechaN>
-      <perfilC>si</perfilC>
-      <contrasena>:P</contrasena>
-      <recibirN>si</recibirN>
-      <casillero>a345</casillero>
-    </campo>
-    <campo>
-      <nombre>Pinche Jose :v</nombre>
-      <email>diegocheng1973@gmail.com</email>
-      <dirrecion>Tres Rios</dirrecion>
-      <numTel>0932123746</numTel>
-      <fechaN>30-11-2018</fechaN>
-      <perfilC>no</perfilC>
-      <contrasena>kek</contrasena>
-      <recibirN>no</recibirN>
-      <casillero>e210</casillero>
-    </campo>
-  </tabla>
-  <tabla nombre="Soporte">
-    <campo>
-      <nombre>campo</nombre>
-      <tipo>varchar</tipo>
-      <valor>pato</valor>
-    </campo>
-  </tabla>
+    <tabla Nombre="Clientes">
+        <campo>
+            <nombre>Diego Cheng</nombre>
+            <email>diegocheng1973@gmail.com</email>
+            <dirrecion>Santa ana</dirrecion>
+            <numTel>123</numTel>
+            <fechaDeNacimiento>1/2/3</fechaDeNacimiento>
+            <perfilCompleto>true</perfilCompleto>
+            <contraseña>contra</contraseña>
+            <notificaciones>false</notificaciones>
+            <numCasillero>a221</numCasillero>
+        </campo>
+        <campo>
+            <nombre>Luis Chavarraria</nombre>
+            <email>luisSeMamo@hotmail.com</email>
+            <dirrecion>San jose</dirrecion>
+            <numTel>3456</numTel>
+            <fechaDeNacimiento>5/7/5</fechaDeNacimiento>
+            <perfilCompleto>false</perfilCompleto>
+            <contraseña>:p</contraseña>
+            <notificaciones>false</notificaciones>
+            <numCasillero>a231</numCasillero>
+        </campo>
+        <campo>
+            <nombre>Bruh</nombre>
+            <email>Pos@yahoo.com</email>
+            <dirrecion>brasil</dirrecion>
+            <numTel>6854</numTel>
+            <fechaDeNacimiento>5/7/7</fechaDeNacimiento>
+            <perfilCompleto>false</perfilCompleto>
+            <contraseña>password</contraseña>
+            <notificaciones>true</notificaciones>
+            <numCasillero>a999</numCasillero>
+        </campo>
+    </tabla>
 </tables>

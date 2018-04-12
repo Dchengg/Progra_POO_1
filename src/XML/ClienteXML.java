@@ -30,7 +30,7 @@ public class ClienteXML {
 			List<Element> list = rootNode.getChildren("tabla");
 			for(int i = 0; i < list.size(); i++){
 				Element tabla = (Element) list.get(i);
-				String nombreTabla = tabla.getAttributeValue("nombre");
+				String nombreTabla = tabla.getAttributeValue("Nombre");
 				if(nombreTabla.equals("Clientes")) {
 					List<Element> lista_campos = tabla.getChildren();
 					for(int j = 0; j < lista_campos.size(); j++) {

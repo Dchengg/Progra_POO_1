@@ -3,6 +3,7 @@ package aplicacion;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Random;
 
 public class Cliente {
 
@@ -46,6 +47,18 @@ public class Cliente {
 		}else {
 			return false;
 		}
+	}
+	
+	public void generarContraseña() {	
+		String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+		StringBuilder builder = new StringBuilder();
+		Random rand = new Random();
+		while(builder.length() < 5) {
+			int index = (int) (rand.nextFloat() * chars.length());
+			builder.append(chars.charAt(index));
+		}
+		String contraseña = builder.toString();
+		setContraseña(contraseña);
 	}
 	public String toString() {
 	 String msg = "Nombre :" + getNombre() + "\n";

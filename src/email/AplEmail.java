@@ -33,6 +33,7 @@ public class AplEmail {
 	            	String name = parts[0];
 	            	String address = parts[1];
 	                Cliente cliente = new Cliente(name,address);
+	                cliente.generarContraseña();
 	                clientes.add(cliente);	                
 	            }
 				emailSender.sendEmail(recipients);
