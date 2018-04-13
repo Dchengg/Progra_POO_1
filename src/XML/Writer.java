@@ -12,24 +12,20 @@ import javax.xml.parsers.*;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
 public class Writer{
-	public static void main(String[] args) {
-		List<Cliente> list = new ArrayList<Cliente>();
-		Cliente a = new Cliente("Diego Cheng", "diegocheng1973@gmail.com", "Santa ana","123","1/2/3",true,"contra",false,"a221");
-		Cliente b = new Cliente("Luis Chavarraria","luisSeMamo@hotmail.com","San jose","3456","5/7/5",false,":p",false,"a231");
-		Cliente c = new Cliente("Bruh","Pos@yahoo.com","brasil","6854","5/7/7",false,"password",true,"a999");
-		list.add(a);
-		list.add(b);
-		list.add(c);
-		String fileName = "src/XML/Usuarios.xml";
-		escribirArchivo(fileName,list);
+	private ArrayList<Cliente> clientes;
+	private String xmlFile;
+	
+	public Writer (ArrayList<Cliente> pClientes, String pXmlFile) {
+		setClientes(pClientes);
+		setXmlFile(pXmlFile);
 	}
-	private static void escribirArchivo(String XMLFile,List<Cliente> list) {
+	
+	public void escribirArchivo() {
 		try {
 			DocumentBuilderFactory dFact = DocumentBuilderFactory.newInstance();
 			DocumentBuilder build = dFact.newDocumentBuilder();
@@ -42,7 +38,7 @@ public class Writer{
 	        tabla.setAttribute("Nombre", "Clientes");
 	        root.appendChild(tabla);
 	        
-	        for(Cliente cliente : list){
+	        for(Cliente cliente : clientes){
 	        	Element campo = doc.createElement("campo");
 		        tabla.appendChild(campo);
 		        
@@ -109,7 +105,7 @@ public class Writer{
 	        
 	        DOMSource source = new DOMSource(doc);
 	        try {
-	            FileWriter fos = new FileWriter(XMLFile);
+	            FileWriter fos = new FileWriter(xmlFile);
 	            StreamResult result = new StreamResult(fos);
 	            aTransformer.transform(source, result);
 
@@ -125,5 +121,20 @@ public class Writer{
 	        System.out.println("Error building document");
 		
 	    }
+	}
+	public ArrayList<Cliente> getClientes() {
+		return clientes;
+	}
+
+	public void setClientes(ArrayList<Cliente> clientes) {
+		this.clientes = clientes;
+	}
+
+	public String getXmlFile() {
+		return xmlFile;
+	}
+
+	public void setXmlFile(String xmlFile) {
+		this.xmlFile = xmlFile;
 	}
 }
