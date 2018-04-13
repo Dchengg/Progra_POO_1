@@ -3,7 +3,7 @@
     <tabla Nombre="Clientes">
         <campo>
             <nombre>Diego Cheng</nombre>
-            <email>diegocheng1973@gmail.com</email>
+            <email>bruh@gmail.com</email>
             <dirrecion>Santa ana</dirrecion>
             <numTel>123</numTel>
             <fechaDeNacimiento>1/2/3</fechaDeNacimiento>
@@ -33,6 +33,17 @@
             <contraseña>password</contraseña>
             <notificaciones>true</notificaciones>
             <numCasillero>a999</numCasillero>
+        </campo>
+        <campo>
+            <nombre>Mario Hidalgo</nombre>
+            <email>jeje@gmail.com	</email>
+            <dirrecion>moravia</dirrecion>
+            <numTel>666</numTel>
+            <fechaDeNacimiento>5/6/7</fechaDeNacimiento>
+            <perfilCompleto>true</perfilCompleto>
+            <contraseña>sumadre</contraseña>
+            <notificaciones>true</notificaciones>
+            <numCasillero>a222</numCasillero>
         </campo>
     </tabla>
 </tables>

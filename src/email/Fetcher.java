@@ -47,7 +47,8 @@ public class Fetcher {
 		        System.out.println("Sender: " + address);
 		        String content = getContent(indvidualmsg);
 		        if(subject.equals("solicitud de cuenta")) {
-			        from.add(content + ";" + address);
+		        	String cleanContent = content.replaceAll("\r", "").replaceAll("\n", "");
+		        	from.add(cleanContent + ";" + address);
 			        System.out.println(content);
 		        }
 		     }
