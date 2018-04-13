@@ -1,10 +1,14 @@
 package aplicacion;
 
 import email.AplEmail;
+import telegramBot.Bot;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import org.telegram.telegrambots.ApiContextInitializer;
+import org.telegram.telegrambots.TelegramBotsApi;
+import org.telegram.telegrambots.exceptions.TelegramApiException;
 
 import XML.ClienteXML;
 
@@ -12,7 +16,16 @@ public class App {
 	
 	
 	public static void main(String[] args) {
-		ArrayList<Cliente> clientes = new ArrayList<Cliente>();
+		
+		ApiContextInitializer.init();
+		TelegramBotsApi botsApi = new TelegramBotsApi();
+		 try {
+	            botsApi.registerBot(new Bot());
+	            
+	        } catch (TelegramApiException e) {
+	            e.printStackTrace();
+	        }
+		/*ArrayList<Cliente> clientes = new ArrayList<Cliente>();
 		ClienteXML lector = new ClienteXML(clientes,"src/XML/Usuarios.xml");
 		lector.leerArchivo();
 		AplEmail.init(clientes);
@@ -26,7 +39,7 @@ public class App {
 					System.out.println(cliente.toString());
 				}
 			}
-		}
+		}*/
 	}
 	
 	private static boolean menuLogIn(ArrayList<Cliente> clientes) {

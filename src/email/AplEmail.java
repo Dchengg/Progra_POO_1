@@ -19,8 +19,7 @@ public class AplEmail {
 	private static final String PASSWORD = "Package123";
 	private static int numero = 0;
 
-	public static void init(ArrayList<Cliente> clientes) {
-		
+	public static void init(ArrayList<Cliente> clientes) {	
 		Timer timer = new Timer();
 		Fetcher emailFetcher = new Fetcher(POP,STORETYPE,USERNAME,PASSWORD);
 		Sender emailSender = new Sender(SMTP,USERNAME,PASSWORD);	

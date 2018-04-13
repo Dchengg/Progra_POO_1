@@ -9,5 +9,6 @@
 	<classpathentry kind="lib" path="C:/Users/Diego/Documents/GitHub/Progra_POO_1/lib/jdom-2.0.6-junit.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Diego/Documents/GitHub/Progra_POO_1/lib/jdom-2.0.6-sources.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Diego/Documents/GitHub/Progra_POO_1/lib/mail.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Diego/Documents/GitHub/Progra_POO_1/lib/telegrambots-3.6-jar-with-dependencies.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
