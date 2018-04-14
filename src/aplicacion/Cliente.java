@@ -133,5 +133,11 @@ public class Cliente {
 		this.numCasillero = numCasillero;
 	}
 	
-	
+	public ArrayList<Paquete> getPaquetes() {
+		return paquetes;
+	}
+
+	public void setPaquetes(ArrayList<Paquete> paquetes) {
+		this.paquetes = paquetes;
+	}
 }

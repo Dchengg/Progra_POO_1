@@ -24,12 +24,8 @@ public class Administrador {
 	// y presentarlo en graficos, se puede hacer desde los gets de estos atributos en Paquete.
 	
 	
+	//falta punto 3
 	
-	public String toString() {
-		 String msg = "Nombre :" + getNombre() + "\n";
-
-		 return msg;
-		}
 	
 	public String getNombre() {
 		return nombre;
