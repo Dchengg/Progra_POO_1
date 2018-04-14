@@ -6,7 +6,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
-<<<<<<< HEAD
 	<classpathentry kind="lib" path="C:/Users/Diego/Documents/GitHub/Progra_POO_1/lib/activation.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Diego/Documents/GitHub/Progra_POO_1/lib/jdom-2.0.6.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Diego/Documents/GitHub/Progra_POO_1/lib/jdom-2.0.6-contrib.jar"/>
@@ -15,14 +14,5 @@
 	<classpathentry kind="lib" path="C:/Users/Diego/Documents/GitHub/Progra_POO_1/lib/jdom-2.0.6-sources.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Diego/Documents/GitHub/Progra_POO_1/lib/mail.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Diego/Documents/GitHub/Progra_POO_1/lib/telegrambots-3.6-jar-with-dependencies.jar"/>
-=======
-	<classpathentry kind="lib" path="C:/Users/josef/Desktop/GitHub/Progra_POO_1/lib/activation.jar"/>
-	<classpathentry kind="lib" path="C:/Users/josef/Desktop/GitHub/Progra_POO_1/lib/jdom-2.0.6.jar"/>
-	<classpathentry kind="lib" path="C:/Users/josef/Desktop/GitHub/Progra_POO_1/lib/jdom-2.0.6-contrib.jar"/>
-	<classpathentry kind="lib" path="C:/Users/josef/Desktop/GitHub/Progra_POO_1/lib/jdom-2.0.6-javadoc.jar"/>
-	<classpathentry kind="lib" path="C:/Users/josef/Desktop/GitHub/Progra_POO_1/lib/jdom-2.0.6-junit.jar"/>
-	<classpathentry kind="lib" path="C:/Users/josef/Desktop/GitHub/Progra_POO_1/lib/jdom-2.0.6-sources.jar"/>
-	<classpathentry kind="lib" path="C:/Users/josef/Desktop/GitHub/Progra_POO_1/lib/mail.jar"/>
->>>>>>> a5023d07232807a873dc4ed867ba9c62fd66bc43
 	<classpathentry kind="output" path="bin"/>
 </classpath>
