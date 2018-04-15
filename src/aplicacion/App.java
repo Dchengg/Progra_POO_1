@@ -1,42 +1,25 @@
 package aplicacion;
 
 import email.AplEmail;
-import telegramBot.Bot;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import org.telegram.telegrambots.ApiContextInitializer;
-import org.telegram.telegrambots.TelegramBotsApi;
-import org.telegram.telegrambots.exceptions.TelegramApiException;
 
 import XML.ClienteXML;
-import XML.Writer;
 
 public class App {
 	
+
 	
 	public static void main(String[] args) {
-		
-		ApiContextInitializer.init();
-		TelegramBotsApi botsApi = new TelegramBotsApi();
-		 try {
-	            botsApi.registerBot(new Bot());
-	            
-	        } catch (TelegramApiException e) {
-	            e.printStackTrace();
-	        }
-		/*ArrayList<Cliente> clientes = new ArrayList<Cliente>();
+		ArrayList<Cliente> clientes = new ArrayList<Cliente>();
 		ClienteXML lector = new ClienteXML(clientes,"src/XML/Usuarios.xml");
 		lector.leerArchivo();
-		Cliente clientenuevo = new Cliente("Mario Hidalgo", "jeje@gmail.com	", "moravia", "666", "5/6/7",true, "sumadre", true, "a222");
-		//AplEmail.init(clientes);
-		clientes.add(clientenuevo);
+		AplEmail.init(clientes);
 		for(Cliente cliente:clientes) {
 			System.out.println(cliente.toString());
 		}
-		Writer escritor = new Writer(clientes,"src/XML/Usuarios.xml" );
-		escritor.escribirArchivo();
 		while(true) {
 			if(menuLogIn(clientes)) {
 				System.out.println("We are in!!!");
@@ -44,14 +27,13 @@ public class App {
 					System.out.println(cliente.toString());
 				}
 			}
-		}*/
+		}
 	}
 	
 	private static boolean menuLogIn(ArrayList<Cliente> clientes) {
-//		String msg;
+		String msg;
 		//CloseShieldInputStream stream = new CloseShieldInputStream(System.in);
 		Scanner reader = new Scanner(System.in);
-		String msg = "";
 		msg = "Bienvenido a Package Notifier"+ "\n";
 		msg += "LOG IN"+ "\n";
 		msg += "ID : " ;
@@ -70,5 +52,9 @@ public class App {
 		return false;
 		
 	}
-}
 
+
+	
+	
+	
+}

@@ -9,14 +9,16 @@ public class Administrador {
 
 	private String nombre= "administrador";
 	private String contraseña= "123Adm";
-	private ArrayList<Cliente> clientes = new ArrayList<Cliente>();
-	private ArrayList<Paquete> soloPaquetes = new ArrayList<Paquete>();
 	private ArrayList<Soporte> Soportes = new ArrayList<Soporte>();
+	
+	
 	
 	
 	public void creaSoporte(String nombre, String contraseña,String correo)
 	{
-		new Soporte (nombre,contraseña,correo);
+		Soporte soporteNuevo = new Soporte (nombre,contraseña,correo);
+		Soportes.add(soporteNuevo);
+		
 	}
 	
 	

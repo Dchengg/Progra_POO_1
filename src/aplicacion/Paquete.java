@@ -10,16 +10,27 @@ public class Paquete {
 	private String descripcion;
 	private String estado;
 	private String categoria;
+	private String duenio;
 	
-	public Paquete(String pTrackingID, String pTienda, String pCourier, int pValor, String pDescripcion) {
+	public Paquete(String pTrackingID, String pTienda, String pCourier, int pValor, String pDescripcion, String duenio) {
 		setTrackingID(pTrackingID);
 		setTienda(pTienda);
 		setCourier(pCourier);
 		setValor(pValor);
 		setDescripcion(pDescripcion);
 		setEstado("Prealertado");
+		setDuenio(duenio);
 	}
 
+	
+
+	@Override
+	public String toString() {
+		return "Paquete [trackingID=" + trackingID + ", tienda=" + tienda + ", courier=" + courier + ", valor=" + valor
+				+ ", peso=" + peso + ", descripcion=" + descripcion + ", estado=" + estado + ", categoria=" + categoria
+				+ ", duenio=" + duenio + "]";
+	}
+	
 	public String getTrackingID() {
 		return trackingID;
 	}
@@ -84,5 +95,12 @@ public class Paquete {
 		this.categoria = categoria;
 	}
 	
+	public String getDuenio() {
+		return duenio;
+	}
+
+	public void setDuenio(String duenio) {
+		this.duenio = duenio;
+	}
 	
 }
