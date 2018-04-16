@@ -6,20 +6,33 @@ public class Paquete {
 	private String tienda;
 	private String courier;
 	private double valor;
-	private int peso;
+	private double peso;
 	private String descripcion;
 	private String estado;
 	private String categoria;
 	
-	public Paquete(String pTrackingID, String pTienda, String pCourier, int pValor, String pDescripcion) {
+	public Paquete(String pTrackingID, String pTienda, String pCourier, double pValor, String pDescripcion) {
 		setTrackingID(pTrackingID);
 		setTienda(pTienda);
 		setCourier(pCourier);
 		setValor(pValor);
 		setDescripcion(pDescripcion);
 		setEstado("Prealertado");
+
 	}
 
+	public String toString() {
+		 String msg = "TrackingID :" + getTrackingID() + "\n";
+		 msg += "Tienda :" + getTienda() + "\n";
+		 msg += "Courier : " + getCourier() + "\n";
+		 msg += "Valor : " + getValor() + "\n";
+		 msg += "Peso : " + getPeso() + "\n";
+		 msg += "Descripcion : " + getDescripcion() + "\n";
+		 msg += "Estado : " + getEstado() + "\n";
+		 msg += "Categoria : " + getCategoria() + "\n";
+		 return msg;
+		}
+	
 	public String getTrackingID() {
 		return trackingID;
 	}
@@ -48,11 +61,11 @@ public class Paquete {
 		return valor;
 	}
 
-	public void setValor(int valor) {
+	public void setValor(double valor) {
 		this.valor = valor;
 	}
 
-	public int getPeso() {
+	public double getPeso() {
 		return peso;
 	}
 
@@ -84,5 +97,6 @@ public class Paquete {
 		this.categoria = categoria;
 	}
 	
+
 	
 }

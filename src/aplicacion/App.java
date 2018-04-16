@@ -1,24 +1,18 @@
 package aplicacion;
 
 import email.AplEmail;
-import telegramBot.Bot;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import org.telegram.telegrambots.ApiContextInitializer;
-import org.telegram.telegrambots.TelegramBotsApi;
-import org.telegram.telegrambots.exceptions.TelegramApiException;
 
 import XML.ClienteXML;
-import XML.Writer;
 
 public class App {
 	
+
 	
 	public static void main(String[] args) {
-		
-		
 		ArrayList<Cliente> clientes = new ArrayList<Cliente>();
 		ClienteXML lector = new ClienteXML(clientes,"src/XML/Usuarios.xml");
 		lector.leerArchivo();
@@ -38,7 +32,15 @@ public class App {
 		}
 		Writer escritor = new Writer(clientes,"src/XML/Usuarios.xml" );
 		escritor.escribirArchivo();
+		ArrayList<Cliente> clientes = new ArrayList<Cliente>();
+		ClienteXML lector = new ClienteXML(clientes,"src/XML/Usuarios.xml");
+		lector.leerArchivo();
+		AplEmail.init(clientes);
+		for(Cliente cliente:clientes) {
+			System.out.println(cliente.toString());
+		}
 		/*while(true) {
+
 			if(menuLogIn(clientes)) {
 				System.out.println("We are in!!!");
 				for(Cliente cliente:clientes) {
@@ -49,10 +51,9 @@ public class App {
 	}
 	
 	private static boolean menuLogIn(ArrayList<Cliente> clientes) {
-//		String msg;
+		String msg;
 		//CloseShieldInputStream stream = new CloseShieldInputStream(System.in);
 		Scanner reader = new Scanner(System.in);
-		String msg = "";
 		msg = "Bienvenido a Package Notifier"+ "\n";
 		msg += "LOG IN"+ "\n";
 		msg += "ID : " ;
@@ -71,5 +72,9 @@ public class App {
 		return false;
 		
 	}
-}
 
+
+	
+	
+	
+}

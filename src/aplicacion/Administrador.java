@@ -9,22 +9,56 @@ public class Administrador {
 
 	private String nombre= "administrador";
 	private String contraseña= "123Adm";
-	private ArrayList<Cliente> clientes = new ArrayList<Cliente>();
-	private ArrayList<Paquete> soloPaquetes = new ArrayList<Paquete>();
 	private ArrayList<Soporte> Soportes = new ArrayList<Soporte>();
+	private ArrayList<Cliente> clientes = Soporte.getClientes();
+	
+	
 	
 	
 	public void creaSoporte(String nombre, String contraseña,String correo)
 	{
-		new Soporte (nombre,contraseña,correo);
+		Soporte soporteNuevo = new Soporte (nombre,contraseña,correo);
+		Soportes.add(soporteNuevo);
+		
 	}
 	
 	
-	// debe acceder el estado, tienda, categoria, compa;ia de paquetes
-	// y presentarlo en graficos, se puede hacer desde los gets de estos atributos en Paquete.
+	public String dashBoard (String indicador)
+	{
+
+		
+		switch(indicador)
+		{
+		case "Estado":
+			
+			for (int i=0; i <= clientes.size(); i++)
+			{
+				
+				
+			}
+			
+			
+			break;
+		
+		case "Tienda":
+			break;
+			
+		case "Categoria":
+			break;
+			
+		case "Compañia":
+			break;
+			
+		default:
+			return "Indique: Estado, Tienda, Categoria o Compañia";
+			
+		
+		}
+		
+		
+		
+	}
 	
-	
-	//falta punto 3
 	
 	
 	public String getNombre() {

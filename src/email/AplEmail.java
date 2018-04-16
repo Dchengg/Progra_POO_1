@@ -17,7 +17,6 @@ public class AplEmail {
 	private static final String STORETYPE = "pop3";
 	private static final String USERNAME = "PackageNotifier";
 	private static final String PASSWORD = "Package123";
-	private static int numero = 0;
 
 	public static void init(ArrayList<Cliente> clientes) {	
 		Timer timer = new Timer();
@@ -25,7 +24,6 @@ public class AplEmail {
 		Sender emailSender = new Sender(SMTP,USERNAME,PASSWORD);	
 		timer.scheduleAtFixedRate(new TimerTask() { 
 			public void run() {
-				System.out.println("it ran "+ ++numero + " times");
 				ArrayList<String> recipients = emailFetcher.fetchEmail();
 				for( int i = 0; i < recipients.size(); i++ ) {
 	            	String[]parts = recipients.get(i).split(";");

@@ -1,8 +1,15 @@
 package aplicacion;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+
 //import aplicacion.estadoPaquete; ?? (.-.)
+
+import XML.ClienteXML;
+import aplicacion.Cliente;
+
+
 
 public class Soporte{
 
@@ -12,15 +19,19 @@ public class Soporte{
 	private String correo;
 	private Date creacionDeCuenta;
 	private Calendar fecha;
+	private static ArrayList<Cliente> clientes = new ArrayList<Cliente>();
 	
+	
+	
+
 	//constructores
 	public Soporte(String nombre, String contraseña,String correo)
 	{
-		//Date creacionCuenta = new java.util.Date();
 		setNombre(nombre);
 		setContraseña(contraseña);
 		setCorreo(correo);
 		setCreacionDeCuenta();
+		
 	}
 	
 	//metodos
@@ -30,34 +41,63 @@ public class Soporte{
 	public void cambiarEstadoPaquete(Paquete paquete, String pEstado)
 	{
 		
-		//HACER CON FUCKIN STRING NO ENUM
-		
-		/*switch (pEstado.)
+		switch (pEstado)
 		{
-		case estadoPaquete.:
-			
-			
+		case "PREALERTADO":
+			paquete.setEstado("RECIBIDO_EN_MIAMI");
+			break;
 			
 		case "RECIBIDO_EN_MIAMI":
+			paquete.setEstado("EN_TRANSITO_A_PAIS_DESTIN0");
+			break;
 			
 		case "EN_TRANSITO_A_PAIS_DESTIN0":
+			paquete.setEstado("EN_ADUANAS");
+			break;
 			
 		case "EN_ADUANAS":
+			paquete.setEstado("EN_TRANSITO_A_COUNTER_LOCAL");
+			break;
 			
 		case "EN_TRANSITO_A_COUNTER_LOCAL":
+			paquete.setEstado("RECIBIDO_EN_PAIS_DESTINO");
+			break;
 			
 		case "RECIBIDO_EN_PAIS_DESTINO":
+			paquete.setEstado("ENTREGADO");
+			break;
 			
 		default:
-			;
-		}*/
-		
-		
-		//Cliente.getPaquetes().setEstado(pEstado);
-		
+			paquete.setEstado("EL_PAQUETE_YA_A_SIDO_ENTREGADO");
+			break;
+		}
 			
 	//enviar correo
 	}
+
+	
+	public double costoDeIVI(int peso, double porcentaje)
+	{
+		double ivi=0;
+		//meter porcentajes
+		
+		return ivi;
+	}
+	
+	public void listaPaquetes()
+	{
+		ArrayList<ArrayList<Paquete>> ordenUsuarioPaquetes = new ArrayList<ArrayList<Paquete>>();
+		
+		
+		for (int i=0; i <= clientes.size() ;i++)
+		{
+			ordenUsuarioPaquetes.add(clientes.get(i).getPaquetes());
+		}
+		ordenUsuarioPaquetes.toString();
+		
+		
+	}
+	
 	
 	public String toString() {
 		 String msg = "Nombre :" + getNombre() + "\n";
@@ -101,19 +141,13 @@ public class Soporte{
 		this.creacionDeCuenta = fecha.getTime();
 	}
 
-	public double costoDeIVI(int peso)
-	{
-		double ivi=0;
-		//hay que meter los porcentajes de categoria
-		return ivi;
+	public static ArrayList<Cliente> getClientes() {
+		return clientes;
 	}
-	
-	public void listaPaquetes()
-	{
-		//crear la lista desde admin 
-		
+
+	public static void setClientes(ArrayList<Cliente> clientes) {
+		Soporte.clientes = clientes;
 	}
-	
 
 	
 	
