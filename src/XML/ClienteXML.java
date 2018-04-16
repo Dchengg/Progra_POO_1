@@ -45,6 +45,20 @@ public class ClienteXML {
 						boolean recibir = (campo.getChildTextTrim("notificaciones").equals("true"));
 						String casillero = campo.getChildTextTrim("numCasillero");
 						Cliente clienteCargado = new Cliente(nombre,email,dir,numTel,fecha,perfil,contra,recibir,casillero);
+						Element paquetes = campo.getChild("paquetes");
+						List<Element> paquetesP = paquetes.getChildren();
+						for(int k = 0; k < paquetesP.size(); k++) {
+							Element paquete = (Element) paquetesP.get(k);
+							String trackingID = paquete.getChildTextTrim("trackingID");
+							String tienda = paquete.getChildTextTrim("tienda");
+							String courier = paquete.getChildTextTrim("courier");
+							double valor = Double.parseDouble(paquete.getChildTextTrim("valor"));
+							double peso = Integer.parseInt(paquete.getChildTextTrim("peso"));
+							String descripcion = paquete.getChildTextTrim("descripcion");
+							String estado = paquete.getChildTextTrim("estado");
+							String categoria = paquete.getChildTextTrim("categoria");
+							clienteCargado.agregarPaquete(trackingID, tienda, courier, valor, descripcion);
+						}
 						clientes.add(clienteCargado);
 						}
 					}

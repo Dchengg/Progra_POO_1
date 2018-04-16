@@ -6,6 +6,8 @@ import javax.xml.transform.dom.*;
 import org.w3c.dom.*;
 
 import aplicacion.Cliente;
+import aplicacion.Paquete;
+import aplicacion.Soporte;
 
 import javax.xml.parsers.*;
 
@@ -17,14 +19,18 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
 public class Writer{
+	private ArrayList<Soporte> soportes;
 	private ArrayList<Cliente> clientes;
 	private String xmlFile;
 	
-	public Writer (ArrayList<Cliente> pClientes, String pXmlFile) {
+	public Writer (ArrayList<Cliente> pClientes, ArrayList<Soporte> pSoportes, String pXmlFile) {
 		setClientes(pClientes);
 		setXmlFile(pXmlFile);
+		setSoportes(pSoportes);
 	}
 	
+	
+
 	public void escribirArchivo() {
 		try {
 			DocumentBuilderFactory dFact = DocumentBuilderFactory.newInstance();
@@ -87,11 +93,50 @@ public class Writer{
 	        	numCasillero.appendChild(doc.createTextNode(cliente.getNumCasillero()));
 	        	campo.appendChild(numCasillero);
 	        	
-	        	/*Not ready, need more time
-	        	 * 
-	        	 * Element paquetes = doc.createElement("paquetes");
-	        	paquetes.appendChild(doc.createTextNode(cliente.getPaquetes()));
-	        	campo.appendChild(paquetes);*/
+	        	Element paquetes = doc.createElement("paquetes");
+	        	campo.appendChild(paquetes);
+	        	ArrayList<Paquete> paquetesC = cliente.getPaquetes();
+	        	
+	        	for(Paquete paquete : paquetesC) {
+	        		
+	        		Element paqueteIn = doc.createElement("paquete");
+	        		paquetes.appendChild(paqueteIn);
+	        		
+	        		Element trackingID = doc.createElement("trackingID");
+		        	trackingID.appendChild(doc.createTextNode(paquete.getTrackingID()));
+		        	paqueteIn.appendChild(trackingID);
+		        	
+		        	Element tienda = doc.createElement("tienda");
+		        	tienda.appendChild(doc.createTextNode(paquete.getTienda()));
+		        	paqueteIn.appendChild(tienda);
+		        	
+		        	Element courier = doc.createElement("courier");
+		        	courier.appendChild(doc.createTextNode(paquete.getCourier()));
+		        	paqueteIn.appendChild(courier);
+		        	
+		        	Element valor = doc.createElement("valor");
+		        	valor.appendChild(doc.createTextNode(String.valueOf(paquete.getValor())));
+		        	paqueteIn.appendChild(valor);
+		        	
+		        	Element peso = doc.createElement("peso");
+		        	peso.appendChild(doc.createTextNode("0")); //String.valueOf(paquete.getPeso())
+		        	paqueteIn.appendChild(peso);
+		        	
+		        	Element descripcion = doc.createElement("descripcion");
+		        	descripcion.appendChild(doc.createTextNode(paquete.getDescripcion()));
+		        	paqueteIn.appendChild(descripcion);
+		        	
+		        	Element estado = doc.createElement("estado");
+		        	estado.appendChild(doc.createTextNode(paquete.getEstado()));
+		        	paqueteIn.appendChild(estado);
+		        	
+		        	Element categoria = doc.createElement("categoria");
+		        	categoria.appendChild(doc.createTextNode(""));   //paquete.getCategoria()
+		        	paqueteIn.appendChild(categoria);
+	        	}
+	        	Element tablaS = doc.createElement("tabla");
+		        tablaS.setAttribute("Nombre", "Soportes");
+		        root.appendChild(tablaS);
 	   
 	        }
 	        TransformerFactory tranFactory = TransformerFactory.newInstance();
@@ -136,5 +181,13 @@ public class Writer{
 
 	public void setXmlFile(String xmlFile) {
 		this.xmlFile = xmlFile;
+	}
+	
+	public ArrayList<Soporte> getSoportes() {
+		return soportes;
+	}
+
+	public void setSoportes(ArrayList<Soporte> soportes) {
+		this.soportes = soportes;
 	}
 }

@@ -6,12 +6,12 @@ public class Paquete {
 	private String tienda;
 	private String courier;
 	private double valor;
-	private int peso;
+	private double peso;
 	private String descripcion;
 	private String estado;
 	private String categoria;
 	
-	public Paquete(String pTrackingID, String pTienda, String pCourier, int pValor, String pDescripcion) {
+	public Paquete(String pTrackingID, String pTienda, String pCourier, double pValor, String pDescripcion) {
 		setTrackingID(pTrackingID);
 		setTienda(pTienda);
 		setCourier(pCourier);
@@ -61,11 +61,11 @@ public class Paquete {
 		return valor;
 	}
 
-	public void setValor(int valor) {
+	public void setValor(double valor) {
 		this.valor = valor;
 	}
 
-	public int getPeso() {
+	public double getPeso() {
 		return peso;
 	}
 

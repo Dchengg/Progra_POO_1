@@ -39,7 +39,7 @@ public class Cliente {
 		
 	}
 	
-	public void agregarPaquete(String trackingID, String tienda, String courier, int valor, String descripcion) {
+	public void agregarPaquete(String trackingID, String tienda, String courier, double valor, String descripcion) {
 		Paquete paqueteNuevo = new Paquete(trackingID,tienda,courier,valor,descripcion);
 		paquetes.add(paqueteNuevo);
 	}
