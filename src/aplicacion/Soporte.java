@@ -15,7 +15,11 @@ public class Soporte{
 	private String correo;
 	private Date creacionDeCuenta;
 	private Calendar fecha;
+	private static ArrayList<Cliente> clientes = new ArrayList<Cliente>();
 	
+	
+	
+
 	//constructores
 	public Soporte(String nombre, String contraseña,String correo)
 	{
@@ -72,16 +76,21 @@ public class Soporte{
 	public double costoDeIVI(int peso, double porcentaje)
 	{
 		double ivi=0;
+		//meter porcentajes
+		
 		return ivi;
 	}
 	
 	public void listaPaquetes()
 	{
-		ArrayList<Paquete> ordenEstadoPaquetes = new ArrayList<Paquete>();
+		ArrayList<ArrayList<Paquete>> ordenUsuarioPaquetes = new ArrayList<ArrayList<Paquete>>();
 		
-		ArrayList<Paquete> soloPaquetes = Cliente.getPaquetes();
 		
-	
+		for (int i=0; i <= clientes.size() ;i++)
+		{
+			ordenUsuarioPaquetes.add(clientes.get(i).getPaquetes());
+		}
+		ordenUsuarioPaquetes.toString();
 		
 		
 	}
@@ -129,7 +138,13 @@ public class Soporte{
 		this.creacionDeCuenta = fecha.getTime();
 	}
 
-	
+	public static ArrayList<Cliente> getClientes() {
+		return clientes;
+	}
+
+	public static void setClientes(ArrayList<Cliente> clientes) {
+		Soporte.clientes = clientes;
+	}
 
 	
 	
