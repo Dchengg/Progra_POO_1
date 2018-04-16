@@ -18,26 +18,27 @@ public class App {
 	
 	public static void main(String[] args) {
 		
-		ApiContextInitializer.init();
-		TelegramBotsApi botsApi = new TelegramBotsApi();
-		 try {
-	            botsApi.registerBot(new Bot());
-	            
-	        } catch (TelegramApiException e) {
-	            e.printStackTrace();
-	        }
-		/*ArrayList<Cliente> clientes = new ArrayList<Cliente>();
+		
+		ArrayList<Cliente> clientes = new ArrayList<Cliente>();
 		ClienteXML lector = new ClienteXML(clientes,"src/XML/Usuarios.xml");
 		lector.leerArchivo();
 		Cliente clientenuevo = new Cliente("Mario Hidalgo", "jeje@gmail.com	", "moravia", "666", "5/6/7",true, "sumadre", true, "a222");
-		//AplEmail.init(clientes);
+		AplEmail.init(clientes);
 		clientes.add(clientenuevo);
+		ApiContextInitializer.init();
+		TelegramBotsApi botsApi = new TelegramBotsApi();
+		try {
+			botsApi.registerBot(new Bot(clientes));
+	            
+	    } catch (TelegramApiException e) {
+	    	e.printStackTrace();
+	    }
 		for(Cliente cliente:clientes) {
 			System.out.println(cliente.toString());
 		}
 		Writer escritor = new Writer(clientes,"src/XML/Usuarios.xml" );
 		escritor.escribirArchivo();
-		while(true) {
+		/*while(true) {
 			if(menuLogIn(clientes)) {
 				System.out.println("We are in!!!");
 				for(Cliente cliente:clientes) {

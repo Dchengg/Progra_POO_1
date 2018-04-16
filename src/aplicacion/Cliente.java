@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Cliente {
 
@@ -62,6 +63,22 @@ public class Cliente {
 		setContraseña(contra);
 		return contra;
 	}
+	
+	public void cambiarContrasena(String codigo) {
+		String msg = "Hola " + getNombre() + " ud ha solicitado un cambio de contraseña" +"/n";
+		msg += "Por favor, introduzca su codigo de verificación: ";
+		System.out.print(msg);
+		Scanner reader = new Scanner(System.in);
+		String codigoVer = reader.nextLine();
+		if(codigo.equals(codigoVer)) {
+			msg = "Su código ha sido verificado";
+			System.out.println(msg);
+		}else {
+			System.out.println("Codigo equivocado");
+		}
+		
+	}
+	
 	public String toString() {
 	 String msg = "Nombre :" + getNombre() + "\n";
 	 msg += "Correo :" + getEmail() + "\n";
@@ -111,6 +128,7 @@ public class Cliente {
 	public void setPerfilCompleto(boolean perfilCompleto) {
 		this.perfilCompleto = perfilCompleto;
 	}
+	
 	//Tiene que ser privada pero por unos problemas en Writer se necesita public **HAY QUE ARREGLAR
 	public String getContraseña() {
 		return contraseña;

@@ -2,7 +2,7 @@ package aplicacion;
 
 import java.util.Calendar;
 import java.util.Date;
-import aplicacion.estadoPaquete;
+//import aplicacion.estadoPaquete; ?? (.-.)
 
 public class Soporte{
 
@@ -49,8 +49,8 @@ public class Soporte{
 		case "RECIBIDO_EN_PAIS_DESTINO":
 			
 		default:
-			;*/
-		}
+			;
+		}*/
 		
 		
 		//Cliente.getPaquetes().setEstado(pEstado);
