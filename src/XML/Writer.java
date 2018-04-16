@@ -25,12 +25,11 @@ public class Writer{
 	
 	public Writer (ArrayList<Cliente> pClientes, ArrayList<Soporte> pSoportes, String pXmlFile) {
 		setClientes(pClientes);
-		setXmlFile(pXmlFile);
 		setSoportes(pSoportes);
+		setXmlFile(pXmlFile);
+		
 	}
 	
-	
-
 	public void escribirArchivo() {
 		try {
 			DocumentBuilderFactory dFact = DocumentBuilderFactory.newInstance();
@@ -134,11 +133,30 @@ public class Writer{
 		        	categoria.appendChild(doc.createTextNode(""));   //paquete.getCategoria()
 		        	paqueteIn.appendChild(categoria);
 	        	}
-	        	Element tablaS = doc.createElement("tabla");
-		        tablaS.setAttribute("Nombre", "Soportes");
-		        root.appendChild(tablaS);
-	   
+	        	
 	        }
+	        
+	        Element tablaS = doc.createElement("tabla");
+	        tablaS.setAttribute("Nombre", "Soportes");
+	        root.appendChild(tablaS);
+	        
+	        for(Soporte soporte : soportes) {
+	        	Element campo = doc.createElement("campo");
+		        tablaS.appendChild(campo);
+		        
+		        Element nombre = doc.createElement("nombre");
+	        	nombre.appendChild(doc.createTextNode(soporte.getNombre()));
+	        	campo.appendChild(nombre);
+	        	
+	        	Element correo = doc.createElement("email");
+	        	correo.appendChild(doc.createTextNode(soporte.getCorreo()));
+	        	campo.appendChild(correo);
+	        	
+	        	Element contraseña = doc.createElement("contraseña");
+	        	contraseña.appendChild(doc.createTextNode(soporte.getContraseña()));
+	        	campo.appendChild(contraseña);
+	        }
+	        
 	        TransformerFactory tranFactory = TransformerFactory.newInstance();
 	        Transformer aTransformer = tranFactory.newTransformer();
 	        
