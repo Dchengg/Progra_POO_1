@@ -1,8 +1,6 @@
 package aplicacion;
 
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -40,8 +38,8 @@ public class Cliente {
 		
 	}
 	
-	public void agregarPaquete(String trackingID, String tienda, String courier, double valor, String descripcion) {
-		Paquete paqueteNuevo = new Paquete(trackingID,tienda,courier,valor,descripcion);
+	public void agregarPaquete(String trackingID, String tienda, String courier, double valor, String descripcion, String compañia) {
+		Paquete paqueteNuevo = new Paquete(trackingID,tienda,courier,valor,descripcion,compañia);
 		paquetes.add(paqueteNuevo);
 	}
 	

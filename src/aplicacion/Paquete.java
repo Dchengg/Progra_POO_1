@@ -10,16 +10,19 @@ public class Paquete {
 	private String descripcion;
 	private String estado;
 	private String categoria;
+	private String compañia;
 	
-	public Paquete(String pTrackingID, String pTienda, String pCourier, double pValor, String pDescripcion) {
+	public Paquete(String pTrackingID, String pTienda, String pCourier, double pValor, String pDescripcion, String pCompañia) {
 		setTrackingID(pTrackingID);
 		setTienda(pTienda);
 		setCourier(pCourier);
 		setValor(pValor);
 		setDescripcion(pDescripcion);
+		setCompañia(pCompañia);
 		setEstado("Prealertado");
 
 	}
+
 
 	public String toString() {
 		 String msg = "TrackingID :" + getTrackingID() + "\n";
@@ -30,6 +33,7 @@ public class Paquete {
 		 msg += "Descripcion : " + getDescripcion() + "\n";
 		 msg += "Estado : " + getEstado() + "\n";
 		 msg += "Categoria : " + getCategoria() + "\n";
+		 msg += "Compañia : " + getCompañia() + "\n" ;
 		 return msg;
 		}
 	
@@ -97,6 +101,13 @@ public class Paquete {
 		this.categoria = categoria;
 	}
 	
+	public String getCompañia() {
+		return compañia;
+	}
+
+	public void setCompañia(String compañia) {
+		this.compañia = compañia;
+	}
 
 	
 }

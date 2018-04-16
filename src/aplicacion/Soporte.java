@@ -4,9 +4,6 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
-//import aplicacion.estadoPaquete; ?? (.-.)
-
-import XML.ClienteXML;
 import aplicacion.Cliente;
 
 
@@ -20,7 +17,7 @@ public class Soporte{
 	private Date creacionDeCuenta;
 	private Calendar fecha;
 	private static ArrayList<Cliente> clientes = new ArrayList<Cliente>();
-	
+	//donde se crea cada cliente hay que a;adirlo aqui!!
 	
 	
 
@@ -93,8 +90,8 @@ public class Soporte{
 		{
 			ordenUsuarioPaquetes.add(clientes.get(i).getPaquetes());
 		}
-		ordenUsuarioPaquetes.toString();
 		
+		System.out.println(ordenUsuarioPaquetes.toString());
 		
 	}
 	
