@@ -38,9 +38,9 @@ public class App {
 		for(Cliente cliente:clientes) {
 			System.out.println(cliente.toString());
 		}
-                /*Writer escritor = new Writer(clientes,soportes, "src/XML/Usuarios.xml" );
-		escritor.escribirArchivo();*/
-		Log_in_UI loginUI = new Log_in_UI();
+                Writer escritor = new Writer(clientes,soportes, "src/XML/Usuarios.xml" );
+		escritor.escribirArchivo();
+		Log_in_UI loginUI = new Log_in_UI(clientes);
                 //loginUI.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 loginUI.setVisible(true);
                 

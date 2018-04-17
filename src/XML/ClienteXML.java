@@ -24,8 +24,6 @@ public class ClienteXML {
 		setXmlFile(pXmlFile);
 	}
 	
-	
-
 	public void leerArchivo() {
 		SAXBuilder builder = new SAXBuilder();
 		File xml = new File(xmlFile);
@@ -46,7 +44,7 @@ public class ClienteXML {
 						String numTel = campo.getChildTextTrim("numTel");
 						String fecha = campo.getChildTextTrim("fechaDeNacimiento");
 						boolean perfil = (campo.getChildTextTrim("perfilCompleto").equals("true"));
-						String contra = campo.getChildTextTrim("contrase�a");
+						String contra = campo.getChildTextTrim("contrasena");
 						boolean recibir = (campo.getChildTextTrim("notificaciones").equals("true"));
 						String casillero = campo.getChildTextTrim("numCasillero");
 						Cliente clienteCargado = new Cliente(nombre,email,dir,numTel,fecha,perfil,contra,recibir,casillero);
@@ -73,7 +71,7 @@ public class ClienteXML {
 						Element campo = (Element)lista_campos.get(j);
 						String nombre = campo.getChildTextTrim("nombre");
 						String email = campo.getChildTextTrim("email");
-						String contra = campo.getChildTextTrim("contrase�a");
+						String contra = campo.getChildTextTrim("contrasena");
 						Soporte soporteCargado = new Soporte(nombre,contra,email);
 						soportes.add(soporteCargado);
 					}

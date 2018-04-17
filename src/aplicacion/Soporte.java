@@ -15,7 +15,6 @@ public class Soporte{
 	private String contrasena;
 	private String correo;
 	private Date creacionDeCuenta;
-	private Calendar fecha;
 	private static ArrayList<Cliente> clientes = new ArrayList<Cliente>();
 	//donde se crea cada cliente hay que a;adirlo aqui!!
 	
@@ -134,8 +133,9 @@ public class Soporte{
 	}
 
 	public void setCreacionDeCuenta() {
-	
-		this.creacionDeCuenta = fecha.getTime();
+            Calendar calendario;
+            calendario = Calendar.getInstance();
+            this.creacionDeCuenta = calendario.getTime();
 	}
 
 	public static ArrayList<Cliente> getClientes() {

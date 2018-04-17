@@ -4,67 +4,44 @@
         <campo>
             <nombre>Diego Cheng</nombre>
             <email>bruh@gmail.com</email>
-            <dirrecion>Santa ana</dirrecion>
+            <dirrecion>Santa Ana</dirrecion>
             <numTel>123</numTel>
             <fechaDeNacimiento>1/2/3</fechaDeNacimiento>
             <perfilCompleto>true</perfilCompleto>
-            <contraseña>contra</contraseña>
+            <contrasena>contra</contrasena>
             <notificaciones>false</notificaciones>
             <numCasillero>a221</numCasillero>
             <paquetes>
                 <paquete>
-                    <trackingID>456</trackingID>
-                    <tienda>Ebay</tienda>
-                    <courier>AeroCasillas</courier>
-                    <valor>30.0</valor>
+                    <trackingID>000</trackingID>
+                    <tienda>Amazon</tienda>
+                    <courier>Aerocasillas</courier>
+                    <valor>1459.9</valor>
                     <peso>0</peso>
-                    <descripcion>A book</descripcion>
+                    <descripcion>Libro de texto</descripcion>
                     <estado>Prealertado</estado>
                     <categoria/>
                 </paquete>
             </paquetes>
         </campo>
         <campo>
-            <nombre>Luis Chavarraria</nombre>
-            <email>luisSeMamo@hotmail.com</email>
-            <dirrecion>San jose</dirrecion>
+            <nombre>Luis Chavaria</nombre>
+            <email>luisSeMamo@gmail.com</email>
+            <dirrecion>San Jose</dirrecion>
             <numTel>3456</numTel>
             <fechaDeNacimiento>5/7/5</fechaDeNacimiento>
             <perfilCompleto>false</perfilCompleto>
-            <contraseña>:p</contraseña>
-            <notificaciones>false</notificaciones>
+            <contrasena>:p</contrasena>
+            <notificaciones>true</notificaciones>
             <numCasillero>a231</numCasillero>
             <paquetes>
                 <paquete>
-                    <trackingID>456</trackingID>
-                    <tienda>Ebay</tienda>
-                    <courier>AeroCasillas</courier>
-                    <valor>30.0</valor>
+                    <trackingID>000</trackingID>
+                    <tienda>Amazon</tienda>
+                    <courier>Aerocasillas</courier>
+                    <valor>1459.9</valor>
                     <peso>0</peso>
-                    <descripcion>A book</descripcion>
-                    <estado>Prealertado</estado>
-                    <categoria/>
-                </paquete>
-            </paquetes>
-        </campo>
-        <campo>
-            <nombre>Bruh</nombre>
-            <email>Pos@yahoo.com</email>
-            <dirrecion>brasil</dirrecion>
-            <numTel>6854</numTel>
-            <fechaDeNacimiento>5/7/7</fechaDeNacimiento>
-            <perfilCompleto>false</perfilCompleto>
-            <contraseña>password</contraseña>
-            <notificaciones>true</notificaciones>
-            <numCasillero>a999</numCasillero>
-            <paquetes>
-                <paquete>
-                    <trackingID>456</trackingID>
-                    <tienda>Ebay</tienda>
-                    <courier>AeroCasillas</courier>
-                    <valor>30.0</valor>
-                    <peso>0</peso>
-                    <descripcion>A book</descripcion>
+                    <descripcion>Libro de texto</descripcion>
                     <estado>Prealertado</estado>
                     <categoria/>
                 </paquete>
@@ -77,60 +54,14 @@
             <numTel>666</numTel>
             <fechaDeNacimiento>5/6/7</fechaDeNacimiento>
             <perfilCompleto>true</perfilCompleto>
-            <contraseña>sumadre</contraseña>
-            <notificaciones>true</notificaciones>
-            <numCasillero>a222</numCasillero>
-            <paquetes>
-                <paquete>
-                    <trackingID>456</trackingID>
-                    <tienda>Ebay</tienda>
-                    <courier>AeroCasillas</courier>
-                    <valor>30.0</valor>
-                    <peso>0</peso>
-                    <descripcion>A book</descripcion>
-                    <estado>Prealertado</estado>
-                    <categoria/>
-                </paquete>
-            </paquetes>
-        </campo>
-        <campo>
-            <nombre>Mario Hidalgo</nombre>
-            <email>jeje@gmail.com</email>
-            <dirrecion>moravia</dirrecion>
-            <numTel>666</numTel>
-            <fechaDeNacimiento>5/6/7</fechaDeNacimiento>
-            <perfilCompleto>true</perfilCompleto>
-            <contraseña>sumadre</contraseña>
-            <notificaciones>true</notificaciones>
-            <numCasillero>a222</numCasillero>
-            <paquetes>
-                <paquete>
-                    <trackingID>456</trackingID>
-                    <tienda>Ebay</tienda>
-                    <courier>AeroCasillas</courier>
-                    <valor>30.0</valor>
-                    <peso>0</peso>
-                    <descripcion>A book</descripcion>
-                    <estado>Prealertado</estado>
-                    <categoria/>
-                </paquete>
-            </paquetes>
-        </campo>
-        <campo>
-            <nombre>Mario Hidalgo</nombre>
-            <email>jeje@gmail.com</email>
-            <dirrecion>moravia</dirrecion>
-            <numTel>666</numTel>
-            <fechaDeNacimiento>5/6/7</fechaDeNacimiento>
-            <perfilCompleto>true</perfilCompleto>
-            <contraseña>sumadre</contraseña>
+            <contrasena>sumadre</contrasena>
             <notificaciones>true</notificaciones>
             <numCasillero>a222</numCasillero>
             <paquetes>
                 <paquete>
                     <trackingID>123</trackingID>
                     <tienda>Amazon</tienda>
-                    <courier>AeroCasillas</courier>
+                    <courier>Aerocasillas</courier>
                     <valor>1000.0</valor>
                     <peso>0</peso>
                     <descripcion>Es una tostadora</descripcion>
@@ -138,23 +69,23 @@
                     <categoria/>
                 </paquete>
                 <paquete>
-                    <trackingID>456</trackingID>
-                    <tienda>Ebay</tienda>
-                    <courier>AeroCasillas</courier>
-                    <valor>30.0</valor>
+                    <trackingID>000</trackingID>
+                    <tienda>Amazon</tienda>
+                    <courier>Aerocasillas</courier>
+                    <valor>1459.9</valor>
                     <peso>0</peso>
-                    <descripcion>A book</descripcion>
+                    <descripcion>Libro de texto</descripcion>
                     <estado>Prealertado</estado>
                     <categoria/>
                 </paquete>
             </paquetes>
         </campo>
     </tabla>
-    <tabla Nombre="Soporte">
+    <tabla Nombre="Soportes">
         <campo>
             <nombre>Marcos Herrera</nombre>
-            <email>MHerrera@gmail.com</email>
-            <contraseña>yoquese</contraseña>
+            <email>yoquese</email>
+            <contrasena>MHerrera@gmail.com</contrasena>
         </campo>
     </tabla>
 </tables>
