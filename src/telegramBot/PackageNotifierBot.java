@@ -14,13 +14,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class Bot extends TelegramLongPollingBot {
+public class PackageNotifierBot extends TelegramLongPollingBot {
 	
 	public final static String BOT_TOKEN = "508395264:AAHNrhDNzWCf4qHT8uO15_AYb9sHWqnZixw";
 	public final static String BOT_USERNAME = "PackageNotifierBot";
 	private ArrayList<Cliente> clientes;
 	
-	public Bot(ArrayList<Cliente> pClientes) {
+	public PackageNotifierBot(ArrayList<Cliente> pClientes) {
 		super();
 		setClientes(pClientes);
 	}
@@ -31,7 +31,7 @@ public class Bot extends TelegramLongPollingBot {
 		  if(update.getMessage().getText().equals("/start")) {
 			  SendMessage message = new SendMessage();
 			  message.setChatId(update.getMessage().getChatId());
-			  message.setText("Para poder cambiar tu contraseña necesitamos saber tu número telefonico, por favor haz click en 'Compartir tu número'. Nunca compartiremos tu número telefonico");
+			  message.setText("Para poder cambiar tu contraseÃ±a necesitamos saber tu nÃºmero telefonico, por favor haz click en 'Compartir tu nÃºmero'. Nunca compartiremos tu nÃºmero telefonico");
 			  ReplyKeyboardMarkup replyKeyboardMarkup = new ReplyKeyboardMarkup();
 			  message.setReplyMarkup(replyKeyboardMarkup);
 			  replyKeyboardMarkup.setSelective(true);
@@ -41,7 +41,7 @@ public class Bot extends TelegramLongPollingBot {
 
 			  KeyboardRow keyboardFirstRow = new KeyboardRow();
 			  KeyboardButton keyboardButton = new KeyboardButton();
-			  keyboardButton.setText("Compartir tu número >").setRequestContact(true);
+			  keyboardButton.setText("Compartir tu nÃºmero >").setRequestContact(true);
 			  keyboardFirstRow.add(keyboardButton);
 			
 			  // add array to list
@@ -60,7 +60,7 @@ public class Bot extends TelegramLongPollingBot {
 		  }else {
 			  SendMessage message = new SendMessage();
 			  message.setChatId(update.getMessage().getChatId());
-			  message.setText("Para solicitar el código de verificación para el cambio de contraseña"
+			  message.setText("Para solicitar el cï¿½digo de verificaciÃ³n para el cambio de contraseÃ±a"
 					  + "porfavor utilice el commando '/sendcode' ");
 			  try {
 		           	execute(message); // Call method to send the message
@@ -86,7 +86,7 @@ public class Bot extends TelegramLongPollingBot {
 			      }
 				  cliente.cambiarContrasena(codigo);
 			  }else {
-				  message.setText("No hay ningun usuario valido con ese número telefonico");
+				  message.setText("No hay ningun usuario valido con ese nï¿½mero telefonico");
 				  try {
 			           	execute(message); // Call method to send the message
 			      } catch (TelegramApiException e) {

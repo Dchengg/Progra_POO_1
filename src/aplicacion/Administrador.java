@@ -8,15 +8,15 @@ import java.util.Map;
 public class Administrador {
 
 	private String nombre= "administrador";
-	private String contraseña= "123Adm";
+	private String contrasena= "123Adm";
 	private ArrayList<Soporte> Soportes = new ArrayList<Soporte>();
 	private ArrayList<Cliente> clientes = Soporte.getClientes();
 	
 
 
-	public void creaSoporte(String nombre, String contraseña,String correo)
+	public void creaSoporte(String nombre, String contrasena,String correo)
 	{
-		Soporte soporteNuevo = new Soporte (nombre,contraseña,correo);
+		Soporte soporteNuevo = new Soporte (nombre,contrasena,correo);
 		Soportes.add(soporteNuevo);
 		
 	}
@@ -28,7 +28,7 @@ public class Administrador {
 		Map<String, String> estados = new HashMap<String,String>();
 		Map<String, String> tiendas = new HashMap<String,String>();
 		Map<String, String> categorias = new HashMap<String,String>();
-		Map<String, String> compañias = new HashMap<String,String>();
+		Map<String, String> couriers = new HashMap<String,String>();
 		
 		//estados
 		
@@ -82,24 +82,24 @@ public class Administrador {
 				}
 				
 				
-				//compañias
+				//compaï¿½ias
 				
-				if (compañias.containsKey(clientes.get(i).getPaquetes().get(e).getCompañia()))
+				if (couriers.containsKey(clientes.get(i).getPaquetes().get(e).getCourier()))
 				{
-					String valor = compañias.get(clientes.get(i).getPaquetes().get(e).getCompañia());
+					String valor = couriers.get(clientes.get(i).getPaquetes().get(e).getCourier());
 					int iValor = Integer.parseInt(valor)+1;
-					compañias.put(clientes.get(i).getPaquetes().get(e).getCompañia(), String.valueOf(iValor));
+					couriers.put(clientes.get(i).getPaquetes().get(e).getCourier(), String.valueOf(iValor));
 				}
 				
 				else
 				{
-					compañias.put(clientes.get(i).getPaquetes().get(e).getCompañia(), "1");
+					couriers.put(clientes.get(i).getPaquetes().get(e).getCourier(), "1");
 				} 
 				
 			}	
 		}
 		
-		return ("Estados: " + estados.toString() + " " + "Tiendas: " + tiendas.toString() + " " + "Categorias: " + categorias.toString()+ " " + "Compañias: " + compañias.toString());
+		return ("Estados: " + estados.toString() + " " + "Tiendas: " + tiendas.toString() + " " + "Categorias: " + categorias.toString()+ " " + "CompaÃ±ias: " + couriers.toString());
 		
 	}
 	
@@ -111,11 +111,11 @@ public class Administrador {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public String getContraseña() {
-		return contraseña;
+	public String getContrasena() {
+		return contrasena;
 	}
-	public void setContraseña(String contraseña) {
-		this.contraseña = contraseña;
+	public void setContrasena(String contrasena) {
+		this.contrasena = contrasena;
 	}
 	public ArrayList<Cliente> getClientes() {
 		return clientes;

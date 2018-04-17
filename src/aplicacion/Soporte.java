@@ -12,7 +12,7 @@ public class Soporte{
 
 	//variables
 	private String nombre;
-	private String contraseña;
+	private String contrasena;
 	private String correo;
 	private Date creacionDeCuenta;
 	private Calendar fecha;
@@ -22,10 +22,10 @@ public class Soporte{
 	
 
 	//constructores
-	public Soporte(String nombre, String contraseña,String correo)
+	public Soporte(String nombre, String contrasena,String correo)
 	{
 		setNombre(nombre);
-		setContraseña(contraseña);
+		setContrasena(contrasena);
 		setCorreo(correo);
 		setCreacionDeCuenta();
 		
@@ -112,12 +112,12 @@ public class Soporte{
 		this.nombre = nombre;
 	}
 
-	public String getContraseña() {
-		return contraseña;
+	public String getContrasena() {
+		return contrasena;
 	}
 
-	public void setContraseña(String contraseña) {
-		this.contraseña = contraseña;
+	public void setContrasena(String contrasena) {
+		this.contrasena = contrasena;
 	}
 	
 	

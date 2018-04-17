@@ -7,6 +7,12 @@ import java.util.Scanner;
 
 
 import XML.ClienteXML;
+import XML.Writer;
+import interfaz.Log_in_UI;
+import org.telegram.telegrambots.ApiContextInitializer;
+import org.telegram.telegrambots.TelegramBotsApi;
+import org.telegram.telegrambots.exceptions.TelegramApiException;
+import telegramBot.PackageNotifierBot;
 
 public class App {
 	
@@ -14,40 +20,30 @@ public class App {
 	
 	public static void main(String[] args) {
 		ArrayList<Cliente> clientes = new ArrayList<Cliente>();
-		ClienteXML lector = new ClienteXML(clientes,"src/XML/Usuarios.xml");
+                ArrayList<Soporte> soportes = new ArrayList<Soporte>();
+		ClienteXML lector = new ClienteXML(clientes,soportes, "src/XML/Usuarios.xml");
 		lector.leerArchivo();
-		Cliente clientenuevo = new Cliente("Mario Hidalgo", "jeje@gmail.com	", "moravia", "666", "5/6/7",true, "sumadre", true, "a222");
-		AplEmail.init(clientes);
-		clientes.add(clientenuevo);
-		ApiContextInitializer.init();
+		//AplEmail.init(clientes);
+		/*ApiContextInitializer.init();
 		TelegramBotsApi botsApi = new TelegramBotsApi();
 		try {
-			botsApi.registerBot(new Bot(clientes));
-	            
-	    } catch (TelegramApiException e) {
-	    	e.printStackTrace();
-	    }
+                    botsApi.registerBot(new PackageNotifierBot(clientes));
+	        }catch(TelegramApiException e) {
+                    e.printStackTrace();
+                }*/
 		for(Cliente cliente:clientes) {
 			System.out.println(cliente.toString());
 		}
-		Writer escritor = new Writer(clientes,"src/XML/Usuarios.xml" );
-		escritor.escribirArchivo();
-		ArrayList<Cliente> clientes = new ArrayList<Cliente>();
-		ClienteXML lector = new ClienteXML(clientes,"src/XML/Usuarios.xml");
-		lector.leerArchivo();
-		AplEmail.init(clientes);
+		
 		for(Cliente cliente:clientes) {
 			System.out.println(cliente.toString());
 		}
-		/*while(true) {
-
-			if(menuLogIn(clientes)) {
-				System.out.println("We are in!!!");
-				for(Cliente cliente:clientes) {
-					System.out.println(cliente.toString());
-				}
-			}
-		}*/
+                /*Writer escritor = new Writer(clientes,soportes, "src/XML/Usuarios.xml" );
+		escritor.escribirArchivo();*/
+		Log_in_UI loginUI = new Log_in_UI();
+                //loginUI.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                loginUI.setVisible(true);
+                
 	}
 	
 	private static boolean menuLogIn(ArrayList<Cliente> clientes) {
@@ -59,7 +55,7 @@ public class App {
 		msg += "ID : " ;
 		System.out.println(msg);
 		String id = reader.nextLine();
-		System.out.print("Contraseña: ");
+		System.out.print("Contraseï¿½a: ");
 		String contra = reader.nextLine();
 		System.out.println("");
 		for(Cliente cliente:clientes) {

@@ -5,12 +5,24 @@
             <nombre>Diego Cheng</nombre>
             <email>bruh@gmail.com</email>
             <dirrecion>Santa ana</dirrecion>
-            <numTel>86564739</numTel>
+            <numTel>123</numTel>
             <fechaDeNacimiento>1/2/3</fechaDeNacimiento>
             <perfilCompleto>true</perfilCompleto>
             <contraseña>contra</contraseña>
             <notificaciones>false</notificaciones>
             <numCasillero>a221</numCasillero>
+            <paquetes>
+                <paquete>
+                    <trackingID>456</trackingID>
+                    <tienda>Ebay</tienda>
+                    <courier>AeroCasillas</courier>
+                    <valor>30.0</valor>
+                    <peso>0</peso>
+                    <descripcion>A book</descripcion>
+                    <estado>Prealertado</estado>
+                    <categoria/>
+                </paquete>
+            </paquetes>
         </campo>
         <campo>
             <nombre>Luis Chavarraria</nombre>
@@ -22,6 +34,18 @@
             <contraseña>:p</contraseña>
             <notificaciones>false</notificaciones>
             <numCasillero>a231</numCasillero>
+            <paquetes>
+                <paquete>
+                    <trackingID>456</trackingID>
+                    <tienda>Ebay</tienda>
+                    <courier>AeroCasillas</courier>
+                    <valor>30.0</valor>
+                    <peso>0</peso>
+                    <descripcion>A book</descripcion>
+                    <estado>Prealertado</estado>
+                    <categoria/>
+                </paquete>
+            </paquetes>
         </campo>
         <campo>
             <nombre>Bruh</nombre>
@@ -33,6 +57,18 @@
             <contraseña>password</contraseña>
             <notificaciones>true</notificaciones>
             <numCasillero>a999</numCasillero>
+            <paquetes>
+                <paquete>
+                    <trackingID>456</trackingID>
+                    <tienda>Ebay</tienda>
+                    <courier>AeroCasillas</courier>
+                    <valor>30.0</valor>
+                    <peso>0</peso>
+                    <descripcion>A book</descripcion>
+                    <estado>Prealertado</estado>
+                    <categoria/>
+                </paquete>
+            </paquetes>
         </campo>
         <campo>
             <nombre>Mario Hidalgo</nombre>
@@ -44,6 +80,18 @@
             <contraseña>sumadre</contraseña>
             <notificaciones>true</notificaciones>
             <numCasillero>a222</numCasillero>
+            <paquetes>
+                <paquete>
+                    <trackingID>456</trackingID>
+                    <tienda>Ebay</tienda>
+                    <courier>AeroCasillas</courier>
+                    <valor>30.0</valor>
+                    <peso>0</peso>
+                    <descripcion>A book</descripcion>
+                    <estado>Prealertado</estado>
+                    <categoria/>
+                </paquete>
+            </paquetes>
         </campo>
         <campo>
             <nombre>Mario Hidalgo</nombre>
@@ -55,6 +103,18 @@
             <contraseña>sumadre</contraseña>
             <notificaciones>true</notificaciones>
             <numCasillero>a222</numCasillero>
+            <paquetes>
+                <paquete>
+                    <trackingID>456</trackingID>
+                    <tienda>Ebay</tienda>
+                    <courier>AeroCasillas</courier>
+                    <valor>30.0</valor>
+                    <peso>0</peso>
+                    <descripcion>A book</descripcion>
+                    <estado>Prealertado</estado>
+                    <categoria/>
+                </paquete>
+            </paquetes>
         </campo>
         <campo>
             <nombre>Mario Hidalgo</nombre>
@@ -66,83 +126,35 @@
             <contraseña>sumadre</contraseña>
             <notificaciones>true</notificaciones>
             <numCasillero>a222</numCasillero>
+            <paquetes>
+                <paquete>
+                    <trackingID>123</trackingID>
+                    <tienda>Amazon</tienda>
+                    <courier>AeroCasillas</courier>
+                    <valor>1000.0</valor>
+                    <peso>0</peso>
+                    <descripcion>Es una tostadora</descripcion>
+                    <estado>Prealertado</estado>
+                    <categoria/>
+                </paquete>
+                <paquete>
+                    <trackingID>456</trackingID>
+                    <tienda>Ebay</tienda>
+                    <courier>AeroCasillas</courier>
+                    <valor>30.0</valor>
+                    <peso>0</peso>
+                    <descripcion>A book</descripcion>
+                    <estado>Prealertado</estado>
+                    <categoria/>
+                </paquete>
+            </paquetes>
         </campo>
+    </tabla>
+    <tabla Nombre="Soporte">
         <campo>
-            <nombre>Mario Hidalgo</nombre>
-            <email>jeje@gmail.com</email>
-            <dirrecion>moravia</dirrecion>
-            <numTel>666</numTel>
-            <fechaDeNacimiento>5/6/7</fechaDeNacimiento>
-            <perfilCompleto>true</perfilCompleto>
-            <contraseña>sumadre</contraseña>
-            <notificaciones>true</notificaciones>
-            <numCasillero>a222</numCasillero>
-        </campo>
-        <campo>
-            <nombre>Mario Hidalgo</nombre>
-            <email>jeje@gmail.com</email>
-            <dirrecion>moravia</dirrecion>
-            <numTel>666</numTel>
-            <fechaDeNacimiento>5/6/7</fechaDeNacimiento>
-            <perfilCompleto>true</perfilCompleto>
-            <contraseña>sumadre</contraseña>
-            <notificaciones>true</notificaciones>
-            <numCasillero>a222</numCasillero>
-        </campo>
-        <campo>
-            <nombre>Mario Hidalgo</nombre>
-            <email>jeje@gmail.com</email>
-            <dirrecion>moravia</dirrecion>
-            <numTel>666</numTel>
-            <fechaDeNacimiento>5/6/7</fechaDeNacimiento>
-            <perfilCompleto>true</perfilCompleto>
-            <contraseña>sumadre</contraseña>
-            <notificaciones>true</notificaciones>
-            <numCasillero>a222</numCasillero>
-        </campo>
-        <campo>
-            <nombre>Mario Hidalgo</nombre>
-            <email>jeje@gmail.com</email>
-            <dirrecion>moravia</dirrecion>
-            <numTel>666</numTel>
-            <fechaDeNacimiento>5/6/7</fechaDeNacimiento>
-            <perfilCompleto>true</perfilCompleto>
-            <contraseña>sumadre</contraseña>
-            <notificaciones>true</notificaciones>
-            <numCasillero>a222</numCasillero>
-        </campo>
-        <campo>
-            <nombre>Mario Hidalgo</nombre>
-            <email>jeje@gmail.com</email>
-            <dirrecion>moravia</dirrecion>
-            <numTel>666</numTel>
-            <fechaDeNacimiento>5/6/7</fechaDeNacimiento>
-            <perfilCompleto>true</perfilCompleto>
-            <contraseña>sumadre</contraseña>
-            <notificaciones>true</notificaciones>
-            <numCasillero>a222</numCasillero>
-        </campo>
-        <campo>
-            <nombre>Mario Hidalgo</nombre>
-            <email>jeje@gmail.com</email>
-            <dirrecion>moravia</dirrecion>
-            <numTel>666</numTel>
-            <fechaDeNacimiento>5/6/7</fechaDeNacimiento>
-            <perfilCompleto>true</perfilCompleto>
-            <contraseña>sumadre</contraseña>
-            <notificaciones>true</notificaciones>
-            <numCasillero>a222</numCasillero>
-        </campo>
-        <campo>
-            <nombre>Mario Hidalgo</nombre>
-            <email>jeje@gmail.com	</email>
-            <dirrecion>moravia</dirrecion>
-            <numTel>666</numTel>
-            <fechaDeNacimiento>5/6/7</fechaDeNacimiento>
-            <perfilCompleto>true</perfilCompleto>
-            <contraseña>sumadre</contraseña>
-            <notificaciones>true</notificaciones>
-            <numCasillero>a222</numCasillero>
+            <nombre>Marcos Herrera</nombre>
+            <email>MHerrera@gmail.com</email>
+            <contraseña>yoquese</contraseña>
         </campo>
     </tabla>
 </tables>

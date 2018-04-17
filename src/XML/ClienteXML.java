@@ -46,7 +46,7 @@ public class ClienteXML {
 						String numTel = campo.getChildTextTrim("numTel");
 						String fecha = campo.getChildTextTrim("fechaDeNacimiento");
 						boolean perfil = (campo.getChildTextTrim("perfilCompleto").equals("true"));
-						String contra = campo.getChildTextTrim("contraseña");
+						String contra = campo.getChildTextTrim("contraseï¿½a");
 						boolean recibir = (campo.getChildTextTrim("notificaciones").equals("true"));
 						String casillero = campo.getChildTextTrim("numCasillero");
 						Cliente clienteCargado = new Cliente(nombre,email,dir,numTel,fecha,perfil,contra,recibir,casillero);
@@ -73,7 +73,7 @@ public class ClienteXML {
 						Element campo = (Element)lista_campos.get(j);
 						String nombre = campo.getChildTextTrim("nombre");
 						String email = campo.getChildTextTrim("email");
-						String contra = campo.getChildTextTrim("contraseña");
+						String contra = campo.getChildTextTrim("contraseï¿½a");
 						Soporte soporteCargado = new Soporte(nombre,contra,email);
 						soportes.add(soporteCargado);
 					}

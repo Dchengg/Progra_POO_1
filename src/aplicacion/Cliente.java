@@ -8,11 +8,11 @@ public class Cliente {
 
 	private String nombre;
 	private String email;
-	private String dirección;
+	private String direccion;
 	private String numTel;
 	private String fechaDeNacimiento;
 	private boolean perfilCompleto;
-	private String contraseña;
+	private String contrasena;
 	private boolean notificaciones;
 	private String numCasillero;
 	private ArrayList<Paquete> paquetes = new ArrayList<Paquete>();
@@ -25,11 +25,11 @@ public class Cliente {
 	public Cliente(String pNombre, String pEmail, String pDir, String pNumTel,String pFechaDeNacimiento,boolean pCompleto, String pContra, boolean pNotificaciones, String pNumCasillero) {
 		setNombre(pNombre);
 		setEmail(pEmail);
-		setDirección(pDir);
+		setDireccion(pDir);
 		setNumTel(pNumTel);
 		setFechaDeNacimiento(pFechaDeNacimiento);
 		setPerfilCompleto(pCompleto);
-		setContraseña(pContra);
+		setContrasena(pContra);
 		setNotificaciones(pNotificaciones);
 		setNumCasillero(pNumCasillero);
 		
@@ -38,20 +38,20 @@ public class Cliente {
 		
 	}
 	
-	public void agregarPaquete(String trackingID, String tienda, String courier, double valor, String descripcion, String compañia) {
-		Paquete paqueteNuevo = new Paquete(trackingID,tienda,courier,valor,descripcion,compañia);
+	public void agregarPaquete(String trackingID, String tienda, String courier, double valor, String descripcion) {
+		Paquete paqueteNuevo = new Paquete(trackingID,tienda,courier,valor,descripcion);
 		paquetes.add(paqueteNuevo);
 	}
 	
 	public boolean logIn(String id, String contra) {
-		if(id.equals(getNombre()) && contra.equals(getContraseña())) {
+		if(id.equals(getNombre()) && contra.equals(getContrasena())) {
 			return true;
 		}else {
 			return false;
 		}
 	}
 	
-	public String generarContraseña() {	
+	public String generarContrasena() {	
 		String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
 		StringBuilder builder = new StringBuilder();
 		Random rand = new Random();
@@ -61,18 +61,18 @@ public class Cliente {
 		}
 		String contra = builder.toString();
 		System.out.print(contra);
-		setContraseña(contra);
+		setContrasena(contra);
 		return contra;
 	}
 	
 	public void cambiarContrasena(String codigo) {
-		String msg = "Hola " + getNombre() + " ud ha solicitado un cambio de contraseña" +"/n";
-		msg += "Por favor, introduzca su codigo de verificación: ";
+		String msg = "Hola " + getNombre() + " ud ha solicitado un cambio de contraseï¿½a" +"/n";
+		msg += "Por favor, introduzca su codigo de verificaciÃ³n: ";
 		System.out.print(msg);
 		Scanner reader = new Scanner(System.in);
 		String codigoVer = reader.nextLine();
 		if(codigo.equals(codigoVer)) {
-			msg = "Su código ha sido verificado";
+			msg = "Su cï¿½digo ha sido verificado";
 			System.out.println(msg);
 		}else {
 			System.out.println("Codigo equivocado");
@@ -83,13 +83,13 @@ public class Cliente {
 	public String toString() {
 	 String msg = "Nombre :" + getNombre() + "\n";
 	 msg += "Correo :" + getEmail() + "\n";
-	 msg += "Dirección : " + getDirección() + "\n";
-	 msg += "Número de Telefono : " + getNumTel() + "\n";
+	 msg += "Direccion : " + getDireccion() + "\n";
+	 msg += "Nï¿½mero de Telefono : " + getNumTel() + "\n";
 	 msg += "Fecha de Nacimiento : " + getFechaDeNacimiento() + "\n";
 	 msg += "Perfil Completo : " + isPerfilCompleto() + "\n";
-	 msg += "Contraseña : " + getContraseña() + "\n";
+	 msg += "Contrasena : " + getContrasena() + "\n";
 	 msg += "Recibir notificaciones : " + isNotificaciones() + "\n";
-	 msg += "Número de Casillero : " + getNumCasillero() + "\n";
+	 msg += "Nï¿½mero de Casillero : " + getNumCasillero() + "\n";
 	 return msg;
 	}
 	
@@ -105,11 +105,11 @@ public class Cliente {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getDirección() {
-		return dirección;
+	public String getDireccion() {
+		return direccion;
 	}
-	public void setDirección(String dirección) {
-		this.dirección = dirección;
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
 	}
 	public String getNumTel() {
 		return numTel;
@@ -131,11 +131,11 @@ public class Cliente {
 	}
 	
 	//Tiene que ser privada pero por unos problemas en Writer se necesita public **HAY QUE ARREGLAR
-	public String getContraseña() {
-		return contraseña;
+	public String getContrasena() {
+		return contrasena;
 	}
-	private void setContraseña(String contraseña) {
-		this.contraseña = contraseña;
+	private void setContrasena(String contrasena) {
+		this.contrasena = contrasena;
 	}
 	public boolean isNotificaciones() {
 		return notificaciones;

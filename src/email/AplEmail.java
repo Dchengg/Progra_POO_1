@@ -33,10 +33,10 @@ public class AplEmail {
 	            	String subject;   		
             		if(VerificarCorreo(clientes,address)) {
             			Cliente clienteNuevo = new Cliente(nombre,address);
-            			String contraseña = clienteNuevo.generarContraseña();
+            			String contrasena = clienteNuevo.generarContrasena();
             			clientes.add(clienteNuevo);	
             			content = "Your id is : " + nombre +"\n"
- 		  					+ " Your password is: " + contraseña;
+ 		  					+ " Your password is: " + contrasena;
             			subject = "Bienvenido a Package Notifier!!!";
             			emailSender.sendEmail(address,subject,content);
             		}else {
@@ -44,7 +44,7 @@ public class AplEmail {
             			content = "Error al crear la cuenta, la cuenta de correo " + address +
             					"ya esta asociada a una cuenta ya creada" + "\n" + 
             					"Por favor verifique si ud ya tiene una cuenta creada a su nombre";
-            			subject = "Hubo un error en la creación de su Cuenta";
+            			subject = "Hubo un error en la creaciï¿½n de su Cuenta";
             			emailSender.sendEmail(address,subject,content);
             		}
 	            		
