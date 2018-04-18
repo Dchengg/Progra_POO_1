@@ -67,11 +67,9 @@
                   <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="LogInButton" pref="111" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="contrasena" max="32767" attributes="0"/>
-                          <Component id="ID" max="32767" attributes="0"/>
-                          <Component id="TipoDeUsuario" pref="111" max="32767" attributes="0"/>
-                      </Group>
+                      <Component id="contrasena" max="32767" attributes="0"/>
+                      <Component id="ID" max="32767" attributes="0"/>
+                      <Component id="TipoDeUsuario" pref="111" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace pref="120" max="32767" attributes="0"/>
               </Group>
@@ -202,7 +200,7 @@
               <Color blue="c2" green="d2" red="5e" type="rgb"/>
             </Property>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Default Cursor"/>
+              <Color id="Cursor Por defecto"/>
             </Property>
             <Property name="label" type="java.lang.String" value="Log In"/>
             <Property name="name" type="java.lang.String" value="Log_in" noResource="true"/>

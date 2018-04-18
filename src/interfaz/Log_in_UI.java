@@ -198,7 +198,9 @@ public class Log_in_UI extends javax.swing.JFrame {
         String contra = contrasena.getText();
         for(Cliente cliente:getClientes()){
             if(cliente.logIn(id, contra)){
-                System.out.println("WE ARE IN BOYS");
+                Menu_Clientes_UI menuClientes = new Menu_Clientes_UI();
+                menuClientes.setVisible(true);
+                setVisible(false);
             }
         }
     }//GEN-LAST:event_LogInButtonActionPerformed

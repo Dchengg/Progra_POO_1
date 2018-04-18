@@ -9,6 +9,7 @@ import java.util.Scanner;
 import XML.ClienteXML;
 import XML.Writer;
 import interfaz.Log_in_UI;
+import interfaz.UI;
 import org.telegram.telegrambots.ApiContextInitializer;
 import org.telegram.telegrambots.TelegramBotsApi;
 import org.telegram.telegrambots.exceptions.TelegramApiException;
@@ -40,9 +41,7 @@ public class App {
 		}
                 Writer escritor = new Writer(clientes,soportes, "src/XML/Usuarios.xml" );
 		escritor.escribirArchivo();
-		Log_in_UI loginUI = new Log_in_UI(clientes);
-                //loginUI.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                loginUI.setVisible(true);
+		UI.init(clientes, soportes);
                 
 	}
 	
