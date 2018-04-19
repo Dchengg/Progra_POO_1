@@ -46,6 +46,7 @@ public class Log_in_UI extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(32, 33, 36));
         jPanel1.setAlignmentX(0.0F);
@@ -54,8 +55,8 @@ public class Log_in_UI extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(52, 77, 83));
         jLabel1.setText("Tipo de Usuario");
 
-        TipoDeUsuario.setBackground(new java.awt.Color(0, 0, 0));
-        TipoDeUsuario.setForeground(new java.awt.Color(32, 33, 36));
+        TipoDeUsuario.setBackground(new java.awt.Color(32, 33, 36));
+        TipoDeUsuario.setForeground(new java.awt.Color(255, 255, 255));
         TipoDeUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cliente", "Soporte", "Admin" }));
         TipoDeUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -67,13 +68,13 @@ public class Log_in_UI extends javax.swing.JFrame {
         jLabel2.setText("ID");
 
         ID.setBackground(new java.awt.Color(32, 33, 36));
-        ID.setForeground(new java.awt.Color(52, 77, 83));
+        ID.setForeground(new java.awt.Color(255, 255, 255));
 
         jLabel3.setForeground(new java.awt.Color(52, 77, 83));
         jLabel3.setText("Contraseña");
 
         contrasena.setBackground(new java.awt.Color(32, 33, 36));
-        contrasena.setForeground(new java.awt.Color(52, 77, 83));
+        contrasena.setForeground(new java.awt.Color(255, 255, 255));
         contrasena.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 contrasenaActionPerformed(evt);
@@ -119,10 +120,9 @@ public class Log_in_UI extends javax.swing.JFrame {
                 .addGap(29, 29, 29)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(LogInButton, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(contrasena)
-                        .addComponent(ID)
-                        .addComponent(TipoDeUsuario, 0, 111, Short.MAX_VALUE)))
+                    .addComponent(contrasena)
+                    .addComponent(ID)
+                    .addComponent(TipoDeUsuario, 0, 111, Short.MAX_VALUE))
                 .addContainerGap(120, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -198,7 +198,7 @@ public class Log_in_UI extends javax.swing.JFrame {
         String contra = contrasena.getText();
         for(Cliente cliente:getClientes()){
             if(cliente.logIn(id, contra)){
-                Menu_Clientes_UI menuClientes = new Menu_Clientes_UI();
+                Menu_Clientes_UI menuClientes = new Menu_Clientes_UI(cliente);
                 menuClientes.setVisible(true);
                 setVisible(false);
             }
