@@ -149,7 +149,7 @@ public class Menu_Clientes_UI extends javax.swing.JFrame {
     }//GEN-LAST:event_button2ActionPerformed
 
     private void button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button3ActionPerformed
-        PrealertarUI prealertar = new PrealertarUI();
+        PrealertarUI prealertar = new PrealertarUI(cliente);
         prealertar.setVisible(true);
 
     }//GEN-LAST:event_button3ActionPerformed
