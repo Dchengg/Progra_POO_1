@@ -38,10 +38,15 @@ public class Cliente {
 		
 	}
 	
-	public void agregarPaquete(String trackingID, String tienda, String courier, double valor, String descripcion) {
-		Paquete paqueteNuevo = new Paquete(trackingID,tienda,courier,valor,descripcion);
+	public void agregarPaquete(String trackingID, String tienda, String courier, double valor, String pCategoria, String descripcion) {
+		Paquete paqueteNuevo = new Paquete(trackingID,tienda,courier,valor,pCategoria,descripcion);
 		paquetes.add(paqueteNuevo);
 	}
+        
+        public void agregarPaquete(String pTrackingID, String pTienda, String pCourier, double pValor, double peso, String pDescripcion,String pEstado, String pCategoria, String pFechaCambio, String pHoraCambio){
+            Paquete paqueteNuevo = new Paquete(pTrackingID, pTienda, pCourier, pValor, peso, pDescripcion,pEstado, pCategoria, pFechaCambio, pHoraCambio);
+            paquetes.add(paqueteNuevo);
+        }
 	
 	public boolean logIn(String id, String contra) {
 		if(id.equals(getNombre()) && contra.equals(getContrasena())) {
