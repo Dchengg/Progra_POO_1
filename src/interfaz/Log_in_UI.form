@@ -70,7 +70,7 @@
                       <Component id="LogInButton" pref="111" max="32767" attributes="0"/>
                       <Component id="contrasena" max="32767" attributes="0"/>
                       <Component id="ID" max="32767" attributes="0"/>
-                      <Component id="TipoDeUsuario" pref="111" max="32767" attributes="0"/>
+                      <Component id="tipoDeUsuario" pref="111" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace pref="120" max="32767" attributes="0"/>
               </Group>
@@ -84,7 +84,7 @@
                   <EmptySpace pref="76" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="TipoDeUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tipoDeUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -114,7 +114,7 @@
             <Property name="text" type="java.lang.String" value="Tipo de Usuario"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="TipoDeUsuario">
+        <Component class="javax.swing.JComboBox" name="tipoDeUsuario">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="24" green="21" red="20" type="rgb"/>
@@ -131,7 +131,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TipoDeUsuarioActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tipoDeUsuarioActionPerformed"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>

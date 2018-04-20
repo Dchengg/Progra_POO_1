@@ -36,7 +36,7 @@ public class Log_in_UI extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        TipoDeUsuario = new javax.swing.JComboBox<>();
+        tipoDeUsuario = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
         ID = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
@@ -56,12 +56,12 @@ public class Log_in_UI extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(52, 77, 83));
         jLabel1.setText("Tipo de Usuario");
 
-        TipoDeUsuario.setBackground(new java.awt.Color(32, 33, 36));
-        TipoDeUsuario.setForeground(new java.awt.Color(255, 255, 255));
-        TipoDeUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cliente", "Soporte", "Admin" }));
-        TipoDeUsuario.addActionListener(new java.awt.event.ActionListener() {
+        tipoDeUsuario.setBackground(new java.awt.Color(32, 33, 36));
+        tipoDeUsuario.setForeground(new java.awt.Color(255, 255, 255));
+        tipoDeUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cliente", "Soporte", "Admin" }));
+        tipoDeUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TipoDeUsuarioActionPerformed(evt);
+                tipoDeUsuarioActionPerformed(evt);
             }
         });
 
@@ -123,7 +123,7 @@ public class Log_in_UI extends javax.swing.JFrame {
                     .addComponent(LogInButton, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE)
                     .addComponent(contrasena)
                     .addComponent(ID)
-                    .addComponent(TipoDeUsuario, 0, 111, Short.MAX_VALUE))
+                    .addComponent(tipoDeUsuario, 0, 111, Short.MAX_VALUE))
                 .addContainerGap(120, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -134,7 +134,7 @@ public class Log_in_UI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(TipoDeUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tipoDeUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(24, 24, 24)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -190,14 +190,16 @@ public class Log_in_UI extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_exitButtonAction
 
-    private void TipoDeUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TipoDeUsuarioActionPerformed
+    private void tipoDeUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipoDeUsuarioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TipoDeUsuarioActionPerformed
+    }//GEN-LAST:event_tipoDeUsuarioActionPerformed
 
     private void LogInButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogInButtonActionPerformed
         String id = ID.getText();
         String contra = contrasena.getText();
         boolean encontrado = false;
+        String tipo = tipoDeUsuario.getSelectedItem().toString();
+        System.out.println(tipo);
         for(Cliente cliente:getClientes()){
             if(cliente.logIn(id, contra)){
                 Menu_Clientes_UI menuClientes = new Menu_Clientes_UI(cliente,this);
@@ -223,7 +225,6 @@ public class Log_in_UI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField ID;
     private java.awt.Button LogInButton;
-    private javax.swing.JComboBox<String> TipoDeUsuario;
     private javax.swing.JPasswordField contrasena;
     private javax.swing.JButton exitButton;
     private javax.swing.JLabel jLabel1;
@@ -232,5 +233,6 @@ public class Log_in_UI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JComboBox<String> tipoDeUsuario;
     // End of variables declaration//GEN-END:variables
 }
