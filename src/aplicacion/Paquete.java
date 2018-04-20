@@ -1,5 +1,9 @@
 package aplicacion;
 
+import java.util.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+
 public class Paquete {
 
 	private String trackingID;
@@ -10,14 +14,34 @@ public class Paquete {
 	private String descripcion;
 	private String estado;
 	private String categoria;
+        private String horaCambio;
+        private String fechaCambio;
 	
-	public Paquete(String pTrackingID, String pTienda, String pCourier, double pValor, String pDescripcion) {
+	public Paquete(String pTrackingID, String pTienda, String pCourier, double pValor, String pCategoria, String pDescripcion) {
 		setTrackingID(pTrackingID);
 		setTienda(pTienda);
 		setCourier(pCourier);
 		setValor(pValor);
-		setDescripcion(pDescripcion);;
+		setDescripcion(pDescripcion);
+                setPeso(0);
+                setCategoria(pCategoria);
 		setEstado("Prealertado");
+                setFechaCambio();
+                setHoraCambio();
+
+	}
+        
+        public Paquete(String pTrackingID, String pTienda, String pCourier, double pValor, double peso, String pDescripcion,String pEstado, String pCategoria, String pFechaCambio, String pHoraCambio) {
+		setTrackingID(pTrackingID);
+		setTienda(pTienda);
+		setCourier(pCourier);
+		setValor(pValor);
+		setDescripcion(pDescripcion);
+                setPeso(peso);
+		setEstado(pEstado);
+                setCategoria(pCategoria);
+                setFechaCambio(pFechaCambio);
+                setHoraCambio(pHoraCambio);
 
 	}
 
@@ -70,7 +94,7 @@ public class Paquete {
 		return peso;
 	}
 
-	public void setPeso(int peso) {
+	public void setPeso(double peso) {
 		this.peso = peso;
 	}
 
@@ -97,4 +121,26 @@ public class Paquete {
 	public void setCategoria(String categoria) {
 		this.categoria = categoria;
 	}
+        public String getHoraCambio() {
+		return horaCambio;
+	}
+        public void setHoraCambio() {
+		Date date = new Date();
+                DateFormat hourFormat = new SimpleDateFormat("HH:mm:ss");
+                this.horaCambio = hourFormat.format(date);
+	}
+        public void setHoraCambio(String pHoraCambio){
+            this.horaCambio = pHoraCambio;
+        }
+        public String getFechaCambio(){
+          return fechaCambio;
+        }
+        public void setFechaCambio(){
+            Date date = new Date();
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+            this.fechaCambio = sdf.format(date);
+        }
+        public void setFechaCambio(String pFechaCambio){
+            this.fechaCambio = pFechaCambio;
+        }
 }

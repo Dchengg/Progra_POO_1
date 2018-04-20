@@ -20,9 +20,7 @@ public class CategoriasXML {
 	public CategoriasXML (ArrayList<Categoria> pCategorias, String pXmlFile) {
 		setCategorias(pCategorias);
 		setXmlFile(pXmlFile);
-
 	}
-	
 	public void leerArchivo() {
 		SAXBuilder builder = new SAXBuilder();
 		File xml = new File(xmlFile);
@@ -43,8 +41,6 @@ public class CategoriasXML {
 			System.out.println(jdomex.getMessage());
 		}
 	}
-	
-
 	public ArrayList<Categoria> getCategorias() {
 		return categorias;
 	}

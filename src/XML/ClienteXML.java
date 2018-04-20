@@ -56,11 +56,13 @@ public class ClienteXML {
 							String tienda = paquete.getChildTextTrim("tienda");
 							String courier = paquete.getChildTextTrim("courier");
 							double valor = Double.parseDouble(paquete.getChildTextTrim("valor"));
-							double peso = Integer.parseInt(paquete.getChildTextTrim("peso"));
+							double peso = Double.parseDouble(paquete.getChildTextTrim("peso"));
 							String descripcion = paquete.getChildTextTrim("descripcion");
 							String estado = paquete.getChildTextTrim("estado");
 							String categoria = paquete.getChildTextTrim("categoria");
-							clienteCargado.agregarPaquete(trackingID, tienda, courier, valor, descripcion);
+                                                        String horaCambio = paquete.getChildTextTrim("horaCambio");
+                                                        String fechaCambio = paquete.getChildTextTrim("fechaCambio");
+							clienteCargado.agregarPaquete(trackingID, tienda, courier, valor, peso, descripcion, estado, categoria, fechaCambio, horaCambio);
 						}
 						clientes.add(clienteCargado);
 						}

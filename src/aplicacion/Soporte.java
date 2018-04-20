@@ -5,8 +5,8 @@ import java.util.Calendar;
 import java.util.Date;
 
 import aplicacion.Cliente;
-
-
+import aplicacion.Categoria;
+import java.text.SimpleDateFormat;
 
 public class Soporte{
 
@@ -14,7 +14,7 @@ public class Soporte{
 	private String nombre;
 	private String contrasena;
 	private String correo;
-	private Date creacionDeCuenta;
+	private String creacionDeCuenta;
 	private static ArrayList<Cliente> clientes = new ArrayList<Cliente>();
 	//donde se crea cada cliente hay que a;adirlo aqui!!
 	
@@ -26,8 +26,15 @@ public class Soporte{
 		setNombre(nombre);
 		setContrasena(contrasena);
 		setCorreo(correo);
-		setCreacionDeCuenta();
-		
+		setCreacionDeCuenta();	
+	}
+        
+        public Soporte(String nombre, String contrasena,String correo, String pFecha)
+	{
+		setNombre(nombre);
+		setContrasena(contrasena);
+		setCorreo(correo);
+		setCreacionDeCuenta(pFecha);	
 	}
 	
 	//metodos
@@ -70,31 +77,89 @@ public class Soporte{
 			
 	//enviar correo
 	}
+        
+        public double impuestoAduanal(Paquete paquete, Categoria categoria){
+            double precio = paquete.getValor();
+            double porcentaje = categoria.getPorcentaje();
+            return precio*(porcentaje/100);
+        }
+        
+        public double combustible(Paquete paquete){
+            double precio = paquete.getValor();
+            return precio*(19/100);
+        }
+        public double garantiaRetorno(){
+            return 1.5;
+        }
+        public double flete(Paquete paquete){
+            double peso = paquete.getPeso();
+            if(peso == 1){
+               double costo = 9.00;
+               return costo;
+            }
+            if(peso == 2){
+               double costo = 14.50;
+               return costo;
+            }
+            if(peso == 3){
+               double costo = 20.00;
+               return costo;
+            }
+            if(peso == 4){
+               double costo = 25.50;
+               return costo;
+            }
+            if(peso == 5){
+               double costo = 31.50;
+               return costo;
+            }
+            if(peso == 6){
+               double costo = 36.50;
+               return costo;
+            }
+            if(peso == 7){
+               double costo = 42.00;
+               return costo;
+            }
+            if(peso == 8){
+               double costo = 47.50;
+               return costo;
+            }
+            if(peso == 9){
+               double costo = 53.00;
+               return costo;
+            }
+            if(peso == 10){
+               double costo = 58.50;
+               return costo;
+            }
+            else{
+                double extra = peso-10;
+                double cant = 0;
+                for(int i = 0; i < extra; i++){
+                    cant++;
+                }
+                double costo = 58.50 + (cant*3.50);
+                return costo;
+            }
+        }
+        
+        public double costoFinal(Paquete paquete, Categoria categoria){
+            return flete(paquete)+ combustible(paquete) + garantiaRetorno() + impuestoAduanal(paquete,categoria);
+        }
 
-	
-	public double costoDeIVI(int peso, double porcentaje)
-	{
-		double ivi=0;
-		//meter porcentajes
-		
-		return ivi;
-	}
-	
 	public void listaPaquetes()
 	{
-		ArrayList<ArrayList<Paquete>> ordenUsuarioPaquetes = new ArrayList<ArrayList<Paquete>>();
-		
-		
-		for (int i=0; i <= clientes.size() ;i++)
-		{
-			ordenUsuarioPaquetes.add(clientes.get(i).getPaquetes());
-		}
-		
-		System.out.println(ordenUsuarioPaquetes.toString());
-		
+            for (Cliente cliente : clientes){
+                 ArrayList<Paquete> paquetes = cliente.getPaquetes();
+                 System.out.println(cliente.toString());
+                 for(Paquete paquete : paquetes){
+                     System.out.println(paquete.toString());
+                 }
+            }	
 	}
 	
-	
+	@Override
 	public String toString() {
 		 String msg = "Nombre :" + getNombre() + "\n";
 		 msg += "Correo :" + getCorreo() + "\n";
@@ -128,15 +193,19 @@ public class Soporte{
 		this.correo = correo;
 	}
 
-	public Date getCreacionDeCuenta() {
+	public String getCreacionDeCuenta() {
 		return creacionDeCuenta;
 	}
 
 	public void setCreacionDeCuenta() {
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
             Calendar calendario;
             calendario = Calendar.getInstance();
-            this.creacionDeCuenta = calendario.getTime();
+            this.creacionDeCuenta = sdf.format(calendario.getTime());
 	}
+        public void setCreacionDeCuenta(String pFecha){
+            this.creacionDeCuenta = pFecha;
+        }
 
 	public static ArrayList<Cliente> getClientes() {
 		return clientes;

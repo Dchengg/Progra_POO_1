@@ -130,8 +130,16 @@ public class Writer{
 		        	paqueteIn.appendChild(estado);
 		        	
 		        	Element categoria = doc.createElement("categoria");
-		        	categoria.appendChild(doc.createTextNode(""));   //paquete.getCategoria()
+		        	categoria.appendChild(doc.createTextNode(paquete.getCategoria()));   //paquete.getCategoria()
 		        	paqueteIn.appendChild(categoria);
+                                
+                                Element horaCambio = doc.createElement("horaCambio");
+		        	horaCambio.appendChild(doc.createTextNode(paquete.getHoraCambio()));   
+		        	paqueteIn.appendChild(horaCambio);
+                                
+                                Element fechaCambio = doc.createElement("fechaCambio");
+		        	fechaCambio.appendChild(doc.createTextNode(paquete.getFechaCambio()));   
+		        	paqueteIn.appendChild(fechaCambio);
 	        	}
 	        	
 	        }
@@ -155,6 +163,10 @@ public class Writer{
 	        	Element contrasena = doc.createElement("contrasena");
 	        	contrasena.appendChild(doc.createTextNode(soporte.getContrasena()));
 	        	campo.appendChild(contrasena);
+                        
+                        Element creacionDeCuenta = doc.createElement("creacionDeCuenta");
+                        creacionDeCuenta.appendChild(doc.createTextNode(soporte.getCreacionDeCuenta()));
+                        campo.appendChild(creacionDeCuenta);
 	        }
 	        
 	        TransformerFactory tranFactory = TransformerFactory.newInstance();
