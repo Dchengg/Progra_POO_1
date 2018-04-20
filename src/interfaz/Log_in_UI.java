@@ -7,6 +7,7 @@ package interfaz;
 
 import aplicacion.Cliente;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -196,13 +197,17 @@ public class Log_in_UI extends javax.swing.JFrame {
     private void LogInButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogInButtonActionPerformed
         String id = ID.getText();
         String contra = contrasena.getText();
+        boolean encontrado = false;
         for(Cliente cliente:getClientes()){
             if(cliente.logIn(id, contra)){
-                Menu_Clientes_UI menuClientes = new Menu_Clientes_UI(cliente);
+                Menu_Clientes_UI menuClientes = new Menu_Clientes_UI(cliente,this);
                 menuClientes.setVisible(true);
                 setVisible(false);
+                encontrado = true;
             }
         }
+        if(!encontrado)
+            JOptionPane.showMessageDialog(null,"No hay ningún usuario registrado, por favor intentelo de nuevo", "Error",JOptionPane.ERROR_MESSAGE);
     }//GEN-LAST:event_LogInButtonActionPerformed
    
     public ArrayList<Cliente> getClientes() {

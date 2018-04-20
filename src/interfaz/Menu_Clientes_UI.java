@@ -14,13 +14,14 @@ import aplicacion.Cliente;
 public class Menu_Clientes_UI extends javax.swing.JFrame {
 
     private Cliente cliente;
- 
+    private Log_in_UI ventanaAnterior;
     /**
      * Creates new form Menu_Clientes_UI
      */
-    public Menu_Clientes_UI(Cliente pCliente) {
+    public Menu_Clientes_UI(Cliente pCliente,Log_in_UI logIn) {
         initComponents();
         setCliente(pCliente);
+        ventanaAnterior = logIn;
     }
 
     /**
@@ -75,6 +76,11 @@ public class Menu_Clientes_UI extends javax.swing.JFrame {
 
         button4.setActionCommand("logOutButton");
         button4.setLabel("Log out");
+        button4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button4ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -153,6 +159,12 @@ public class Menu_Clientes_UI extends javax.swing.JFrame {
         prealertar.setVisible(true);
 
     }//GEN-LAST:event_button3ActionPerformed
+
+    private void button4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button4ActionPerformed
+        setVisible(false);
+        ventanaAnterior.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_button4ActionPerformed
 
     public Cliente getCliente() {
         return cliente;
