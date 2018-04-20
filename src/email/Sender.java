@@ -8,7 +8,7 @@ import javax.mail.internet.*;
 
 public class Sender {
 
-	private String host;
+    private String host;
     private String username;  
     private String password;
 
@@ -34,8 +34,8 @@ public class Sender {
 	        message.setFrom(new InternetAddress(getHost()));
 	        InternetAddress toAddress = new InternetAddress(pAddress);
 	        message.addRecipient(Message.RecipientType.TO, toAddress);
-            message.setSubject(pSubject);
-            message.setText(pContent);
+                message.setSubject(pSubject);
+                message.setText(pContent);
 	        Transport transport = session.getTransport("smtps");
 	        transport.connect(getHost(), getUsername(), getPassword());
 	        transport.sendMessage(message, message.getAllRecipients());

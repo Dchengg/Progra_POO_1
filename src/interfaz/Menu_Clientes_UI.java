@@ -14,6 +14,7 @@ import aplicacion.Cliente;
 public class Menu_Clientes_UI extends javax.swing.JFrame {
 
     private Cliente cliente;
+ 
     /**
      * Creates new form Menu_Clientes_UI
      */
@@ -140,12 +141,17 @@ public class Menu_Clientes_UI extends javax.swing.JFrame {
     }//GEN-LAST:event_button1ActionPerformed
 
     private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
-        PaquetesUI paquetes = new PaquetesUI(getCliente());
+        PaquetesUI paquetes = new PaquetesUI(getCliente(),this);
         paquetes.setVisible(true);
+        setVisible(false);
+        
+        
     }//GEN-LAST:event_button2ActionPerformed
 
     private void button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button3ActionPerformed
-        // TODO add your handling code here:
+        PrealertarUI prealertar = new PrealertarUI();
+        prealertar.setVisible(true);
+
     }//GEN-LAST:event_button3ActionPerformed
 
     public Cliente getCliente() {
