@@ -23,7 +23,6 @@ public class ClienteXML {
 		setClientes(pClientes);
 		setXmlFile(pXmlFile);
 	}
-	
 	public void leerArchivo() {
 		SAXBuilder builder = new SAXBuilder();
 		File xml = new File(xmlFile);
