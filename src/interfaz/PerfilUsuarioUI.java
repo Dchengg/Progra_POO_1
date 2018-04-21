@@ -48,6 +48,7 @@ public class PerfilUsuarioUI extends javax.swing.JFrame {
         numLabel = new javax.swing.JLabel();
         emailLabel = new javax.swing.JLabel();
         notificacionesToggleButton = new javax.swing.JToggleButton();
+        cambiarContraButton = new javax.swing.JButton();
 
         jCheckBox1.setText("jCheckBox1");
 
@@ -73,6 +74,13 @@ public class PerfilUsuarioUI extends javax.swing.JFrame {
             }
         });
 
+        cambiarContraButton.setText("Cambiar Contraseña");
+        cambiarContraButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cambiarContraButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -94,9 +102,12 @@ public class PerfilUsuarioUI extends javax.swing.JFrame {
                             .addComponent(emailLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(18, 18, 18)
-                        .addComponent(notificacionesToggleButton)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addGap(18, 18, 18)
+                                .addComponent(notificacionesToggleButton))
+                            .addComponent(cambiarContraButton))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -122,7 +133,9 @@ public class PerfilUsuarioUI extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(notificacionesToggleButton))
-                .addContainerGap(163, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(cambiarContraButton)
+                .addContainerGap(122, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -153,6 +166,12 @@ public class PerfilUsuarioUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_notificacionesToggleButtonActionPerformed
 
+    private void cambiarContraButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cambiarContraButtonActionPerformed
+        CambiarContraUI cambiar = new CambiarContraUI(cliente);
+        cambiar.setVisible(true);
+        setVisible(false);
+    }//GEN-LAST:event_cambiarContraButtonActionPerformed
+
     public Cliente getCliente() {
         return cliente;
     }
@@ -163,6 +182,7 @@ public class PerfilUsuarioUI extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton cambiarContraButton;
     private javax.swing.JLabel dirLabel;
     private javax.swing.JLabel emailLabel;
     private javax.swing.JCheckBox jCheckBox1;

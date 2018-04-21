@@ -156,6 +156,15 @@ public class Soporte{
             return flete(paquete)+ combustible(paquete) + garantiaRetorno() + impuestoAduanal(paquete,categoria);
         }
 
+        public Paquete verificarPaquete(String id){
+            ArrayList<Paquete> paquetes = listaPaquetes();
+            for(Paquete paquete:paquetes){
+                if(id.equals(paquete.getTrackingID())){
+                    return paquete;
+                }
+            }
+            return null;
+        }
 	public ArrayList<Paquete> listaPaquetes()
 	{
             ArrayList<Paquete> paquetesGlobales = new ArrayList<Paquete>();

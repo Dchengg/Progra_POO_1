@@ -15,13 +15,13 @@ import java.util.ArrayList;
  */
 public class PrealertarUI extends javax.swing.JFrame {
     
-    private ArrayList<Paquete> paquetes;
+    private Cliente cliente;
     /**
      * Creates new form PrealertarUI
      */
     public PrealertarUI(Cliente pCliente) {
         initComponents();
-        paquetes = pCliente.getPaquetes();
+        cliente = pCliente;
     }
 
     /**
@@ -176,8 +176,8 @@ public class PrealertarUI extends javax.swing.JFrame {
         String categoria = categoriaField.getText();
         double valor = Double.parseDouble(valorField.getText());
         String descripcion = descripcionField.getText();
-        Paquete prealertado = new Paquete(id,tienda,courier,valor,categoria,descripcion);
-        paquetes.add(prealertado);
+        Paquete prealertado = new Paquete(id,tienda,courier,valor,categoria,descripcion,cliente.getNombre());
+        cliente.getPaquetes().add(prealertado);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void tiendaFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tiendaFieldActionPerformed

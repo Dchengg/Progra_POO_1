@@ -140,6 +140,7 @@ public class Writer{
                                 Element fechaCambio = doc.createElement("fechaCambio");
 		        	fechaCambio.appendChild(doc.createTextNode(paquete.getFechaCambio()));   
 		        	paqueteIn.appendChild(fechaCambio);
+                                
 	        	}
 	        	
 	        }

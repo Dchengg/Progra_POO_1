@@ -18,10 +18,11 @@ public class PaquetesGlobalesUI extends javax.swing.JFrame {
 
     /**
      * Creates new form PaquetesGlobalesUI
+     * @param pSoporte
      */
     public PaquetesGlobalesUI(Soporte pSoporte) {
         initComponents();
-        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel()  ;
         ArrayList<Paquete> paquetes = pSoporte.listaPaquetes();
         for(Paquete paquete:paquetes){
             String ID = paquete.getTrackingID();
@@ -32,7 +33,8 @@ public class PaquetesGlobalesUI extends javax.swing.JFrame {
             String descripcion = paquete.getDescripcion();
             String estado = paquete.getEstado();
             String categoria = paquete.getCategoria();
-            Object[] row = {ID,descripcion,tienda,categoria,valor,peso,courier,estado};   
+            String dueno = paquete.getDueno();
+            Object[] row = {ID,descripcion,tienda,categoria,valor,peso,courier,estado,dueno};   
             model.addRow(row);
         }
     }
@@ -56,11 +58,11 @@ public class PaquetesGlobalesUI extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Tracking ID", "Descripción", "Tienda", "Categoria", "Valor", "Peso", "Courier", "Estado"
+                "Tracking ID", "Descripción", "Tienda", "Categoria", "Valor", "Peso", "Courier", "Estado", "Dueño"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {

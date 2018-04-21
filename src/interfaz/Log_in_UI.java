@@ -208,12 +208,12 @@ public class Log_in_UI extends javax.swing.JFrame {
         System.out.println(tipo);
         if(tipo.equals("Cliente")){
             for(Cliente cliente:clientes){
-                //if(cliente.logIn(id, contra)){
+                if(cliente.logIn(id, contra)){
                     Menu_Clientes_UI menuClientes = new Menu_Clientes_UI(cliente,this);
                     menuClientes.setVisible(true);
                     setVisible(false);
                     encontrado = true;
-                //}
+                }
             }
         }else if(tipo.equals("Soporte")){
             for(Soporte soporte:soportes){

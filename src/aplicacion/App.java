@@ -30,14 +30,14 @@ public class App {
             //soportes.add(new Soporte("Marco","marcorules","marco@gmail.com"));
             ClienteXML lector = new ClienteXML(clientes,soportes, "src/XML/Usuarios.xml");
             lector.leerArchivo();
-            //AplEmail.init(clientes);
-            /*ApiContextInitializer.init();
+            AplEmail.init(clientes);
+            ApiContextInitializer.init();
             TelegramBotsApi botsApi = new TelegramBotsApi();
             try {
                 botsApi.registerBot(new PackageNotifierBot(clientes));
             }catch(TelegramApiException e) {
                 e.printStackTrace();
-            }*/
+            }
             for(Cliente cliente:clientes) {
                     System.out.println(cliente.toString());
             }

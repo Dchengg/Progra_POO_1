@@ -16,8 +16,9 @@ public class Paquete {
     private String categoria;
     private String horaCambio;
     private String fechaCambio;
+    private String dueno;
 
-    public Paquete(String pTrackingID, String pTienda, String pCourier, double pValor, String pCategoria, String pDescripcion) {
+    public Paquete(String pTrackingID, String pTienda, String pCourier, double pValor, String pCategoria, String pDescripcion, String pDueno) {
         setTrackingID(pTrackingID);
         setTienda(pTienda);
         setCourier(pCourier);
@@ -28,10 +29,11 @@ public class Paquete {
         setEstado("Prealertado");
         setFechaCambio();
         setHoraCambio();
+        setDueno(pDueno);
 
     }
 
-    public Paquete(String pTrackingID, String pTienda, String pCourier, double pValor, double peso, String pDescripcion,String pEstado, String pCategoria, String pFechaCambio, String pHoraCambio) {
+    public Paquete(String pTrackingID, String pTienda, String pCourier, double pValor, double peso, String pDescripcion,String pEstado, String pCategoria, String pFechaCambio, String pHoraCambio,String pDueno) {
         setTrackingID(pTrackingID);
         setTienda(pTienda);
         setCourier(pCourier);
@@ -42,6 +44,7 @@ public class Paquete {
         setCategoria(pCategoria);
         setFechaCambio(pFechaCambio);
         setHoraCambio(pHoraCambio);
+        setDueno(pDueno);
 
     }
 
@@ -143,4 +146,14 @@ public class Paquete {
     public void setFechaCambio(String pFechaCambio){
         this.fechaCambio = pFechaCambio;
     }
+
+    public String getDueno() {
+        return dueno;
+    }
+
+    public void setDueno(String dueno) {
+        this.dueno = dueno;
+    }
+    
+    
 }

@@ -78,15 +78,15 @@ public class PackageNotifierBot extends TelegramLongPollingBot {
 			  String codigo = generarCodigo();
 			  Cliente cliente = buscarCliente(number,codigo);
 			  if(!cliente.equals(null)) {
-				  message.setText(codigo);
-				  try {
-			           	execute(message); // Call method to send the message
-			      } catch (TelegramApiException e) {
+                                message.setText(codigo);
+                                try {
+                                      execute(message); // Call method to send the message
+                                } catch (TelegramApiException e) {
 			            e.printStackTrace();
-			      }
-				  cliente.cambiarContrasena(codigo);
+                                }
+                                 cliente.setCodigo(codigo);
 			  }else {
-				  message.setText("No hay ningun usuario valido con ese n�mero telefonico");
+				  message.setText("No hay ningun usuario valido con ese número telefonico");
 				  try {
 			           	execute(message); // Call method to send the message
 			      } catch (TelegramApiException e) {

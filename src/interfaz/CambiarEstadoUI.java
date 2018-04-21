@@ -5,17 +5,24 @@
  */
 package interfaz;
 
+import aplicacion.Paquete;
+import aplicacion.Soporte;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Diego
  */
 public class CambiarEstadoUI extends javax.swing.JFrame {
 
+    private Soporte soporte;
     /**
      * Creates new form CambiarEstadoUI
      */
-    public CambiarEstadoUI() {
+    public CambiarEstadoUI(Soporte pSoporte) {
         initComponents();
+        soporte = pSoporte;
+        jPanel1.setVisible(false);
     }
 
     /**
@@ -27,57 +34,140 @@ public class CambiarEstadoUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        idField = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
+        duenoLabel = new javax.swing.JLabel();
+        tiendaLabel = new javax.swing.JLabel();
+        courierLabel = new javax.swing.JLabel();
+        categoriaLabel = new javax.swing.JLabel();
+        descripcionLabel = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        verficarButton = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setText("Cambiar estado de paquete");
+
+        jLabel2.setText("ID del paquete : ");
+
+        duenoLabel.setText("jLabel3");
+
+        tiendaLabel.setText("jLabel4");
+
+        courierLabel.setText("jLabel5");
+
+        categoriaLabel.setText("jLabel6");
+
+        descripcionLabel.setText("jLabel7");
+
+        jLabel3.setText("Estado : ");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(categoriaLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
+                        .addComponent(duenoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(tiendaLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(courierLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(descripcionLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel3))
+                .addContainerGap(484, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(duenoLabel)
+                .addGap(18, 18, 18)
+                .addComponent(tiendaLabel)
+                .addGap(18, 18, 18)
+                .addComponent(courierLabel)
+                .addGap(18, 18, 18)
+                .addComponent(categoriaLabel)
+                .addGap(18, 18, 18)
+                .addComponent(descripcionLabel)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel3)
+                .addContainerGap(94, Short.MAX_VALUE))
+        );
+
+        verficarButton.setText("Verificar ID Paquete");
+        verficarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                verficarButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 677, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(idField, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26)
+                        .addComponent(verficarButton)))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 413, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addGap(42, 42, 42)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(idField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(verficarButton))
+                .addGap(18, 18, 18)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CambiarEstadoUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CambiarEstadoUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CambiarEstadoUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CambiarEstadoUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+    private void verficarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verficarButtonActionPerformed
+        String id = idField.getText();
+        Paquete paquete = soporte.verificarPaquete(id);
+        if(paquete != null){
+            duenoLabel.setText("Dueño : " + paquete.getDueno());
+            tiendaLabel.setText("Tienda : " + paquete.getTienda());
+            courierLabel.setText("Compañia Courier : " + paquete.getCourier());
+            categoriaLabel.setText("Categoria : " + paquete.getCategoria());
+            descripcionLabel.setText("Descripción : " + paquete.getDescripcion());
+            jPanel1.setVisible(true);
+        }else{
+            JOptionPane.showMessageDialog(null,"El paquete con es id no existe,por favor ingrese un id valido", "Error",JOptionPane.ERROR_MESSAGE);                                           
         }
-        //</editor-fold>
+    }//GEN-LAST:event_verficarButtonActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new CambiarEstadoUI().setVisible(true);
-            }
-        });
-    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel categoriaLabel;
+    private javax.swing.JLabel courierLabel;
+    private javax.swing.JLabel descripcionLabel;
+    private javax.swing.JLabel duenoLabel;
+    private javax.swing.JTextField idField;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel tiendaLabel;
+    private javax.swing.JButton verficarButton;
     // End of variables declaration//GEN-END:variables
 }
