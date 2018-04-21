@@ -5,32 +5,22 @@
  */
 package interfaz;
 
-import aplicacion.Administrador;
-import aplicacion.Cliente;
 import aplicacion.Soporte;
-import java.awt.BorderLayout;
-import java.util.ArrayList;
-import javax.swing.JPanel;
 
 /**
  *
  * @author Diego
  */
-public class Menu_Admin extends javax.swing.JFrame {
+public class MenuSoporteUI extends javax.swing.JFrame {
 
-    private Administrador admin;
-    private ArrayList<Cliente> clientes;
-    private ArrayList<Soporte> soportes;
+    private Soporte soporte;
+    
     /**
-     * Creates new form Menu_Admin
+     * Creates new form MenuSoporteUI
      */
-    public Menu_Admin(Administrador pAdmin,ArrayList<Cliente> pClientes,ArrayList<Soporte>pSoportes) {
+    public MenuSoporteUI(Soporte pSoporte) {
+        soporte = pSoporte;
         initComponents();
-        admin = pAdmin;
-        clientes = pClientes;
-        soportes = pSoportes;
-        
-      
     }
 
     /**
@@ -50,14 +40,14 @@ public class Menu_Admin extends javax.swing.JFrame {
 
         jLabel1.setText("Bienvenido");
 
-        jButton1.setText("Crear cuenta de Soporte");
+        jButton1.setText("Cambiar estado de los paquetes");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Show chart");
+        jButton2.setText("Ver todos los paquetes");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -72,47 +62,36 @@ public class Menu_Admin extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jButton1)
-                        .addComponent(jButton2)))
-                .addContainerGap(85, Short.MAX_VALUE))
+                    .addComponent(jButton1)
+                    .addComponent(jButton2))
+                .addContainerGap(458, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(21, 21, 21)
                 .addComponent(jLabel1)
-                .addGap(61, 61, 61)
+                .addGap(40, 40, 40)
                 .addComponent(jButton1)
-                .addGap(50, 50, 50)
+                .addGap(51, 51, 51)
                 .addComponent(jButton2)
-                .addContainerGap(118, Short.MAX_VALUE))
+                .addContainerGap(290, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        NuevoSoporteUI nuevoSoporte = new NuevoSoporteUI(admin);
-        nuevoSoporte.setVisible(true);
-        setVisible(false);
+        // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        DashBoard dashboard = new DashBoard(admin);
-        dashboard.setVisible(true);
+        PaquetesGlobalesUI paquetes = new PaquetesGlobalesUI(soporte);
+        paquetes.setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     
-    /*private static PieDataset createDateSet(ArrayList<Paquete> paquetes){
-        DefaultPieDataset dataset = new DefaultPieDataset();
-        ArrayList<Paquete> paquetesGlobales = new ArrayList<Paquete>();
-        for(Cliente cliente:clientes){
-            
-        }
-        
-    }*/
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

@@ -3,89 +3,42 @@
     <tabla Nombre="Clientes">
         <campo>
             <nombre>Diego Cheng</nombre>
-            <email>bruh@gmail.com</email>
-            <dirrecion>Santa Ana</dirrecion>
-            <numTel>123</numTel>
-            <fechaDeNacimiento>1/2/3</fechaDeNacimiento>
+            <email>diegocheng1973@gmail.com</email>
+            <dirrecion>Santa ana</dirrecion>
+            <numTel>86564739</numTel>
+            <fechaDeNacimiento>31/3/99</fechaDeNacimiento>
             <perfilCompleto>true</perfilCompleto>
             <contrasena>contra</contrasena>
             <notificaciones>false</notificaciones>
-            <numCasillero>a221</numCasillero>
-            <paquetes>
-                <paquete>
-                    <trackingID>000</trackingID>
-                    <tienda>Amazon</tienda>
-                    <courier>Aerocasillas</courier>
-                    <valor>1459.9</valor>
-                    <peso>0</peso>
-                    <descripcion>Libro de texto</descripcion>
-                    <estado>Prealertado</estado>
-                    <categoria/>
-                </paquete>
-            </paquetes>
-        </campo>
-        <campo>
-            <nombre>Luis Chavaria</nombre>
-            <email>luisSeMamo@gmail.com</email>
-            <dirrecion>San Jose</dirrecion>
-            <numTel>3456</numTel>
-            <fechaDeNacimiento>5/7/5</fechaDeNacimiento>
-            <perfilCompleto>false</perfilCompleto>
-            <contrasena>:p</contrasena>
-            <notificaciones>true</notificaciones>
-            <numCasillero>a231</numCasillero>
-            <paquetes>
-                <paquete>
-                    <trackingID>000</trackingID>
-                    <tienda>Amazon</tienda>
-                    <courier>Aerocasillas</courier>
-                    <valor>1459.9</valor>
-                    <peso>0</peso>
-                    <descripcion>Libro de texto</descripcion>
-                    <estado>Prealertado</estado>
-                    <categoria/>
-                </paquete>
-            </paquetes>
-        </campo>
-        <campo>
-            <nombre>Mario Hidalgo</nombre>
-            <email>jeje@gmail.com</email>
-            <dirrecion>moravia</dirrecion>
-            <numTel>666</numTel>
-            <fechaDeNacimiento>5/6/7</fechaDeNacimiento>
-            <perfilCompleto>true</perfilCompleto>
-            <contrasena>sumadre</contrasena>
-            <notificaciones>true</notificaciones>
-            <numCasillero>a222</numCasillero>
+            <numCasillero>a213</numCasillero>
             <paquetes>
                 <paquete>
                     <trackingID>123</trackingID>
                     <tienda>Amazon</tienda>
-                    <courier>Aerocasillas</courier>
-                    <valor>1000.0</valor>
+                    <courier>DHL</courier>
+                    <valor>24.99</valor>
                     <peso>0</peso>
-                    <descripcion>Es una tostadora</descripcion>
+                    <descripcion>IS BACKLIT :D</descripcion>
                     <estado>Prealertado</estado>
-                    <categoria/>
-                </paquete>
-                <paquete>
-                    <trackingID>000</trackingID>
-                    <tienda>Amazon</tienda>
-                    <courier>Aerocasillas</courier>
-                    <valor>1459.9</valor>
-                    <peso>0</peso>
-                    <descripcion>Libro de texto</descripcion>
-                    <estado>Prealertado</estado>
-                    <categoria/>
+                    <categoria>Teclado</categoria>
+                    <horaCambio>19:30:14</horaCambio>
+                    <fechaCambio>20/04/2018</fechaCambio>
                 </paquete>
             </paquetes>
         </campo>
     </tabla>
     <tabla Nombre="Soportes">
         <campo>
-            <nombre>Marcos Herrera</nombre>
-            <email>yoquese</email>
-            <contrasena>MHerrera@gmail.com</contrasena>
+            <nombre>Marco</nombre>
+            <email>marco@gmail.com</email>
+            <contrasena>marcorules</contrasena>
+            <creacionDeCuenta>21/04/2018</creacionDeCuenta>
+        </campo>
+        <campo>
+            <nombre>Juanca</nombre>
+            <email>juanca03@gmail.com</email>
+            <contrasena>fuck</contrasena>
+            <creacionDeCuenta>21/04/2018</creacionDeCuenta>
         </campo>
     </tabla>
 </tables>

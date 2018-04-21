@@ -20,56 +20,35 @@ public class App {
 
 	
 	public static void main(String[] args) {
-		ArrayList<Cliente> clientes = new ArrayList<Cliente>();
-                ArrayList<Soporte> soportes = new ArrayList<Soporte>();
-		ClienteXML lector = new ClienteXML(clientes,soportes, "src/XML/Usuarios.xml");
-		lector.leerArchivo();
-		//AplEmail.init(clientes);
-		/*ApiContextInitializer.init();
-		TelegramBotsApi botsApi = new TelegramBotsApi();
-		try {
-                    botsApi.registerBot(new PackageNotifierBot(clientes));
-	        }catch(TelegramApiException e) {
-                    e.printStackTrace();
-                }*/
-		for(Cliente cliente:clientes) {
-			System.out.println(cliente.toString());
-		}
-		
-		for(Cliente cliente:clientes) {
-			System.out.println(cliente.toString());
-		}
-                Writer escritor = new Writer(clientes,soportes, "src/XML/Usuarios.xml" );
-		escritor.escribirArchivo();
-		UI.init(clientes, soportes);
+            ArrayList<Cliente> clientes = new ArrayList<Cliente>();
+            ArrayList<Soporte> soportes = new ArrayList<Soporte>();
+            Soporte.setClientes(clientes);
+            Administrador admin = new Administrador();
+            Administrador.setClientes(clientes);
+            Administrador.setSoportes(soportes);
+            //clientes.add(new Cliente("Diego Cheng","diegocheng1973@gmail.com","Santa ana","86564739","31/3/99",true,"contra",false,"a213"));
+            //soportes.add(new Soporte("Marco","marcorules","marco@gmail.com"));
+            ClienteXML lector = new ClienteXML(clientes,soportes, "src/XML/Usuarios.xml");
+            lector.leerArchivo();
+            //AplEmail.init(clientes);
+            /*ApiContextInitializer.init();
+            TelegramBotsApi botsApi = new TelegramBotsApi();
+            try {
+                botsApi.registerBot(new PackageNotifierBot(clientes));
+            }catch(TelegramApiException e) {
+                e.printStackTrace();
+            }*/
+            for(Cliente cliente:clientes) {
+                    System.out.println(cliente.toString());
+            }
+            UI.init(clientes, soportes,admin);
+            Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
+                public void run() {
+                    Writer escritor = new Writer(clientes,soportes, "src/XML/Usuarios.xml" );
+                    escritor.escribirArchivo();
+                }
+            }, "Shutdown-thread"));
                 
 	}
-	
-	private static boolean menuLogIn(ArrayList<Cliente> clientes) {
-		String msg;
-		//CloseShieldInputStream stream = new CloseShieldInputStream(System.in);
-		Scanner reader = new Scanner(System.in);
-		msg = "Bienvenido a Package Notifier"+ "\n";
-		msg += "LOG IN"+ "\n";
-		msg += "ID : " ;
-		System.out.println(msg);
-		String id = reader.nextLine();
-		System.out.print("Contrase�a: ");
-		String contra = reader.nextLine();
-		System.out.println("");
-		for(Cliente cliente:clientes) {
-			if(cliente.logIn(id,contra)){
-				//reader.close();
-				return true;
-			}
-		}
-		//reader.close();
-		return false;
-		
-	}
-
-
-	
-	
 	
 }

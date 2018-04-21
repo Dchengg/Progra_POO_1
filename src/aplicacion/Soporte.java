@@ -15,7 +15,7 @@ public class Soporte{
 	private String contrasena;
 	private String correo;
 	private String creacionDeCuenta;
-	private static ArrayList<Cliente> clientes = new ArrayList<Cliente>();
+	private static ArrayList<Cliente> clientes;
 	//donde se crea cada cliente hay que a;adirlo aqui!!
 	
 	
@@ -77,6 +77,14 @@ public class Soporte{
 			
 	//enviar correo
 	}
+        
+        public boolean logIn(String id, String contra){
+            if(id.equals(getNombre()) && contra.equals(getContrasena())){
+                return true;
+            }else{
+                return false;
+            }
+        }
         
         public double impuestoAduanal(Paquete paquete, Categoria categoria){
             double precio = paquete.getValor();
@@ -148,15 +156,16 @@ public class Soporte{
             return flete(paquete)+ combustible(paquete) + garantiaRetorno() + impuestoAduanal(paquete,categoria);
         }
 
-	public void listaPaquetes()
+	public ArrayList<Paquete> listaPaquetes()
 	{
-            for (Cliente cliente : clientes){
+            ArrayList<Paquete> paquetesGlobales = new ArrayList<Paquete>();
+            for (Cliente cliente : clientes){                
                  ArrayList<Paquete> paquetes = cliente.getPaquetes();
-                 System.out.println(cliente.toString());
                  for(Paquete paquete : paquetes){
-                     System.out.println(paquete.toString());
+                     paquetesGlobales.add(paquete);
                  }
             }	
+            return paquetesGlobales;
 	}
 	
 	@Override

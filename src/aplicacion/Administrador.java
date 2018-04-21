@@ -9,19 +9,94 @@ public class Administrador {
 
 	private String nombre= "administrador";
 	private String contrasena= "123Adm";
-	private ArrayList<Soporte> Soportes = new ArrayList<Soporte>();
-	private ArrayList<Cliente> clientes = Soporte.getClientes();
+	private static ArrayList<Soporte> soportes;
+	private static ArrayList<Cliente> clientes;
 	
-
-
+        public Administrador(){
+            
+        }
+        
 	public void creaSoporte(String nombre, String contrasena,String correo)
 	{
 		Soporte soporteNuevo = new Soporte (nombre,contrasena,correo);
-		Soportes.add(soporteNuevo);
+		soportes.add(soporteNuevo);
 		
 	}
 	
+        public boolean logIn(String id, String contra){
+            if(id.equals(getNombre()) && contra.equals(getContrasena())){
+                return true;
+            }else{
+                return false;
+            }
+        }
 	
+        public Map<String, String> getEstados(){
+            Map<String, String> estados = new HashMap<String,String>();
+            for(Cliente cliente:clientes){
+                ArrayList<Paquete> paquetes = cliente.getPaquetes();
+                for(Paquete paquete:paquetes){
+                    if(estados.containsKey(paquete.getEstado())){
+                        String valor = paquete.getEstado();
+                        int iValor = Integer.parseInt(valor)+1;
+                        estados.put(paquete.getEstado(), String.valueOf(iValor));
+                    }else{
+                        estados.put(paquete.getEstado(), "1");
+                    }
+                }
+            }
+            for(String name: estados.keySet()){
+                String key = name;
+                String value = estados.get(name);
+                System.out.println(key + " = " + value);
+            }
+            return estados;
+        }
+        
+        public Map<String, String> getTiendas(){
+            Map<String, String> tiendas = new HashMap<String,String>();
+            for(Cliente cliente:clientes){
+                ArrayList<Paquete> paquetes = cliente.getPaquetes();
+                for(Paquete paquete:paquetes){
+                    if(tiendas.containsKey(paquete.getTienda())){
+                        String valor = paquete.getTienda();
+                        int iValor = Integer.parseInt(valor)+1;
+                        tiendas.put(paquete.getTienda(), String.valueOf(iValor));
+                    }else{
+                        tiendas.put(paquete.getTienda(), "1");
+                    }
+                }
+            }
+            for(String name: tiendas.keySet()){
+                String key = name;
+                String value = tiendas.get(name);
+                System.out.println(key + " = " + value);
+            }
+            return tiendas;
+        }
+        
+        public Map<String, String> getCategorias(){
+            Map<String, String> categorias = new HashMap<String,String>();
+            for(Cliente cliente:clientes){
+                ArrayList<Paquete> paquetes = cliente.getPaquetes();
+                for(Paquete paquete:paquetes){
+                    if(categorias.containsKey(paquete.getCategoria())){
+                        String valor = paquete.getCategoria();
+                        int iValor = Integer.parseInt(valor)+1;
+                        categorias.put(paquete.getCategoria(), String.valueOf(iValor));
+                    }else{
+                        categorias.put(paquete.getCategoria(), "1");
+                    }
+                }
+            }
+            for(String name: categorias.keySet()){
+                String key = name;
+                String value = categorias.get(name);
+                System.out.println(key + " = " + value);
+            }
+            return categorias;
+        }
+        
 	public String dashBoard ()
 	{
 
@@ -31,72 +106,71 @@ public class Administrador {
 		Map<String, String> couriers = new HashMap<String,String>();
 		
 		//estados
-		
-		for (int i=0; i <= clientes.size(); i++)
-		{
-			
-			for (int e = 0; e <= clientes.get(i).getPaquetes().size(); e++)
-			{
-				//estados
-				
-				if (estados.containsKey(clientes.get(i).getPaquetes().get(e).getEstado()))
-				{
-					String valor = estados.get(clientes.get(i).getPaquetes().get(e).getEstado());
-					int iValor = Integer.parseInt(valor)+1;
-					estados.put(clientes.get(i).getPaquetes().get(e).getEstado(), String.valueOf(iValor));
-				}
-				
-				else
-				{
-					estados.put(clientes.get(i).getPaquetes().get(e).getEstado(), "1");
-				}
-				
-				
-				//tiendas
-				
-				if (tiendas.containsKey(clientes.get(i).getPaquetes().get(e).getTienda()))
-				{
-					String valor = tiendas.get(clientes.get(i).getPaquetes().get(e).getTienda());
-					int iValor = Integer.parseInt(valor)+1;
-					tiendas.put(clientes.get(i).getPaquetes().get(e).getTienda(), String.valueOf(iValor));
-				}
-				
-				else
-				{
-					tiendas.put(clientes.get(i).getPaquetes().get(e).getTienda(), "1");
-				}
-				
-				
-				//categorias
-				
-				if (categorias.containsKey(clientes.get(i).getPaquetes().get(e).getCategoria()))
-				{
-					String valor = categorias.get(clientes.get(i).getPaquetes().get(e).getCategoria());
-					int iValor = Integer.parseInt(valor)+1;
-					categorias.put(clientes.get(i).getPaquetes().get(e).getCategoria(), String.valueOf(iValor));
-				}
-				
-				else
-				{
-					categorias.put(clientes.get(i).getPaquetes().get(e).getCategoria(), "1");
-				}
-				
-				
-				//compa�ias
-				
-				if (couriers.containsKey(clientes.get(i).getPaquetes().get(e).getCourier()))
-				{
-					String valor = couriers.get(clientes.get(i).getPaquetes().get(e).getCourier());
-					int iValor = Integer.parseInt(valor)+1;
-					couriers.put(clientes.get(i).getPaquetes().get(e).getCourier(), String.valueOf(iValor));
-				}
-				
-				else
-				{
-					couriers.put(clientes.get(i).getPaquetes().get(e).getCourier(), "1");
-				} 
-				
-			}	
+		System.out.println(clientes.size());
+		for (int i=0; i < clientes.size(); i++)
+		{		
+                    for (int e = 0; e < clientes.get(i).getPaquetes().size(); e++)
+                    {
+                        //estados
+
+                        if (estados.containsKey(clientes.get(i).getPaquetes().get(e).getEstado()))
+                        {
+                                String valor = estados.get(clientes.get(i).getPaquetes().get(e).getEstado());
+                                int iValor = Integer.parseInt(valor)+1;
+                                estados.put(clientes.get(i).getPaquetes().get(e).getEstado(), String.valueOf(iValor));
+                        }
+
+                        else
+                        {
+                                estados.put(clientes.get(i).getPaquetes().get(e).getEstado(), "1");
+                        }
+
+
+                        //tiendas
+
+                        if (tiendas.containsKey(clientes.get(i).getPaquetes().get(e).getTienda()))
+                        {
+                                String valor = tiendas.get(clientes.get(i).getPaquetes().get(e).getTienda());
+                                int iValor = Integer.parseInt(valor)+1;
+                                tiendas.put(clientes.get(i).getPaquetes().get(e).getTienda(), String.valueOf(iValor));
+                        }
+
+                        else
+                        {
+                                tiendas.put(clientes.get(i).getPaquetes().get(e).getTienda(), "1");
+                        }
+
+
+                        //categorias
+
+                        if (categorias.containsKey(clientes.get(i).getPaquetes().get(e).getCategoria()))
+                        {
+                                String valor = categorias.get(clientes.get(i).getPaquetes().get(e).getCategoria());
+                                int iValor = Integer.parseInt(valor)+1;
+                                categorias.put(clientes.get(i).getPaquetes().get(e).getCategoria(), String.valueOf(iValor));
+                        }
+
+                        else
+                        {
+                                categorias.put(clientes.get(i).getPaquetes().get(e).getCategoria(), "1");
+                        }
+
+
+                        //compa�ias
+
+                        if (couriers.containsKey(clientes.get(i).getPaquetes().get(e).getCourier()))
+                        {
+                                String valor = couriers.get(clientes.get(i).getPaquetes().get(e).getCourier());
+                                int iValor = Integer.parseInt(valor)+1;
+                                couriers.put(clientes.get(i).getPaquetes().get(e).getCourier(), String.valueOf(iValor));
+                        }
+
+                        else
+                        {
+                                couriers.put(clientes.get(i).getPaquetes().get(e).getCourier(), "1");
+                        } 
+
+                    }	
 		}
 		
 		return ("Estados: " + estados.toString() + " " + "Tiendas: " + tiendas.toString() + " " + "Categorias: " + categorias.toString()+ " " + "Compañias: " + couriers.toString());
@@ -117,19 +191,19 @@ public class Administrador {
 	public void setContrasena(String contrasena) {
 		this.contrasena = contrasena;
 	}
-	public ArrayList<Cliente> getClientes() {
+	public static ArrayList<Cliente> getClientes() {
 		return clientes;
 	}
-	public void setClientes(ArrayList<Cliente> clientes) {
-		this.clientes = clientes;
+	public static void setClientes(ArrayList<Cliente> pClientes) {
+		clientes = pClientes;
 	}
 	
-	public ArrayList<Soporte> getSoportes() {
-		return Soportes;
+	public static ArrayList<Soporte> getSoportes() {
+		return soportes;
 	}
 
-	public void setSoportes(ArrayList<Soporte> soportes) {
-		Soportes = soportes;
+	public static void setSoportes(ArrayList<Soporte> pSoportes) {
+		soportes = pSoportes;
 	}
 
 }

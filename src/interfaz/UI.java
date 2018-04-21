@@ -5,6 +5,7 @@
  */
 package interfaz;
 
+import aplicacion.Administrador;
 import aplicacion.Cliente;
 import aplicacion.Soporte;
 import java.util.ArrayList;
@@ -15,8 +16,8 @@ import java.util.ArrayList;
  */
 public class UI {
     
-    public static void init(ArrayList<Cliente> clientes, ArrayList<Soporte> soportes){
-        Log_in_UI loginUI = new Log_in_UI(clientes);
+    public static void init(ArrayList<Cliente> clientes, ArrayList<Soporte> soportes,Administrador admin){
+        Log_in_UI loginUI = new Log_in_UI(clientes,soportes,admin);
         loginUI.setVisible(true);
     }
 }

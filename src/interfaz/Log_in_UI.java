@@ -5,7 +5,9 @@
  */
 package interfaz;
 
+import aplicacion.Administrador;
 import aplicacion.Cliente;
+import aplicacion.Soporte;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
@@ -16,13 +18,17 @@ import javax.swing.JOptionPane;
 public class Log_in_UI extends javax.swing.JFrame {
     
     private ArrayList<Cliente> clientes;
+    private ArrayList<Soporte> soportes;
+    private Administrador admin;
     
     /**
      * Creates new form Log_in_UI
      */
-    public Log_in_UI(ArrayList<Cliente> clientes) {
+    public Log_in_UI(ArrayList<Cliente> pClientes, ArrayList<Soporte> pSoportes, Administrador  pAdmin) {
         initComponents();  
-        setClientes(clientes);
+        clientes = pClientes;
+        soportes = pSoportes;
+        admin = pAdmin;
     }
 
     /**
@@ -200,26 +206,36 @@ public class Log_in_UI extends javax.swing.JFrame {
         boolean encontrado = false;
         String tipo = tipoDeUsuario.getSelectedItem().toString();
         System.out.println(tipo);
-        for(Cliente cliente:getClientes()){
-            if(cliente.logIn(id, contra)){
-                Menu_Clientes_UI menuClientes = new Menu_Clientes_UI(cliente,this);
-                menuClientes.setVisible(true);
+        if(tipo.equals("Cliente")){
+            for(Cliente cliente:clientes){
+                //if(cliente.logIn(id, contra)){
+                    Menu_Clientes_UI menuClientes = new Menu_Clientes_UI(cliente,this);
+                    menuClientes.setVisible(true);
+                    setVisible(false);
+                    encontrado = true;
+                //}
+            }
+        }else if(tipo.equals("Soporte")){
+            for(Soporte soporte:soportes){
+                //if(soporte.logIn(id, contra)){
+                    MenuSoporteUI menuSoporte = new MenuSoporteUI(soporte);
+                    menuSoporte.setVisible(true);
+                    setVisible(false);
+                    encontrado = true;
+                //}
+            }
+        }else if(tipo.equals("Admin")){
+            //if(admin.logIn(id,contra)){
+                Menu_Admin menuAdmin = new Menu_Admin(admin,clientes,soportes);
+                menuAdmin.setVisible(true);
                 setVisible(false);
                 encontrado = true;
-            }
+            //}
         }
         if(!encontrado)
             JOptionPane.showMessageDialog(null,"No hay ningún usuario registrado, por favor intentelo de nuevo", "Error",JOptionPane.ERROR_MESSAGE);
     }//GEN-LAST:event_LogInButtonActionPerformed
    
-    public ArrayList<Cliente> getClientes() {
-        return clientes;
-    }
-
-    public void setClientes(ArrayList<Cliente> clientes) {
-        this.clientes = clientes;
-    }
-    
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
