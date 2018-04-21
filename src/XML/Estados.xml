@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<table>
+    <estado>
+        <descripcion>Prealertado</descripcion>
+    </estado>
+    <estado>
+        <descripcion>Recibido en Miami</descripcion>
+    </estado>
+    <estado>
+        <descripcion>En tránsito a país de destino</descripcion>
+    </estado>
+    <estado>
+        <descripcion>En Aduanas</descripcion>
+    </estado>
+    <estado>
+        <descripcion>En tránsito a Counter Local</descripcion>
+    </estado>
+    <estado>
+        <descripcion>Recibido en país destino</descripcion>
+    </estado>
+    <estado>
+        <descripcion>Entregado</descripcion>
+    </estado>
+</table>

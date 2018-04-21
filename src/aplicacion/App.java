@@ -8,6 +8,8 @@ import java.util.Scanner;
 
 import XML.ClienteXML;
 import XML.Writer;
+import XML.EstadosWriter;
+import XML.EstadosXML;
 import interfaz.Log_in_UI;
 import interfaz.UI;
 import org.telegram.telegrambots.ApiContextInitializer;
@@ -22,6 +24,7 @@ public class App {
 	public static void main(String[] args) {
             ArrayList<Cliente> clientes = new ArrayList<Cliente>();
             ArrayList<Soporte> soportes = new ArrayList<Soporte>();
+            ArrayList<Estados> EstadosN = new ArrayList<Estados>();
             Soporte.setClientes(clientes);
             Administrador admin = new Administrador();
             Administrador.setClientes(clientes);
@@ -30,6 +33,9 @@ public class App {
             //soportes.add(new Soporte("Marco","marcorules","marco@gmail.com"));
             ClienteXML lector = new ClienteXML(clientes,soportes, "src/XML/Usuarios.xml");
             lector.leerArchivo();
+            EstadosXML lectorEstados = new EstadosXML(EstadosN,"src/XML/Estados.xml" );
+            lectorEstados.leerArchivo();
+            
             //AplEmail.init(clientes);
             /*ApiContextInitializer.init();
             TelegramBotsApi botsApi = new TelegramBotsApi();
