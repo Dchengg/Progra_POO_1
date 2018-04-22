@@ -20,6 +20,18 @@ public class Paquete {
     private String fechaCambio;
     private Cliente dueno;
 
+    /**
+        * Crea el paquete
+        * @param pTrackingID es el ID del paquete
+        * @param pTienda luegar de donde proviene el paquete
+        * @param pCourier compania de la que proviene el paquete
+        * @param pValor precio del paquete
+        * @param pCategoria tipo de paquete
+        * @param pDescripcion pequena descripcion del paquete
+        * @param pDueno el dueno del paquete
+        */
+    
+    
     public Paquete(String pTrackingID, String pTienda, String pCourier, double pValor, String pCategoria, String pDescripcion, Cliente pDueno) {
         setTrackingID(pTrackingID);
         setTienda(pTienda);
@@ -35,6 +47,22 @@ public class Paquete {
 
     }
 
+    /**
+        * Crea el paquete
+        * @param pTrackingID es el ID del paquete
+        * @param pTienda luegar de donde proviene el paquete
+        * @param pCourier compania de la que proviene el paquete
+        * @param pValor precio del paquete
+        * @param pCategoria tipo de paquete
+        * @param pDescripcion pequena descripcion del paquete
+        * @param pDueno el dueno del paquete
+        * @param peso cuanto pesa el paquete
+        * @param pEstado estado en el que se encuentra
+        * @param pFechaCambio fecha en la que cambio de estado
+        * @param pHoraCambio hora a la que cambio de estado
+        * 
+        */
+    
     public Paquete(String pTrackingID, String pTienda, String pCourier, double pValor, double peso, String pDescripcion,String pEstado, String pCategoria, String pFechaCambio, String pHoraCambio,Cliente pDueno) {
         setTrackingID(pTrackingID);
         setTienda(pTienda);

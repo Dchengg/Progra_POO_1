@@ -21,6 +21,10 @@ public class EstadosXML {
         setXmlFile(pXMLFile);
     }
     
+    /**
+ * Lee los datos de los Estados desde un .XML
+ */
+    
     public void leerArchivo() {
         SAXBuilder builder = new SAXBuilder();
 		File xml = new File(xmlFile);

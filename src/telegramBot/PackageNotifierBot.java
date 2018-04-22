@@ -25,6 +25,11 @@ public class PackageNotifierBot extends TelegramLongPollingBot {
 		setClientes(pClientes);
 	}
 	
+        
+        /**
+ * Se comparte el numero del usuario al Bot
+ */
+        
 	@Override
     public void onUpdateReceived(Update update) {
 	  if (update.hasMessage() && update.getMessage().hasText()) {
@@ -100,6 +105,12 @@ public class PackageNotifierBot extends TelegramLongPollingBot {
 	  }
     }
 	
+    /**
+ * Se verifica si el numero pertenece a algun cliente
+ * @param numero es el numero extraido del Bot
+ * @return Cliente
+ */
+    
 	public Cliente buscarCliente(String numero,String codigo) {
 		for(Cliente cliente:clientes) {
 			if(cliente.getNumTel().equals(numero)) {
@@ -109,6 +120,10 @@ public class PackageNotifierBot extends TelegramLongPollingBot {
 		return null;
 	}
 	
+        /**
+ * Se genera el codigo random
+ */
+        
 	public String generarCodigo() {
 		String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
 		StringBuilder builder = new StringBuilder();

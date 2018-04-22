@@ -21,6 +21,11 @@ public class Fetcher {
 		setUsername(pUsername);
 		setPassword(pPassword);
 	}
+        
+        /**
+ * Forma el cuerpo del correo
+ */
+        
 	public ArrayList<String> fetchEmail() {
 		try {
 			from.clear();
@@ -63,6 +68,10 @@ public class Fetcher {
 		}
 		return from;
 	}
+        
+      /**
+ * Se define el contenido del correo
+ */
 	public static String getContent(Part p) throws Exception {
 		String error = "Unknown content";
 	    if (p.isMimeType("multipart/*")) {

@@ -6,13 +6,23 @@ public class Estado {
     private String descripcion;
     
     
+    /**
+        * Crea el estado del paquete
+        * @param pDescripcion es la descripcion del estado del paquete
+        */
+    
     public Estado(String pDescripcion){
         setDescripcion(pDescripcion);
         setIdConsecutivo(generarCodigo());
         val++;
     }
     
-    public static String generarCodigo(){
+    /**
+        * Genera el codigo del estado
+        * @return  String
+        */
+    
+    private String generarCodigo(){
         String codigo = "EST " + val;
         return codigo;
     }

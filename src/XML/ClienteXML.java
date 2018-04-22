@@ -13,16 +13,26 @@ import org.jdom2.Element;
 import org.jdom2.JDOMException;
 import org.jdom2.input.SAXBuilder;
 
+
+
+
 public class ClienteXML {
 	private ArrayList<Soporte> soportes;
 	private ArrayList<Cliente> clientes;
 	private String xmlFile;
 	
+        
+        
 	public ClienteXML (ArrayList<Cliente> pClientes, ArrayList<Soporte> pSoportes, String pXmlFile) {
 		setSoportes(pSoportes);
 		setClientes(pClientes);
 		setXmlFile(pXmlFile);
 	}
+       
+        
+        /**
+ * Lee los datos de los clientes y soportes desde un .XML, los guarda en una lista
+ */
 	public void leerArchivo() {
 		SAXBuilder builder = new SAXBuilder();
 		File xml = new File(xmlFile);

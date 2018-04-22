@@ -12,6 +12,10 @@ public class Sender {
     private static String username;  
     private static String password;
 
+    /**
+ *Une las partes del corroe
+ */
+    
     public static void sendEmail(String pAddress, String pSubject, String pContent) {
         Properties props = System.getProperties();
         props.put("mail.smtp.starttls.enable", "true");

@@ -16,6 +16,14 @@ public class Administrador {
             
         }
         
+        
+        /** 
+     * Crea un Soporte
+     * @param nombre nombre del soporte
+     * @param contrasena contrasena indicada por el soporte
+     * @param correo correo del soporte
+     */
+        
 	public void creaSoporte(String nombre, String contrasena,String correo)
 	{
 		Soporte soporteNuevo = new Soporte (nombre,contrasena,correo);
@@ -23,6 +31,13 @@ public class Administrador {
 		
 	}
 	
+        /**
+        * Verifica si los datos ingresados en el Log in de un usuario son correctos
+        * @param id es el nombre del usuario
+        * @param contra es la contrasena guardada en la "Base de datos"
+        * @return Boolean
+        */
+        
         public boolean logIn(String id, String contra){
             if(id.equals(getNombre()) && contra.equals(getContrasena())){
                 return true;
@@ -31,6 +46,11 @@ public class Administrador {
             }
         }
 	
+        /**
+        * Crea un map para los estados en los que se encuentran los paquetes
+        * @return Map
+        */
+        
         public Map<String, String> getEstados(){
             Map<String, String> estados = new HashMap<String,String>();
             for(Cliente cliente:clientes){
@@ -53,6 +73,11 @@ public class Administrador {
             return estados;
         }
         
+        /**
+        * Crea un map para las tiendas en los que se encuentran los paquetes
+        * @return Map
+        */
+        
         public Map<String, String> getTiendas(){
             Map<String, String> tiendas = new HashMap<String,String>();
             for(Cliente cliente:clientes){
@@ -74,6 +99,10 @@ public class Administrador {
             }
             return tiendas;
         }
+        /**
+        * Crea un map para las categorias de las que provienen los paquetes
+        * @return Map
+        */
         
         public Map<String, String> getCategorias(){
             Map<String, String> categorias = new HashMap<String,String>();

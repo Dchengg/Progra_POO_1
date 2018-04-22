@@ -29,7 +29,9 @@ public class Writer{
 		setXmlFile(pXmlFile);
 		
 	}
-	
+	/**
+ * Guarda todos los datos de los Clientes y Soportes en un .XML
+ */
 	public void escribirArchivo() {
 		try {
 			DocumentBuilderFactory dFact = DocumentBuilderFactory.newInstance();
