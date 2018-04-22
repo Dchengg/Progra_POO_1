@@ -8,9 +8,7 @@ package interfaz;
 import aplicacion.Administrador;
 import aplicacion.Cliente;
 import aplicacion.Soporte;
-import java.awt.BorderLayout;
 import java.util.ArrayList;
-import javax.swing.JPanel;
 
 /**
  *
@@ -45,6 +43,7 @@ public class Menu_Admin extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        estadosButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -64,6 +63,13 @@ public class Menu_Admin extends javax.swing.JFrame {
             }
         });
 
+        estadosButton.setText("Mantenimiento de Estados");
+        estadosButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                estadosButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -72,10 +78,10 @@ public class Menu_Admin extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jButton1)
-                        .addComponent(jButton2)))
-                .addContainerGap(85, Short.MAX_VALUE))
+                    .addComponent(jButton1)
+                    .addComponent(jButton2)
+                    .addComponent(estadosButton))
+                .addContainerGap(77, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -86,7 +92,9 @@ public class Menu_Admin extends javax.swing.JFrame {
                 .addComponent(jButton1)
                 .addGap(50, 50, 50)
                 .addComponent(jButton2)
-                .addContainerGap(118, Short.MAX_VALUE))
+                .addGap(47, 47, 47)
+                .addComponent(estadosButton)
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         pack();
@@ -104,6 +112,13 @@ public class Menu_Admin extends javax.swing.JFrame {
         setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void estadosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_estadosButtonActionPerformed
+        MantenimientoEstadosUI mantenimiento = new MantenimientoEstadosUI();
+        mantenimiento.setVisible(true);
+        setVisible(false);
+        
+    }//GEN-LAST:event_estadosButtonActionPerformed
+
     
     /*private static PieDataset createDateSet(ArrayList<Paquete> paquetes){
         DefaultPieDataset dataset = new DefaultPieDataset();
@@ -115,6 +130,7 @@ public class Menu_Admin extends javax.swing.JFrame {
     }*/
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton estadosButton;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;

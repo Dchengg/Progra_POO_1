@@ -12,7 +12,7 @@ public class Estado {
         val++;
     }
     
-    private String generarCodigo(){
+    public static String generarCodigo(){
         String codigo = "EST " + val;
         return codigo;
     }
