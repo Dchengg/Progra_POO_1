@@ -10,9 +10,16 @@ import org.jdom2.Element;
 import org.jdom2.JDOMException;
 import org.jdom2.input.SAXBuilder;
 
+
+
+
 public class CategoriasXML {
 	private static String xmlFile = "src/XML/Categorias.xml";
 
+        /**
+ * Lee los datos de las categorias desde un .XML
+ */
+        
 	public static Double leerArchivo(String categoria) {
 		SAXBuilder builder = new SAXBuilder();
 		File xml = new File(xmlFile);
@@ -37,6 +44,10 @@ public class CategoriasXML {
 		}
                 return null;
 	}
+        
+        /**
+ * Guarda los datos de las categorias en una lista
+ */
         
         public static ArrayList<String> getCategorias(){
             ArrayList<String> categorias = new ArrayList<String>();

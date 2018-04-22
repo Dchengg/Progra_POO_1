@@ -7,7 +7,7 @@
         <descripcion>Recibido en Miami</descripcion>
     </estado>
     <estado>
-        <descripcion>En transito a pais de destino</descripcion>
+        <descripcion>En tránsito a país de destino</descripcion>
     </estado>
     <estado>
         <descripcion>En Aduanas</descripcion>
@@ -16,12 +16,9 @@
         <descripcion>En transito a Counter Local</descripcion>
     </estado>
     <estado>
-        <descripcion>Recibido en pais destino</descripcion>
+        <descripcion>Recibido en país destino</descripcion>
     </estado>
     <estado>
         <descripcion>Entregado</descripcion>
-    </estado>
-    <estado>
-        <descripcion>Recibido en China</descripcion>
     </estado>
 </table>

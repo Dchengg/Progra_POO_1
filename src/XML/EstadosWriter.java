@@ -23,6 +23,10 @@ public class EstadosWriter {
         setXmlFile(pXMLFile);
     }
     
+    /**
+ * Guarda la lista de los Estados en un .XML
+ */
+    
     public void escribirArchivo() {
 		try {
 			DocumentBuilderFactory dFact = DocumentBuilderFactory.newInstance();
