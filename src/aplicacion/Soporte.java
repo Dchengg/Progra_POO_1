@@ -58,6 +58,7 @@ public class Soporte{
         * Cambia el estado de un paquete
         * @param paquete es el paquete al que se le cambiara el estado
         * @param pEstado estado al que cambiara
+        * @return Void
         */
 	public void cambiarEstadoPaquete(Paquete paquete, String pEstado)
         {
@@ -70,9 +71,10 @@ public class Soporte{
 	}
         
           /**
-        * verifica el log in del soporte
+        * Verifica el log in del soporte
         * @param id nombre de usuario del soporte
         * @param  contra contrasena indicada por el soporte
+        * @return Boolean
         */
         
         public boolean logIn(String id, String contra){
@@ -86,6 +88,7 @@ public class Soporte{
           /**
         * Calcula los impuestos que se anadiran al precio del paquete
         * @param paquete paquete al que se le aplicaran los impuestos
+        * @return Double
         */
         
         public double impuestoAduanal(Paquete paquete){
@@ -97,6 +100,7 @@ public class Soporte{
           /**
         * Calcula cuanto se le anadira el precio del paquete por el combustible
         * @param paquete el paquete al que se le calculara el precio
+        * @return Double
         */
         
         public double combustible(Paquete paquete){
@@ -104,7 +108,7 @@ public class Soporte{
             return precio*(19/100);
         }
           /**
-        * @return 1.5
+        * @return Double 1.5
         */
         
         public double garantiaRetorno(){
@@ -114,6 +118,7 @@ public class Soporte{
           /**
         * Calcula el costo del paquete segun su peso
         * @param paquete el paquete al cual se le calculara el costo
+        * @return Double
         */
         
         public double flete(Paquete paquete){
@@ -172,6 +177,7 @@ public class Soporte{
           /**
         * Calcula el costo final de un paquete
         * @param paquete el paquete al que se le calculara el costo
+        * @return Double
         */
         
         public double costoFinal(Paquete paquete){
@@ -182,6 +188,7 @@ public class Soporte{
  /**
         * Verefica si el paquete existe
         * @param id id del paquete
+        * @return Paquete
         */
         
         public Paquete verificarPaquete(String id){
@@ -196,6 +203,7 @@ public class Soporte{
         
          /**
         * Crea una lista los paquetes de todos los clientes
+        * @return List
         */
         
 	public ArrayList<Paquete> listaPaquetes()

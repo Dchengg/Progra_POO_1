@@ -20,7 +20,7 @@ import telegramBot.PackageNotifierBot;
 public class App {
 	
  /**
-        * se cargan todos los datos de los XML en listas
+        * Se cargan todos los datos de los XML en listas
         */
 	
 	public static void main(String[] args) {

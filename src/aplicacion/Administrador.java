@@ -32,9 +32,10 @@ public class Administrador {
 	}
 	
         /**
-        * verifica si los datos ingresados en el Log in de un usuario son correctos
+        * Verifica si los datos ingresados en el Log in de un usuario son correctos
         * @param id es el nombre del usuario
         * @param contra es la contrasena guardada en la "Base de datos"
+        * @return Boolean
         */
         
         public boolean logIn(String id, String contra){
@@ -46,7 +47,8 @@ public class Administrador {
         }
 	
         /**
-        * crea un map para los estados en los que se encuentran los paquetes
+        * Crea un map para los estados en los que se encuentran los paquetes
+        * @return Map
         */
         
         public Map<String, String> getEstados(){
@@ -72,7 +74,8 @@ public class Administrador {
         }
         
         /**
-        * crea un map para las tiendas en los que se encuentran los paquetes
+        * Crea un map para las tiendas en los que se encuentran los paquetes
+        * @return Map
         */
         
         public Map<String, String> getTiendas(){
@@ -97,7 +100,8 @@ public class Administrador {
             return tiendas;
         }
         /**
-        * crea un map para las categorias de las que provienen los paquetes
+        * Crea un map para las categorias de las que provienen los paquetes
+        * @return Map
         */
         
         public Map<String, String> getCategorias(){

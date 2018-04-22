@@ -19,6 +19,7 @@ public class Estado {
     
     /**
         * Genera el codigo del estado
+        * @return  String
         */
     
     private String generarCodigo(){

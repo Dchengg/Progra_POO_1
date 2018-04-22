@@ -35,7 +35,7 @@ public class Cliente {
         * @param pNombre es el nombre del cliente como String
         * @param pEmail es el email en forma de String
         * @param pDir la direccion como String
-        * @param oNumTel numero de telefono como String
+        * @param pNumTel numero de telefono como String
         * @param pFechaDeNacimiento indicada como String
         * @param pCompleto indica si el perfil del cliente esta completo definido por un boolean
         * @param pContra contrasena definida en un String
@@ -56,7 +56,7 @@ public class Cliente {
     }
 
     /**
-        * se agrega un paquete al cliente
+        * Se agrega un paquete al cliente
         * @param trackingID es el id del paquete indicado como String
         * @param tienda de donde proviene el paquete, es un String
         * @param courier la campania de donde viene, String
@@ -71,13 +71,13 @@ public class Cliente {
     }
 
     /**
-        * se agrega un paquete al cliente
-        * @param trackingID es el id del paquete
-        * @param tienda de donde proviene el paquete
-        * @param courier la campania de donde viene
-        * @param valor precio del paquete
+        * Se agrega un paquete al cliente
+        * @param pTrackingID es el id del paquete
+        * @param pTienda de donde proviene el paquete
+        * @param pCourier la campania de donde viene
+        * @param pValor precio del paquete
         * @param pCategoria tipo de paquete
-        * @param descripcion descripcion breve del paquete
+        * @param pDescripcion descripcion breve del paquete
         * @param peso el peso del paquete
         * @param pEstado el estado en el que se encuentra el paquete
         * @param pFechaCambio la fecha en la que se realizo el cambio de estado
@@ -90,9 +90,10 @@ public class Cliente {
     }
 
     /**
-        * verifica el log in del cliente
+        * Verifica el log in del cliente
         * @param id es el nombre de usuario
         * @param contra contrasena indicada por el clliente
+        * @return Boolean
         */
     
     public boolean logIn(String id, String contra) {
@@ -103,7 +104,8 @@ public class Cliente {
         }
     }
 /**
-        * genera una contrasena random temporal
+        * Genera una contrasena random temporal
+        * @return String
         */
     
     
@@ -122,7 +124,8 @@ public class Cliente {
     }
 
     /**
-        * verifica el codigo del cliente
+        * Verifica el codigo del cliente
+        * @return Boolean
         */
     
     public boolean verificarCodigo(String pCodigo) {
