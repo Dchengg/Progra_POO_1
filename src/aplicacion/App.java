@@ -3,14 +3,12 @@ package aplicacion;
 import email.AplEmail;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 
 import XML.ClienteXML;
 import XML.Writer;
 import XML.EstadosWriter;
 import XML.EstadosXML;
-import interfaz.Log_in_UI;
 import interfaz.UI;
 import org.telegram.telegrambots.ApiContextInitializer;
 import org.telegram.telegrambots.TelegramBotsApi;
@@ -45,9 +43,6 @@ public class App {
                 botsApi.registerBot(new PackageNotifierBot(clientes));
             }catch(TelegramApiException e) {
                 e.printStackTrace();
-            }
-            for(Cliente cliente:clientes) {
-                    System.out.println(cliente.toString());
             }
             UI.init(clientes, soportes,admin);
             Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {

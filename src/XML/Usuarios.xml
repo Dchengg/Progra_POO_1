@@ -8,7 +8,7 @@
             <numTel>86564739</numTel>
             <fechaDeNacimiento>31/3/99</fechaDeNacimiento>
             <perfilCompleto>true</perfilCompleto>
-            <contrasena>contra2</contrasena>
+            <contrasena>contra</contrasena>
             <notificaciones>false</notificaciones>
             <numCasillero>a213</numCasillero>
             <paquetes>
@@ -32,13 +32,13 @@
             <nombre>Marco</nombre>
             <email>marco@gmail.com</email>
             <contrasena>marcorules</contrasena>
-            <creacionDeCuenta>21/04/2018</creacionDeCuenta>
+            <creacionDeCuenta>22/04/2018</creacionDeCuenta>
         </campo>
         <campo>
             <nombre>Juanca</nombre>
             <email>juanca03@gmail.com</email>
             <contrasena>fuck</contrasena>
-            <creacionDeCuenta>21/04/2018</creacionDeCuenta>
+            <creacionDeCuenta>22/04/2018</creacionDeCuenta>
         </campo>
     </tabla>
 </tables>

@@ -6,6 +6,7 @@
 package interfaz;
 
 import aplicacion.Cliente;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -22,6 +23,10 @@ public class Menu_Clientes_UI extends javax.swing.JFrame {
         initComponents();
         setCliente(pCliente);
         ventanaAnterior = logIn;
+        bienvenidoLabel.setText("Bienvenido " + cliente.getNombre());
+        ImageIcon img = new ImageIcon("src/images/icon8-box-24.png");
+        this.setIconImage(img.getImage());
+        
     }
 
     /**
@@ -33,52 +38,63 @@ public class Menu_Clientes_UI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
+        bienvenidoLabel = new javax.swing.JLabel();
+        paquetesButton = new javax.swing.JButton();
+        prealertarButton = new javax.swing.JButton();
+        logOutButton = new javax.swing.JButton();
+        perfilButton = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        button1 = new java.awt.Button();
-        button2 = new java.awt.Button();
-        button3 = new java.awt.Button();
-        button4 = new java.awt.Button();
-        jPanel2 = new javax.swing.JPanel();
-
-        jButton1.setText("jButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Bienvenido a Package Notifier");
+        setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
 
-        jLabel1.setText("Bienvenido");
+        jPanel1.setBackground(new java.awt.Color(32, 33, 36));
 
-        button1.setActionCommand("InfoUserButton");
-        button1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        button1.setLabel("Perfil");
-        button1.addActionListener(new java.awt.event.ActionListener() {
+        bienvenidoLabel.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
+        bienvenidoLabel.setForeground(new java.awt.Color(62, 140, 129));
+        bienvenidoLabel.setText("Bienvenido");
+
+        paquetesButton.setBackground(new java.awt.Color(64, 130, 137));
+        paquetesButton.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
+        paquetesButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-box-24.png"))); // NOI18N
+        paquetesButton.setText("Mis paquetes");
+        paquetesButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button1ActionPerformed(evt);
+                paquetesButtonActionPerformed(evt);
             }
         });
 
-        button2.setActionCommand("InfoPaquetesButton");
-        button2.setLabel("Mis paquetes");
-        button2.setName("PaquetesButton"); // NOI18N
-        button2.addActionListener(new java.awt.event.ActionListener() {
+        prealertarButton.setBackground(new java.awt.Color(64, 130, 137));
+        prealertarButton.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
+        prealertarButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-alarm-filled-24.png"))); // NOI18N
+        prealertarButton.setText("Prealertar un paquete");
+        prealertarButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button2ActionPerformed(evt);
+                prealertarButtonActionPerformed(evt);
             }
         });
 
-        button3.setActionCommand("PrealertarButton");
-        button3.setLabel("Prealertar un paquete");
-        button3.addActionListener(new java.awt.event.ActionListener() {
+        logOutButton.setBackground(new java.awt.Color(64, 130, 137));
+        logOutButton.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
+        logOutButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-exit-24.png"))); // NOI18N
+        logOutButton.setText("Log out");
+        logOutButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button3ActionPerformed(evt);
+                logOutButtonActionPerformed(evt);
             }
         });
 
-        button4.setActionCommand("logOutButton");
-        button4.setLabel("Log out");
-        button4.addActionListener(new java.awt.event.ActionListener() {
+        perfilButton.setBackground(new java.awt.Color(64, 130, 137));
+        perfilButton.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
+        perfilButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-user-24.png"))); // NOI18N
+        perfilButton.setText("Perfil");
+        perfilButton.setToolTipText("");
+        perfilButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button4ActionPerformed(evt);
+                perfilButtonActionPerformed(evt);
             }
         });
 
@@ -89,38 +105,49 @@ public class Menu_Clientes_UI extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(button3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(button4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(159, Short.MAX_VALUE))
+                    .addComponent(prealertarButton)
+                    .addComponent(logOutButton)
+                    .addComponent(paquetesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bienvenidoLabel)
+                    .addComponent(perfilButton))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(49, 49, 49)
-                .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(58, 58, 58)
-                .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(59, 59, 59)
-                .addComponent(button3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
-                .addComponent(button4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26))
+                .addComponent(bienvenidoLabel)
+                .addGap(53, 53, 53)
+                .addComponent(perfilButton)
+                .addGap(52, 52, 52)
+                .addComponent(paquetesButton)
+                .addGap(52, 52, 52)
+                .addComponent(prealertarButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 119, Short.MAX_VALUE)
+                .addComponent(logOutButton)
+                .addContainerGap())
         );
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 376, Short.MAX_VALUE)
+        jPanel3.setBackground(new java.awt.Color(62, 140, 129));
+
+        jLabel1.setBackground(new java.awt.Color(68, 107, 158));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-contacts-250.png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(130, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(120, 120, 120))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(91, 91, 91)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -130,41 +157,37 @@ public class Menu_Clientes_UI extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
+    private void perfilButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perfilButtonActionPerformed
         PerfilUsuarioUI perfil = new PerfilUsuarioUI(getCliente());
         perfil.setVisible(true);
-    }//GEN-LAST:event_button1ActionPerformed
+    }//GEN-LAST:event_perfilButtonActionPerformed
 
-    private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
-        PaquetesUI paquetes = new PaquetesUI(getCliente(),this);
+    private void paquetesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_paquetesButtonActionPerformed
+        PaquetesUI paquetes = new PaquetesUI(getCliente());
         paquetes.setVisible(true);
-        setVisible(false);
-        
-        
-    }//GEN-LAST:event_button2ActionPerformed
+    }//GEN-LAST:event_paquetesButtonActionPerformed
 
-    private void button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button3ActionPerformed
+    private void prealertarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prealertarButtonActionPerformed
         PrealertarUI prealertar = new PrealertarUI(cliente);
         prealertar.setVisible(true);
+    }//GEN-LAST:event_prealertarButtonActionPerformed
 
-    }//GEN-LAST:event_button3ActionPerformed
-
-    private void button4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button4ActionPerformed
+    private void logOutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logOutButtonActionPerformed
         setVisible(false);
         ventanaAnterior.setVisible(true);
         dispose();
-    }//GEN-LAST:event_button4ActionPerformed
+    }//GEN-LAST:event_logOutButtonActionPerformed
 
     public Cliente getCliente() {
         return cliente;
@@ -176,13 +199,13 @@ public class Menu_Clientes_UI extends javax.swing.JFrame {
 
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private java.awt.Button button1;
-    private java.awt.Button button2;
-    private java.awt.Button button3;
-    private java.awt.Button button4;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel bienvenidoLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JButton logOutButton;
+    private javax.swing.JButton paquetesButton;
+    private javax.swing.JButton perfilButton;
+    private javax.swing.JButton prealertarButton;
     // End of variables declaration//GEN-END:variables
 }
