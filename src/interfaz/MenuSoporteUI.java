@@ -14,14 +14,19 @@ import aplicacion.Soporte;
 public class MenuSoporteUI extends javax.swing.JFrame {
 
     private Soporte soporte;
+    private Log_in_UI ventanaAnterior;
     
     /**
      * Creates new form MenuSoporteUI
      */
-    public MenuSoporteUI(Soporte pSoporte) {
+    public MenuSoporteUI(Soporte pSoporte,Log_in_UI logIn) {
         soporte = pSoporte;
+        ventanaAnterior = logIn;
         initComponents();
         jLabel1.setText("Bienvenido " + soporte.getNombre());
+        setTitle("Package Notifier");
+        setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
+        setIconImage(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-box-24.png")).getImage());
     }
 
     /**
@@ -72,6 +77,11 @@ public class MenuSoporteUI extends javax.swing.JFrame {
         jButton3.setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-exit-24.png"))); // NOI18N
         jButton3.setText("Log out");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -146,6 +156,12 @@ public class MenuSoporteUI extends javax.swing.JFrame {
         paquetes.setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        setVisible(false);
+        ventanaAnterior.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     
 

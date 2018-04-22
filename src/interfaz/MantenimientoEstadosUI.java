@@ -22,6 +22,9 @@ public class MantenimientoEstadosUI extends javax.swing.JFrame {
         initComponents();
         ArrayList<Estado> estados = Paquete.getEstados();
         codigoLabel.setText(Estado.generarCodigo());
+        setTitle("Package Notifier");
+        setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
+        setIconImage(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-box-24.png")).getImage());
     }
 
     /**
@@ -41,7 +44,7 @@ public class MantenimientoEstadosUI extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(32, 33, 36));
 

@@ -22,6 +22,9 @@ public class PaquetesGlobalesUI extends javax.swing.JFrame {
      */
     public PaquetesGlobalesUI(Soporte pSoporte) {
         initComponents();
+        setTitle("Package Notifier");
+        setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
+        setIconImage(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-box-24.png")).getImage());
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel()  ;
         ArrayList<Paquete> paquetes = pSoporte.listaPaquetes();
         for(Paquete paquete:paquetes){
@@ -51,7 +54,7 @@ public class PaquetesGlobalesUI extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jTable1.setFont(new java.awt.Font("Rockwell", 0, 12)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(

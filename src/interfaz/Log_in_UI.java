@@ -32,6 +32,9 @@ public class Log_in_UI extends javax.swing.JFrame {
         clientes = pClientes;
         soportes = pSoportes;
         admin = pAdmin;
+        setTitle("Bienvenido a Package Notifier");
+        setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
+        setIconImage(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-box-24.png")).getImage());
     }
 
     /**
@@ -264,20 +267,20 @@ public class Log_in_UI extends javax.swing.JFrame {
             }
         }else if(tipo.equals("Soporte")){
             for(Soporte soporte:soportes){
-                //if(soporte.logIn(id, contra)){
-                    MenuSoporteUI menuSoporte = new MenuSoporteUI(soporte);
+                if(soporte.logIn(id, contra)){
+                    MenuSoporteUI menuSoporte = new MenuSoporteUI(soporte,this);
                     menuSoporte.setVisible(true);
                     setVisible(false);
                     encontrado = true;
-                    //}
+                }
             }
         }else if(tipo.equals("Admin")){
-            //if(admin.logIn(id,contra)){
-                Menu_Admin menuAdmin = new Menu_Admin(admin,clientes,soportes);
+            if(admin.logIn(id,contra)){
+                Menu_Admin menuAdmin = new Menu_Admin(admin,clientes,soportes,this);
                 menuAdmin.setVisible(true);
                 setVisible(false);
                 encontrado = true;
-                //}
+            }
         }
         if(!encontrado)
         JOptionPane.showMessageDialog(null,"No hay ningún usuario registrado, por favor intentelo de nuevo", "Error",JOptionPane.ERROR_MESSAGE); 

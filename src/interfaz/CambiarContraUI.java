@@ -22,6 +22,9 @@ public class CambiarContraUI extends javax.swing.JFrame {
         initComponents();
         cliente = pCliente;
         jPanel1.setVisible(false);
+        setTitle("Package Notifier");
+        setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
+        setIconImage(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-box-24.png")).getImage());
     }
 
     /**
@@ -48,7 +51,7 @@ public class CambiarContraUI extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel2.setBackground(new java.awt.Color(68, 107, 158));
 

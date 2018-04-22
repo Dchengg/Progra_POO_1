@@ -24,6 +24,9 @@ public class PerfilUsuarioUI extends javax.swing.JFrame {
         dirLabel.setText(cliente.getDireccion());
         numLabel.setText(cliente.getNumTel());
         emailLabel.setText(cliente.getEmail());
+        setTitle("Package Notifier");
+        setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
+        setIconImage(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-box-24.png")).getImage());
     }
 
     /**

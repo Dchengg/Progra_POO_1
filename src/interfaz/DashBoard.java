@@ -19,6 +19,9 @@ public class DashBoard extends javax.swing.JFrame {
      */
     public DashBoard(Administrador admin) {
         initComponents();
+        setTitle("Package Notifier");
+        setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
+        setIconImage(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-box-24.png")).getImage());
         GraficoCircular estados = new GraficoCircular(admin.getEstados(),"Estados de los paquetes","Estados");
         GraficoCircular tiendas = new GraficoCircular(admin.getTiendas(),"Tiendas más populares","Tiendas");
         GraficoBarras categorias = new GraficoBarras(admin.getCategorias(),"Categorias");
@@ -42,7 +45,7 @@ public class DashBoard extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setResizable(false);
 

@@ -22,7 +22,7 @@ public class Estado {
         * @return  String
         */
     
-    private String generarCodigo(){
+    public static String generarCodigo(){
         String codigo = "EST " + val;
         return codigo;
     }

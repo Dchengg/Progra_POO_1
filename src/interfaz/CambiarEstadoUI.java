@@ -29,6 +29,9 @@ public class CambiarEstadoUI extends javax.swing.JFrame {
         jPanel1.setVisible(false);
         jPanel2.setVisible(false);
         valorTotalLabel.setVisible(false);
+        setTitle("Package Notifier");
+        setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
+        setIconImage(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-box-24.png")).getImage());
         
     }
 
@@ -60,7 +63,7 @@ public class CambiarEstadoUI extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         pesoField = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel3.setBackground(new java.awt.Color(235, 128, 100));
 

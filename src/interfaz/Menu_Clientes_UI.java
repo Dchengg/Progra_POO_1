@@ -24,8 +24,9 @@ public class Menu_Clientes_UI extends javax.swing.JFrame {
         setCliente(pCliente);
         ventanaAnterior = logIn;
         bienvenidoLabel.setText("Bienvenido " + cliente.getNombre());
-        ImageIcon img = new ImageIcon("src/images/icon8-box-24.png");
-        this.setIconImage(img.getImage());
+        setTitle("Package Notifier");
+        setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
+        setIconImage(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-box-24.png")).getImage());
         
     }
 
@@ -48,7 +49,6 @@ public class Menu_Clientes_UI extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Bienvenido a Package Notifier");
         setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
 
         jPanel1.setBackground(new java.awt.Color(32, 33, 36));

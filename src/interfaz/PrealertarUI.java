@@ -27,6 +27,9 @@ public class PrealertarUI extends javax.swing.JFrame {
         for(String categoria:categorias){
             categoriasComboBox.addItem(categoria);
         }
+        setTitle("Package Notifier");
+        setFont(new java.awt.Font("Rockwell", 0, 14)); // NOI18N
+        setIconImage(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-box-24.png")).getImage());
     }
 
     /**
