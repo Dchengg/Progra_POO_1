@@ -18,6 +18,11 @@ public class AplEmail {
     private static final String USERNAME = "PackageNotifier";
     private static final String PASSWORD = "Package123";
 
+    
+    /**
+ * Envia un correo
+ */
+    
     public static void init(ArrayList<Cliente> clientes) {	
         Timer timer = new Timer();
         Fetcher emailFetcher = new Fetcher(POP,STORETYPE,USERNAME,PASSWORD);
@@ -56,6 +61,9 @@ public class AplEmail {
         },0,60000);
     }	
    
+    /**
+ * Verifica que la cuenta de correo no este asociada a otro usuario
+ */
     private static boolean VerificarCorreo(ArrayList<Cliente> clientes, String address) {
             for(Cliente cliente:clientes) {
                     if(address.equals(cliente.getEmail())) {
