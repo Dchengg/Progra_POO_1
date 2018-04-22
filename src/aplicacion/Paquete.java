@@ -10,15 +10,17 @@ public class Paquete {
     private String tienda;
     private String courier;
     private double valor;
+    private double valorTotal;
     private double peso;
     private String descripcion;
-    private String estado;
+    private Estado estado;
+    private static ArrayList<Estado> estados;
     private String categoria;
     private String horaCambio;
     private String fechaCambio;
-    private String dueno;
+    private Cliente dueno;
 
-    public Paquete(String pTrackingID, String pTienda, String pCourier, double pValor, String pCategoria, String pDescripcion, String pDueno) {
+    public Paquete(String pTrackingID, String pTienda, String pCourier, double pValor, String pCategoria, String pDescripcion, Cliente pDueno) {
         setTrackingID(pTrackingID);
         setTienda(pTienda);
         setCourier(pCourier);
@@ -33,7 +35,7 @@ public class Paquete {
 
     }
 
-    public Paquete(String pTrackingID, String pTienda, String pCourier, double pValor, double peso, String pDescripcion,String pEstado, String pCategoria, String pFechaCambio, String pHoraCambio,String pDueno) {
+    public Paquete(String pTrackingID, String pTienda, String pCourier, double pValor, double peso, String pDescripcion,String pEstado, String pCategoria, String pFechaCambio, String pHoraCambio,Cliente pDueno) {
         setTrackingID(pTrackingID);
         setTienda(pTienda);
         setCourier(pCourier);
@@ -93,6 +95,14 @@ public class Paquete {
         this.valor = valor;
     }
 
+    public double getValorTotal() {
+        return valorTotal;
+    }
+
+    public void setValorTotal(double valorTotal) {
+        this.valorTotal = valorTotal;
+    }
+    
     public double getPeso() {
         return peso;
     }
@@ -109,12 +119,25 @@ public class Paquete {
             this.descripcion = descripcion;
     }
 
-    public String getEstado() {
-            return estado;
+    public Estado getEstado() {
+        return estado;
     }
 
-    public void setEstado(String estado) {
-            this.estado = estado;
+    public void setEstado(String tipoEstado) {
+        for(Estado pEstado:estados){
+            if(pEstado.getDescripcion().equals(tipoEstado)){
+                this.estado = pEstado;
+            }
+        }
+        
+    }
+
+    public static ArrayList<Estado> getEstados() {
+        return estados;
+    }
+
+    public static void setEstados(ArrayList<Estado> estados) {
+        Paquete.estados = estados;
     }
 
     public String getCategoria() {
@@ -147,11 +170,11 @@ public class Paquete {
         this.fechaCambio = pFechaCambio;
     }
 
-    public String getDueno() {
+    public Cliente getDueno() {
         return dueno;
     }
 
-    public void setDueno(String dueno) {
+    public void setDueno(Cliente dueno) {
         this.dueno = dueno;
     }
     

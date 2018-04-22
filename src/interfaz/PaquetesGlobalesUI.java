@@ -31,9 +31,9 @@ public class PaquetesGlobalesUI extends javax.swing.JFrame {
             String valor = String.valueOf(paquete.getValor());
             String peso = String.valueOf(paquete.getPeso());
             String descripcion = paquete.getDescripcion();
-            String estado = paquete.getEstado();
+            String estado = paquete.getEstado().getDescripcion();
             String categoria = paquete.getCategoria();
-            String dueno = paquete.getDueno();
+            String dueno = paquete.getDueno().getNombre();
             Object[] row = {ID,descripcion,tienda,categoria,valor,peso,courier,estado,dueno};   
             model.addRow(row);
         }

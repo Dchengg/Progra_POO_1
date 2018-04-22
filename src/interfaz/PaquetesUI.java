@@ -32,7 +32,7 @@ public class PaquetesUI extends javax.swing.JFrame {
             String valor = String.valueOf(paquete.getValor());
             String peso = String.valueOf(paquete.getPeso());
             String descripcion = paquete.getDescripcion();
-            String estado = paquete.getEstado();
+            String estado = paquete.getEstado().getDescripcion();
             String categoria = paquete.getCategoria();
             Object[] row = {ID,descripcion,tienda,categoria,valor,peso,courier,estado};   
             model.addRow(row);

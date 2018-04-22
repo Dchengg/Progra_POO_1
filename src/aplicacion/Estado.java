@@ -1,12 +1,12 @@
 package aplicacion;
 
-public class Estados {
+public class Estado {
     public static long val = 1;
     private String idConsecutivo;
     private String descripcion;
     
     
-    public Estados(String pDescripcion){
+    public Estado(String pDescripcion){
         setDescripcion(pDescripcion);
         setIdConsecutivo(generarCodigo());
         val++;

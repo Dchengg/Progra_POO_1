@@ -161,8 +161,10 @@ public class PerfilUsuarioUI extends javax.swing.JFrame {
     private void notificacionesToggleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_notificacionesToggleButtonActionPerformed
         if(notificacionesToggleButton.isSelected()){
             notificacionesToggleButton.setText("Si");
+            cliente.setNotificaciones(true);
         }else{
             notificacionesToggleButton.setText("No");
+            cliente.setNotificaciones(false);
         }
     }//GEN-LAST:event_notificacionesToggleButtonActionPerformed
 

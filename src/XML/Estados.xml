@@ -7,16 +7,16 @@
         <descripcion>Recibido en Miami</descripcion>
     </estado>
     <estado>
-        <descripcion>En trÃ¡nsito a paÃ­s de destino</descripcion>
+        <descripcion>En tránsito a país de destino</descripcion>
     </estado>
     <estado>
         <descripcion>En Aduanas</descripcion>
     </estado>
     <estado>
-        <descripcion>En trÃ¡nsito a Counter Local</descripcion>
+        <descripcion>En transito a Counter Local</descripcion>
     </estado>
     <estado>
-        <descripcion>Recibido en paÃ­s destino</descripcion>
+        <descripcion>Recibido en país destino</descripcion>
     </estado>
     <estado>
         <descripcion>Entregado</descripcion>

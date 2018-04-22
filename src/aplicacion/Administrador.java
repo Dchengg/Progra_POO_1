@@ -37,11 +37,11 @@ public class Administrador {
                 ArrayList<Paquete> paquetes = cliente.getPaquetes();
                 for(Paquete paquete:paquetes){
                     if(estados.containsKey(paquete.getEstado())){
-                        String valor = paquete.getEstado();
+                        String valor = paquete.getEstado().getDescripcion();
                         int iValor = Integer.parseInt(valor)+1;
-                        estados.put(paquete.getEstado(), String.valueOf(iValor));
+                        estados.put(paquete.getEstado().getDescripcion(), String.valueOf(iValor));
                     }else{
-                        estados.put(paquete.getEstado(), "1");
+                        estados.put(paquete.getEstado().getDescripcion(), "1");
                     }
                 }
             }
@@ -96,89 +96,7 @@ public class Administrador {
             }
             return categorias;
         }
-        
-	public String dashBoard ()
-	{
-
-		Map<String, String> estados = new HashMap<String,String>();
-		Map<String, String> tiendas = new HashMap<String,String>();
-		Map<String, String> categorias = new HashMap<String,String>();
-		Map<String, String> couriers = new HashMap<String,String>();
-		
-		//estados
-		System.out.println(clientes.size());
-		for (int i=0; i < clientes.size(); i++)
-		{		
-                    for (int e = 0; e < clientes.get(i).getPaquetes().size(); e++)
-                    {
-                        //estados
-
-                        if (estados.containsKey(clientes.get(i).getPaquetes().get(e).getEstado()))
-                        {
-                                String valor = estados.get(clientes.get(i).getPaquetes().get(e).getEstado());
-                                int iValor = Integer.parseInt(valor)+1;
-                                estados.put(clientes.get(i).getPaquetes().get(e).getEstado(), String.valueOf(iValor));
-                        }
-
-                        else
-                        {
-                                estados.put(clientes.get(i).getPaquetes().get(e).getEstado(), "1");
-                        }
-
-
-                        //tiendas
-
-                        if (tiendas.containsKey(clientes.get(i).getPaquetes().get(e).getTienda()))
-                        {
-                                String valor = tiendas.get(clientes.get(i).getPaquetes().get(e).getTienda());
-                                int iValor = Integer.parseInt(valor)+1;
-                                tiendas.put(clientes.get(i).getPaquetes().get(e).getTienda(), String.valueOf(iValor));
-                        }
-
-                        else
-                        {
-                                tiendas.put(clientes.get(i).getPaquetes().get(e).getTienda(), "1");
-                        }
-
-
-                        //categorias
-
-                        if (categorias.containsKey(clientes.get(i).getPaquetes().get(e).getCategoria()))
-                        {
-                                String valor = categorias.get(clientes.get(i).getPaquetes().get(e).getCategoria());
-                                int iValor = Integer.parseInt(valor)+1;
-                                categorias.put(clientes.get(i).getPaquetes().get(e).getCategoria(), String.valueOf(iValor));
-                        }
-
-                        else
-                        {
-                                categorias.put(clientes.get(i).getPaquetes().get(e).getCategoria(), "1");
-                        }
-
-
-                        //compa�ias
-
-                        if (couriers.containsKey(clientes.get(i).getPaquetes().get(e).getCourier()))
-                        {
-                                String valor = couriers.get(clientes.get(i).getPaquetes().get(e).getCourier());
-                                int iValor = Integer.parseInt(valor)+1;
-                                couriers.put(clientes.get(i).getPaquetes().get(e).getCourier(), String.valueOf(iValor));
-                        }
-
-                        else
-                        {
-                                couriers.put(clientes.get(i).getPaquetes().get(e).getCourier(), "1");
-                        } 
-
-                    }	
-		}
-		
-		return ("Estados: " + estados.toString() + " " + "Tiendas: " + tiendas.toString() + " " + "Categorias: " + categorias.toString()+ " " + "Compañias: " + couriers.toString());
-		
-	}
-	
-	
-	
+      
 	public String getNombre() {
 		return nombre;
 	}

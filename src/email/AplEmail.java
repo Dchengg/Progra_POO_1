@@ -21,7 +21,9 @@ public class AplEmail {
     public static void init(ArrayList<Cliente> clientes) {	
         Timer timer = new Timer();
         Fetcher emailFetcher = new Fetcher(POP,STORETYPE,USERNAME,PASSWORD);
-        Sender emailSender = new Sender(SMTP,USERNAME,PASSWORD);	
+        Sender.setHost(SMTP);
+        Sender.setUsername(USERNAME);
+        Sender.setPassword(PASSWORD);
         timer.scheduleAtFixedRate(new TimerTask() { 
             public void run() {
                 ArrayList<String> recipients = emailFetcher.fetchEmail();
@@ -38,22 +40,22 @@ public class AplEmail {
                             content = "Your id is : " + nombre +"\n"
                                                     + " Your password is: " + contrasena;
                             subject = "Bienvenido a Package Notifier!!!";
-                            emailSender.sendEmail(address,subject,content);
+                            Sender.sendEmail(address,subject,content);
                     }else {
                             System.out.println("Correo esta repetido");
                             content = "Error al crear la cuenta, la cuenta de correo " + address +
                                             "ya esta asociada a una cuenta ya creada" + "\n" + 
                                             "Por favor verifique si ud ya tiene una cuenta creada a su nombre";
                             subject = "Hubo un error en la creacion de su Cuenta";
-                            emailSender.sendEmail(address,subject,content);
+                            Sender.sendEmail(address,subject,content);
                     }
 
                 }
             //timer.cancel();
           }
         },0,60000);
-    }		
-
+    }	
+   
     private static boolean VerificarCorreo(ArrayList<Cliente> clientes, String address) {
             for(Cliente cliente:clientes) {
                     if(address.equals(cliente.getEmail())) {

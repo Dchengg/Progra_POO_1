@@ -126,7 +126,7 @@ public class Writer{
 		        	paqueteIn.appendChild(descripcion);
 		        	
 		        	Element estado = doc.createElement("estado");
-		        	estado.appendChild(doc.createTextNode(paquete.getEstado()));
+		        	estado.appendChild(doc.createTextNode(paquete.getEstado().getDescripcion()));
 		        	paqueteIn.appendChild(estado);
 		        	
 		        	Element categoria = doc.createElement("categoria");

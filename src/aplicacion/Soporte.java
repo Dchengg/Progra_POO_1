@@ -1,11 +1,9 @@
 package aplicacion;
 
+import XML.CategoriasXML;
+import email.Sender;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
-
-import aplicacion.Cliente;
-import aplicacion.Categoria;
 import java.text.SimpleDateFormat;
 
 public class Soporte{
@@ -42,40 +40,13 @@ public class Soporte{
 	
 	
 	public void cambiarEstadoPaquete(Paquete paquete, String pEstado)
-	{
-		
-		switch (pEstado)
-		{
-		case "PREALERTADO":
-			paquete.setEstado("RECIBIDO_EN_MIAMI");
-			break;
-			
-		case "RECIBIDO_EN_MIAMI":
-			paquete.setEstado("EN_TRANSITO_A_PAIS_DESTIN0");
-			break;
-			
-		case "EN_TRANSITO_A_PAIS_DESTIN0":
-			paquete.setEstado("EN_ADUANAS");
-			break;
-			
-		case "EN_ADUANAS":
-			paquete.setEstado("EN_TRANSITO_A_COUNTER_LOCAL");
-			break;
-			
-		case "EN_TRANSITO_A_COUNTER_LOCAL":
-			paquete.setEstado("RECIBIDO_EN_PAIS_DESTINO");
-			break;
-			
-		case "RECIBIDO_EN_PAIS_DESTINO":
-			paquete.setEstado("ENTREGADO");
-			break;
-			
-		default:
-			paquete.setEstado("EL_PAQUETE_YA_A_SIDO_ENTREGADO");
-			break;
-		}
-			
-	//enviar correo
+        {
+            paquete.setEstado(pEstado);
+            if(paquete.getDueno().isNotificaciones()){
+                String subject = "Notificación : El paquete " + paquete.getTrackingID() + "ha cambiado de estado";
+                String content = "El paquete " + paquete.getTrackingID() + " ha cambiado al estado " + paquete.getEstado().getDescripcion();
+                Sender.sendEmail(paquete.getDueno().getEmail(), subject, content);
+            }
 	}
         
         public boolean logIn(String id, String contra){
@@ -86,9 +57,9 @@ public class Soporte{
             }
         }
         
-        public double impuestoAduanal(Paquete paquete, Categoria categoria){
+        public double impuestoAduanal(Paquete paquete){
             double precio = paquete.getValor();
-            double porcentaje = categoria.getPorcentaje();
+            double porcentaje = CategoriasXML.leerArchivo(paquete.getCategoria());
             return precio*(porcentaje/100);
         }
         
@@ -152,8 +123,10 @@ public class Soporte{
             }
         }
         
-        public double costoFinal(Paquete paquete, Categoria categoria){
-            return flete(paquete)+ combustible(paquete) + garantiaRetorno() + impuestoAduanal(paquete,categoria);
+        public double costoFinal(Paquete paquete){
+            double valorTotal = flete(paquete)+ combustible(paquete) + garantiaRetorno() + impuestoAduanal(paquete);
+            paquete.setValorTotal(valorTotal);
+            return valorTotal;
         }
 
         public Paquete verificarPaquete(String id){

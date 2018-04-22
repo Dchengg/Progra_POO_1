@@ -1,6 +1,6 @@
 package XML;
 
-import aplicacion.Estados;
+import aplicacion.Estado;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,10 +13,10 @@ import org.jdom2.JDOMException;
 import org.jdom2.input.SAXBuilder;
 
 public class EstadosXML {
-    private ArrayList<Estados> estados;
+    private ArrayList<Estado> estados;
     private String xmlFile;
     
-    public EstadosXML(ArrayList<Estados> pEstados, String pXMLFile){
+    public EstadosXML(ArrayList<Estado> pEstados, String pXMLFile){
         setEstados(pEstados);
         setXmlFile(pXMLFile);
     }
@@ -31,7 +31,7 @@ public class EstadosXML {
                         for(int i = 0; i < list.size(); i++){
                             Element est = (Element)list.get(i);
                             String des = est.getChildTextTrim("descripcion");
-                            Estados estadoCargado = new Estados(des);
+                            Estado estadoCargado = new Estado(des);
                             estados.add(estadoCargado);
                         }
                     }catch (IOException io) {
@@ -41,7 +41,7 @@ public class EstadosXML {
 		}
 	}
 
-    public ArrayList<Estados> getEstados() {
+    public ArrayList<Estado> getEstados() {
         return estados;
     }
 
@@ -49,7 +49,7 @@ public class EstadosXML {
         return xmlFile;
     }
 
-    public void setEstados(ArrayList<Estados> estados) {
+    public void setEstados(ArrayList<Estado> estados) {
         this.estados = estados;
     }
 

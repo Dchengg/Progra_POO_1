@@ -1,6 +1,6 @@
 package XML;
 
-import aplicacion.Estados;
+import aplicacion.Estado;
 import javax.xml.transform.*;
 import javax.xml.transform.stream.*;
 import javax.xml.transform.dom.*;
@@ -15,10 +15,10 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
 public class EstadosWriter {
-    private ArrayList<Estados> estados;
+    private ArrayList<Estado> estados;
     private String xmlFile;
     
-    public EstadosWriter(ArrayList<Estados> pEstados, String pXMLFile){
+    public EstadosWriter(ArrayList<Estado> pEstados, String pXMLFile){
         setEstados(pEstados);
         setXmlFile(pXMLFile);
     }
@@ -32,7 +32,7 @@ public class EstadosWriter {
                 Element root = doc.createElement("table");
 	        doc.appendChild(root);
                 
-                for(Estados estado : estados){
+                for(Estado estado : estados){
                     Element campo = doc.createElement("estado");
 		    root.appendChild(campo);
                     
@@ -69,7 +69,7 @@ public class EstadosWriter {
 	    }
 	}
 
-    public ArrayList<Estados> getEstados() {
+    public ArrayList<Estado> getEstados() {
         return estados;
     }
 
@@ -77,7 +77,7 @@ public class EstadosWriter {
         return xmlFile;
     }
 
-    public void setEstados(ArrayList<Estados> estados) {
+    public void setEstados(ArrayList<Estado> estados) {
         this.estados = estados;
     }
 

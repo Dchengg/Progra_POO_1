@@ -24,8 +24,11 @@ public class App {
 	public static void main(String[] args) {
             ArrayList<Cliente> clientes = new ArrayList<Cliente>();
             ArrayList<Soporte> soportes = new ArrayList<Soporte>();
-            ArrayList<Estados> EstadosN = new ArrayList<Estados>();
+            ArrayList<Estado> EstadosN = new ArrayList<Estado>();
+            EstadosXML lectorEstados = new EstadosXML(EstadosN,"src/XML/Estados.xml" );
+            lectorEstados.leerArchivo();
             Soporte.setClientes(clientes);
+            Paquete.setEstados(EstadosN);
             Administrador admin = new Administrador();
             Administrador.setClientes(clientes);
             Administrador.setSoportes(soportes);
@@ -36,8 +39,7 @@ public class App {
 
             AplEmail.init(clientes);
            
-            EstadosXML lectorEstados = new EstadosXML(EstadosN,"src/XML/Estados.xml" );
-            lectorEstados.leerArchivo();
+            
             
             ApiContextInitializer.init();
             TelegramBotsApi botsApi = new TelegramBotsApi();
