@@ -19,7 +19,9 @@ import telegramBot.PackageNotifierBot;
 
 public class App {
 	
-
+ /**
+        * se cargan todos los datos de los XML en listas
+        */
 	
 	public static void main(String[] args) {
             ArrayList<Cliente> clientes = new ArrayList<Cliente>();
@@ -38,6 +40,8 @@ public class App {
             lector.leerArchivo();
 
             AplEmail.init(clientes);
+           
+            
             
             ApiContextInitializer.init();
             TelegramBotsApi botsApi = new TelegramBotsApi();
@@ -54,8 +58,6 @@ public class App {
                 public void run() {
                     Writer escritor = new Writer(clientes,soportes, "src/XML/Usuarios.xml" );
                     escritor.escribirArchivo();
-                    EstadosWriter escritorEstados = new EstadosWriter(EstadosN,"src/XML/Estados.xml");
-                    escritorEstados.escribirArchivo();
                 }
             }, "Shutdown-thread"));
                 

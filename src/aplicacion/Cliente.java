@@ -18,11 +18,30 @@ public class Cliente {
     private String codigo;
     private ArrayList<Paquete> paquetes = new ArrayList<Paquete>();
 
+    
+     /**
+        * Crea un cliente
+        * @param pNombre se indica el nombre del cliente como String
+        * @param pEmail se indica el email como String
+        */
+    
     public Cliente(String pNombre, String pEmail) {
             setNombre(pNombre);
             setEmail(pEmail);
     }
 
+     /**
+        * Crea el perfil completo del Cliente
+        * @param pNombre es el nombre del cliente como String
+        * @param pEmail es el email en forma de String
+        * @param pDir la direccion como String
+        * @param oNumTel numero de telefono como String
+        * @param pFechaDeNacimiento indicada como String
+        * @param pCompleto indica si el perfil del cliente esta completo definido por un boolean
+        * @param pContra contrasena definida en un String
+        * @param pNotificaciones indica si el cliente quiere notificaciones al correo indicada por un boolean
+        * @param pNumCasillero numero del casillero indicada por un String
+        */
     public Cliente(String pNombre, String pEmail, String pDir, String pNumTel,String pFechaDeNacimiento,boolean pCompleto, String pContra, boolean pNotificaciones, String pNumCasillero) {
         setNombre(pNombre);
         setEmail(pEmail);
@@ -36,16 +55,46 @@ public class Cliente {
 
     }
 
+    /**
+        * se agrega un paquete al cliente
+        * @param trackingID es el id del paquete indicado como String
+        * @param tienda de donde proviene el paquete, es un String
+        * @param courier la campania de donde viene, String
+        * @param valor precio del paquete, double
+        * @param pCategoria tipo de paquete, String
+        * @param descripcion descripcion breve del paquete, String
+        */
+    
     public void agregarPaquete(String trackingID, String tienda, String courier, double valor, String pCategoria, String descripcion) {
         Paquete paqueteNuevo = new Paquete(trackingID,tienda,courier,valor,pCategoria,descripcion,this);
         paquetes.add(paqueteNuevo);
     }
 
+    /**
+        * se agrega un paquete al cliente
+        * @param trackingID es el id del paquete
+        * @param tienda de donde proviene el paquete
+        * @param courier la campania de donde viene
+        * @param valor precio del paquete
+        * @param pCategoria tipo de paquete
+        * @param descripcion descripcion breve del paquete
+        * @param peso el peso del paquete
+        * @param pEstado el estado en el que se encuentra el paquete
+        * @param pFechaCambio la fecha en la que se realizo el cambio de estado
+        * @param pHoraCambio la hora en la que fue el cambio de estado
+        */
+    
     public void agregarPaquete(String pTrackingID, String pTienda, String pCourier, double pValor, double peso, String pDescripcion,String pEstado, String pCategoria, String pFechaCambio, String pHoraCambio){
         Paquete paqueteNuevo = new Paquete(pTrackingID, pTienda, pCourier, pValor, peso, pDescripcion,pEstado, pCategoria, pFechaCambio, pHoraCambio,this);
         paquetes.add(paqueteNuevo);
     }
 
+    /**
+        * verifica el log in del cliente
+        * @param id es el nombre de usuario
+        * @param contra contrasena indicada por el clliente
+        */
+    
     public boolean logIn(String id, String contra) {
         if(id.equals(getNombre()) && contra.equals(getContrasena())) {
                 return true;
@@ -53,7 +102,11 @@ public class Cliente {
                 return false;
         }
     }
-
+/**
+        * genera una contrasena random temporal
+        */
+    
+    
     public String generarContrasena() {	
         String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
         StringBuilder builder = new StringBuilder();
@@ -68,6 +121,10 @@ public class Cliente {
         return contra;
     }
 
+    /**
+        * verifica el codigo del cliente
+        */
+    
     public boolean verificarCodigo(String pCodigo) {
         if(codigo == null){
            return false;

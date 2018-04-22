@@ -19,6 +19,14 @@ public class Soporte{
 	
 
 	//constructores
+        
+         /**
+        * Crea un Soporte
+        * @param nombre es el nombre del soporte
+        * @param contrasena contrasena indicada por el usuario
+        * @param correo correo del usuario
+        */
+        
 	public Soporte(String nombre, String contrasena,String correo)
 	{
 		setNombre(nombre);
@@ -26,6 +34,14 @@ public class Soporte{
 		setCorreo(correo);
 		setCreacionDeCuenta();	
 	}
+        
+          /**
+        * Crea un Soporte
+        * @param nombre es el nombre del soporte
+        * @param contrasena contrasena indicada por el usuario
+        * @param correo correo del usuario
+        * @param pFecha indica la fecha de cuando se creo la cuenta
+        */
         
         public Soporte(String nombre, String contrasena,String correo, String pFecha)
 	{
@@ -38,7 +54,11 @@ public class Soporte{
 	//metodos
 	
 	
-	
+	  /**
+        * Cambia el estado de un paquete
+        * @param paquete es el paquete al que se le cambiara el estado
+        * @param pEstado estado al que cambiara
+        */
 	public void cambiarEstadoPaquete(Paquete paquete, String pEstado)
         {
             paquete.setEstado(pEstado);
@@ -49,6 +69,12 @@ public class Soporte{
             }
 	}
         
+          /**
+        * verifica el log in del soporte
+        * @param id nombre de usuario del soporte
+        * @param  contra contrasena indicada por el soporte
+        */
+        
         public boolean logIn(String id, String contra){
             if(id.equals(getNombre()) && contra.equals(getContrasena())){
                 return true;
@@ -57,19 +83,39 @@ public class Soporte{
             }
         }
         
+          /**
+        * Calcula los impuestos que se anadiran al precio del paquete
+        * @param paquete paquete al que se le aplicaran los impuestos
+        */
+        
         public double impuestoAduanal(Paquete paquete){
             double precio = paquete.getValor();
             double porcentaje = CategoriasXML.leerArchivo(paquete.getCategoria());
             return precio*(porcentaje/100);
         }
         
+          /**
+        * Calcula cuanto se le anadira el precio del paquete por el combustible
+        * @param paquete el paquete al que se le calculara el precio
+        */
+        
         public double combustible(Paquete paquete){
             double precio = paquete.getValor();
             return precio*(19/100);
         }
+          /**
+        * @return 1.5
+        */
+        
         public double garantiaRetorno(){
             return 1.5;
         }
+        
+          /**
+        * Calcula el costo del paquete segun su peso
+        * @param paquete el paquete al cual se le calculara el costo
+        */
+        
         public double flete(Paquete paquete){
             double peso = paquete.getPeso();
             if(peso == 1){
@@ -123,12 +169,21 @@ public class Soporte{
             }
         }
         
+          /**
+        * Calcula el costo final de un paquete
+        * @param paquete el paquete al que se le calculara el costo
+        */
+        
         public double costoFinal(Paquete paquete){
             double valorTotal = flete(paquete)+ combustible(paquete) + garantiaRetorno() + impuestoAduanal(paquete);
             paquete.setValorTotal(valorTotal);
             return valorTotal;
         }
-
+ /**
+        * Verefica si el paquete existe
+        * @param id id del paquete
+        */
+        
         public Paquete verificarPaquete(String id){
             ArrayList<Paquete> paquetes = listaPaquetes();
             for(Paquete paquete:paquetes){
@@ -138,6 +193,11 @@ public class Soporte{
             }
             return null;
         }
+        
+         /**
+        * Crea una lista los paquetes de todos los clientes
+        */
+        
 	public ArrayList<Paquete> listaPaquetes()
 	{
             ArrayList<Paquete> paquetesGlobales = new ArrayList<Paquete>();
