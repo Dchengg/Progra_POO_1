@@ -6,6 +6,12 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.text.SimpleDateFormat;
 
+
+/**
+ * Aqui se desarrolla cada soporte, el cual puede ver todos los paquetes de cada cliente, cambiar los estados de los paquetes, y calcula el costo total de los paqutes
+ * @author Aivy
+ */
+
 public class Soporte{
 
 	//variables
@@ -58,7 +64,6 @@ public class Soporte{
         * Cambia el estado de un paquete
         * @param paquete es el paquete al que se le cambiara el estado
         * @param pEstado estado al que cambiara
-        * @return Void
         */
 	public void cambiarEstadoPaquete(Paquete paquete, String pEstado)
         {

@@ -14,7 +14,10 @@ import org.jdom2.JDOMException;
 import org.jdom2.input.SAXBuilder;
 
 
-
+/**
+ * Se maneja los archivos de XML de los clientes y soportes
+ * @author Jose
+ */
 
 public class ClienteXML {
 	private ArrayList<Soporte> soportes;

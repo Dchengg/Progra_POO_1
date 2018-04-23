@@ -4,6 +4,11 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
+/**
+ * Aqui se desarrola el Cliente, donde se puede añadir paquetes
+ * @author Diego
+ */
+
 public class Cliente {
 
     private String nombre;
@@ -25,6 +30,8 @@ public class Cliente {
         * @param pEmail se indica el email como String
         */
     
+    
+    
     public Cliente(String pNombre, String pEmail) {
             setNombre(pNombre);
             setEmail(pEmail);
@@ -41,7 +48,7 @@ public class Cliente {
         * @param pCompleto indica si el perfil del cliente esta completo definido por un boolean
         * @param pContra contrasena definida en un String
         * @param pNotificaciones indica si el cliente quiere notificaciones al correo indicada por un boolean
-        * @param pNumCasillero numero del casillero indicada por un String
+        * @param pCasillero numero del casillero indicada por un String
         */
     public Cliente(String pNombre, String pEmail, String pDir, String pNumTel,String pFechaDeNacimiento,boolean pCompleto, String pContra, boolean pNotificaciones,String pCasillero) {
         setNombre(pNombre);

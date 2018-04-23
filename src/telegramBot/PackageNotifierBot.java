@@ -14,6 +14,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * Se maneja el Bot en Telegram
+ * @author Diego
+ */
+
+
 public class PackageNotifierBot extends TelegramLongPollingBot {
 	
 	public final static String BOT_TOKEN = "508395264:AAHNrhDNzWCf4qHT8uO15_AYb9sHWqnZixw";

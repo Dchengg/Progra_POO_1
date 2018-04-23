@@ -14,6 +14,12 @@ import java.util.ArrayList;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
+/**
+ * Guarda los  datos de Estados en un XML
+ * @author Jose
+ */
+
+
 public class EstadosWriter {
     private ArrayList<Estado> estados;
     private String xmlFile;

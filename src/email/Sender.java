@@ -6,6 +6,11 @@ import java.util.*;
 import javax.mail.*;
 import javax.mail.internet.*;
 
+/**
+ * Maneja los datos del correo
+ * @author Diego
+ */
+
 public class Sender {
 
     private static String host;

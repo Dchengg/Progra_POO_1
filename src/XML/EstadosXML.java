@@ -12,6 +12,11 @@ import org.jdom2.Element;
 import org.jdom2.JDOMException;
 import org.jdom2.input.SAXBuilder;
 
+/**
+ * Se maneja los archivos de XML de los estados
+ * @author Jose
+ */
+
 public class EstadosXML {
     private ArrayList<Estado> estados;
     private String xmlFile;

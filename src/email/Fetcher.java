@@ -6,6 +6,11 @@ import java.util.Properties;
 
 import javax.mail.*;
 import javax.mail.search.FlagTerm;
+/**
+ * Se maneja los datos del usuario del correo
+ * @author Diego
+ */
+
 
 public class Fetcher {
 	

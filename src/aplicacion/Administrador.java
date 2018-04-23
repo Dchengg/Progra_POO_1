@@ -5,6 +5,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+
+/**
+ * En esta clase se ejecutan las funciones del Administrador: crear soportes, ver el porcentaje de tiendas, compañias, estados y categorias de paquetes
+ * @author Aivy
+ */
+
+
 public class Administrador {
 
 	private String nombre= "administrador";

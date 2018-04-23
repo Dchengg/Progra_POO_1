@@ -4,6 +4,11 @@ import java.util.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
+/**
+ * Se crean los objetos "Paquete"
+ * @author Diego
+ */
+
 public class Paquete {
 
     private String trackingID;

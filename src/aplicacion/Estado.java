@@ -1,5 +1,11 @@
 package aplicacion;
 
+/**
+ * Se define la descripcion y el id de los estados de cada paquete
+ * @author Diego
+ */
+
+
 public class Estado {
     public static long val = 1;
     private String idConsecutivo;

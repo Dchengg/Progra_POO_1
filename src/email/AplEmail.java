@@ -10,6 +10,11 @@ import aplicacion.Cliente;
 import email.Fetcher;
 import email.Sender;
 
+/**
+ * Envia los correos
+ * @author Diego
+ */
+
 public class AplEmail {
 	
     private static final String POP = "pop.gmail.com";

@@ -97,15 +97,9 @@ public class PaquetesUI extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel1.setBackground(new java.awt.Color(32, 33, 36));
-
-        jLabel1.setFont(new java.awt.Font("Rockwell", 0, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Criterios de Busqueda");
 
-        jRadioButton1.setBackground(new java.awt.Color(32, 33, 36));
         jRadioButton1.setFont(new java.awt.Font("Rockwell", 0, 12)); // NOI18N
-        jRadioButton1.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton1.setText("Por estado");
         jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -113,9 +107,7 @@ public class PaquetesUI extends javax.swing.JFrame {
             }
         });
 
-        jRadioButton2.setBackground(new java.awt.Color(32, 33, 36));
         jRadioButton2.setFont(new java.awt.Font("Rockwell", 0, 12)); // NOI18N
-        jRadioButton2.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton2.setText("Por tienda");
         jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -123,10 +115,7 @@ public class PaquetesUI extends javax.swing.JFrame {
             }
         });
 
-        jPanel2.setBackground(new java.awt.Color(32, 33, 36));
-
         jLabel2.setFont(new java.awt.Font("Rockwell", 0, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Estado :");
 
         jButton1.setFont(new java.awt.Font("Rockwell", 0, 12)); // NOI18N
@@ -164,10 +153,7 @@ public class PaquetesUI extends javax.swing.JFrame {
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
-        jPanel3.setBackground(new java.awt.Color(32, 33, 36));
-
         jLabel3.setFont(new java.awt.Font("Rockwell", 0, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Tienda");
 
         tiendaField.setFont(new java.awt.Font("Rockwell", 0, 12)); // NOI18N
@@ -207,9 +193,7 @@ public class PaquetesUI extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jRadioButton3.setBackground(new java.awt.Color(32, 33, 36));
         jRadioButton3.setFont(new java.awt.Font("Rockwell", 0, 12)); // NOI18N
-        jRadioButton3.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton3.setText("Todos");
         jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

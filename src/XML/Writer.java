@@ -18,6 +18,12 @@ import java.util.ArrayList;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
+
+/**
+ * Guarda los datos de los soportes y clientes en un XML
+ * @author Jose
+ */
+
 public class Writer{
 	private ArrayList<Soporte> soportes;
 	private ArrayList<Cliente> clientes;

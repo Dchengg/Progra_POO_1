@@ -15,6 +15,11 @@ import org.telegram.telegrambots.TelegramBotsApi;
 import org.telegram.telegrambots.exceptions.TelegramApiException;
 import telegramBot.PackageNotifierBot;
 
+/**
+ * En esta clase se cargan los datos base
+ * @author Diego
+ */
+
 public class App {
 	
  /**
