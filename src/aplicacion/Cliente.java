@@ -17,7 +17,7 @@ public class Cliente {
     private String numCasillero;
     private String codigo;
     private ArrayList<Paquete> paquetes = new ArrayList<Paquete>();
-
+    private static int cantCasilleros ;
     
      /**
         * Crea un cliente
@@ -28,6 +28,7 @@ public class Cliente {
     public Cliente(String pNombre, String pEmail) {
             setNombre(pNombre);
             setEmail(pEmail);
+            setPerfilCompleto(false);
     }
 
      /**
@@ -42,7 +43,7 @@ public class Cliente {
         * @param pNotificaciones indica si el cliente quiere notificaciones al correo indicada por un boolean
         * @param pNumCasillero numero del casillero indicada por un String
         */
-    public Cliente(String pNombre, String pEmail, String pDir, String pNumTel,String pFechaDeNacimiento,boolean pCompleto, String pContra, boolean pNotificaciones, String pNumCasillero) {
+    public Cliente(String pNombre, String pEmail, String pDir, String pNumTel,String pFechaDeNacimiento,boolean pCompleto, String pContra, boolean pNotificaciones,String pCasillero) {
         setNombre(pNombre);
         setEmail(pEmail);
         setDireccion(pDir);
@@ -51,7 +52,7 @@ public class Cliente {
         setPerfilCompleto(pCompleto);
         setContrasena(pContra);
         setNotificaciones(pNotificaciones);
-        setNumCasillero(pNumCasillero);
+        setNumCasillero(pCasillero);
 
     }
 
@@ -124,7 +125,7 @@ public class Cliente {
     }
 
     /**
-        * Verifica el codigo del cliente
+        * Verifica el codigo reicibido de telegram del cliente
         * @return Boolean
         */
     
@@ -139,7 +140,16 @@ public class Cliente {
         }
 
     }
+    /**
+     * Genera el numero de casillero del cliente
+     */
+    public void generarNumCasillero() {
+        this.numCasillero = "CAS-" + cantCasilleros;
+        cantCasilleros++;
+    }
 
+    
+    
     public String toString() {
         String msg = "Nombre :" + getNombre() + "\n";
         msg += "Correo :" + getEmail() + "\n";
@@ -208,7 +218,7 @@ public class Cliente {
         return numCasillero;
     }
 
-    public void setNumCasillero(String numCasillero) {
+    public void setNumCasillero(String numCasillero){
         this.numCasillero = numCasillero;
     }
 
@@ -227,6 +237,15 @@ public class Cliente {
     public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
+
+    public static int getCantCasilleros() {
+        return cantCasilleros;
+    }
+
+    public static void setCantCasilleros(int cantCasilleros) {
+        Cliente.cantCasilleros = cantCasilleros;
+    }
+    
     
     
 }

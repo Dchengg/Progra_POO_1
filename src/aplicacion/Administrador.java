@@ -65,11 +65,6 @@ public class Administrador {
                     }
                 }
             }
-            for(String name: estados.keySet()){
-                String key = name;
-                String value = estados.get(name);
-                System.out.println(key + " = " + value);
-            }
             return estados;
         }
         
@@ -92,11 +87,6 @@ public class Administrador {
                     }
                 }
             }
-            for(String name: tiendas.keySet()){
-                String key = name;
-                String value = tiendas.get(name);
-                System.out.println(key + " = " + value);
-            }
             return tiendas;
         }
         /**
@@ -118,12 +108,27 @@ public class Administrador {
                     }
                 }
             }
-            for(String name: categorias.keySet()){
-                String key = name;
-                String value = categorias.get(name);
-                System.out.println(key + " = " + value);
-            }
             return categorias;
+        }
+        /**
+         * Crea un map para las compañias courier de los paquetes
+         * @return Map
+         */
+        public Map<String, String> getCouriers(){
+            Map<String, String> couriers = new HashMap<String,String>();
+            for(Cliente cliente:clientes){
+                ArrayList<Paquete> paquetes = cliente.getPaquetes();
+                for(Paquete paquete:paquetes){
+                    if(couriers.containsKey(paquete.getCourier())){
+                        String valor = paquete.getCourier();
+                        int iValor = Integer.parseInt(valor)+1;
+                        couriers.put(paquete.getCourier(), String.valueOf(iValor));
+                    }else{
+                        couriers.put(paquete.getCourier(), "1");
+                    }
+                }
+            }
+            return couriers;
         }
       
 	public String getNombre() {

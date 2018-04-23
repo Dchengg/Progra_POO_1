@@ -25,15 +25,19 @@ public class DashBoard extends javax.swing.JFrame {
         GraficoCircular estados = new GraficoCircular(admin.getEstados(),"Estados de los paquetes","Estados");
         GraficoCircular tiendas = new GraficoCircular(admin.getTiendas(),"Tiendas más populares","Tiendas");
         GraficoBarras categorias = new GraficoBarras(admin.getCategorias(),"Categorias");
+        GraficoBarras couriers = new GraficoBarras(admin.getCouriers(),"Compañias Courier");
         estados.setSize(400,300);
         estados.setLocation(0,0);
         tiendas.setSize(400,300);
         tiendas.setLocation(400,0);
         categorias.setSize(400,300);
-        categorias.setLocation(0,400);
+        categorias.setLocation(0,300);
+        couriers.setSize(400,300);
+        couriers.setLocation(400,300);
         add(estados);
         add(tiendas);
         add(categorias);
+        add(couriers);
     }
 
     /**
@@ -53,11 +57,11 @@ public class DashBoard extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1367, Short.MAX_VALUE)
+            .addGap(0, 951, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 767, Short.MAX_VALUE)
+            .addGap(0, 604, Short.MAX_VALUE)
         );
 
         pack();

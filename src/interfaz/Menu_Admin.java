@@ -159,19 +159,19 @@ public class Menu_Admin extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         NuevoSoporteUI nuevoSoporte = new NuevoSoporteUI(admin);
         nuevoSoporte.setVisible(true);
-        setVisible(false);
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         DashBoard dashboard = new DashBoard(admin);
         dashboard.setVisible(true);
-        setVisible(false);
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void estadosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_estadosButtonActionPerformed
         MantenimientoEstadosUI mantenimiento = new MantenimientoEstadosUI();
         mantenimiento.setVisible(true);
-        setVisible(false);
+        
         
     }//GEN-LAST:event_estadosButtonActionPerformed
 

@@ -181,8 +181,9 @@ public class Soporte{
         */
         
         public double costoFinal(Paquete paquete){
-            double valorTotal = flete(paquete)+ combustible(paquete) + garantiaRetorno() + impuestoAduanal(paquete);
+            double valorTotal = flete(paquete)+ combustible(paquete) + garantiaRetorno() + impuestoAduanal(paquete) + paquete.getValor();
             paquete.setValorTotal(valorTotal);
+            paquete.setValor(valorTotal);
             return valorTotal;
         }
  /**

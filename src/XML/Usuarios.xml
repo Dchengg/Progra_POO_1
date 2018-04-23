@@ -6,38 +6,32 @@
             <email>diegocheng1973@gmail.com</email>
             <dirrecion>Santa ana</dirrecion>
             <numTel>86564739</numTel>
-            <fechaDeNacimiento>31/3/99</fechaDeNacimiento>
+            <fechaDeNacimiento>31/3/19</fechaDeNacimiento>
             <perfilCompleto>true</perfilCompleto>
             <contrasena>contra</contrasena>
-            <notificaciones>false</notificaciones>
-            <numCasillero>a213</numCasillero>
+            <notificaciones>true</notificaciones>
+            <numCasillero>CAS-0</numCasillero>
             <paquetes>
                 <paquete>
                     <trackingID>123</trackingID>
                     <tienda>Amazon</tienda>
                     <courier>DHL</courier>
-                    <valor>24.99</valor>
+                    <valor>2256.5325117571</valor>
                     <peso>0</peso>
-                    <descripcion>IS BACKLIT :D</descripcion>
+                    <descripcion>Diamante :D</descripcion>
                     <estado>Recibido en Miami</estado>
-                    <categoria>TECLADO DE ORDENADOR</categoria>
-                    <horaCambio>19:30:14</horaCambio>
-                    <fechaCambio>20/04/2018</fechaCambio>
+                    <categoria>DESODORANTE</categoria>
+                    <horaCambio>15:50:33</horaCambio>
+                    <fechaCambio>22/04/2018</fechaCambio>
                 </paquete>
             </paquetes>
         </campo>
     </tabla>
     <tabla Nombre="Soportes">
         <campo>
-            <nombre>Marco</nombre>
-            <email>marco@gmail.com</email>
-            <contrasena>marcorules</contrasena>
-            <creacionDeCuenta>22/04/2018</creacionDeCuenta>
-        </campo>
-        <campo>
             <nombre>Juanca</nombre>
-            <email>juanca03@gmail.com</email>
-            <contrasena>fuck</contrasena>
+            <email>juanca@gmail.com</email>
+            <contrasena>fizz</contrasena>
             <creacionDeCuenta>22/04/2018</creacionDeCuenta>
         </campo>
     </tabla>

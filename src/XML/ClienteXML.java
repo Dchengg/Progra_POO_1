@@ -56,6 +56,8 @@ public class ClienteXML {
 						String contra = campo.getChildTextTrim("contrasena");
 						boolean recibir = (campo.getChildTextTrim("notificaciones").equals("true"));
 						String casillero = campo.getChildTextTrim("numCasillero");
+                                                String numCasillero = casillero.substring(4);
+                                                Cliente.setCantCasilleros(Integer.parseInt(numCasillero));
 						Cliente clienteCargado = new Cliente(nombre,email,dir,numTel,fecha,perfil,contra,recibir,casillero);
 						Element paquetes = campo.getChild("paquetes");
 						List<Element> paquetesP = paquetes.getChildren();
